@@ -1,0 +1,95 @@
+[gd_scene load_steps=4 format=3 uid="uid://cnhklcs1hke2d"]
+
+[ext_resource type="Script" path="res://DialogueScene/scripts/dialogue_scene.gd" id="1_dcnpp"]
+[ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://Places/IleOuest/IleOuestWhite.png" id="2_8s2f6"]
+[ext_resource type="Texture2D" uid="uid://dkfqm6las5n8a" path="res://Characters/Erwan/Erwan1.png" id="2_clf8o"]
+
+[node name="DialogueScene" type="Node2D"]
+script = ExtResource("1_dcnpp")
+orientation = "Left"
+
+[node name="BackgroundContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BackgroundSprite" type="Sprite2D" parent="BackgroundContainer"]
+position = Vector2(960, 540)
+texture = ExtResource("2_8s2f6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_left = 70
+theme_override_constants/margin_top = 70
+theme_override_constants/margin_right = 70
+theme_override_constants/margin_bottom = 70
+
+[node name="SpriteContainer" type="MarginContainer" parent="MarginContainer"]
+custom_minimum_size = Vector2(500, 800)
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="Sprite2D" type="Sprite2D" parent="MarginContainer/SpriteContainer"]
+position = Vector2(-75, -178)
+scale = Vector2(1.476, 1.476)
+texture = ExtResource("2_clf8o")
+offset = Vector2(250, 400)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="FillerL" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+
+[node name="TextBoxContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 30
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer/HBoxContainer/TextBoxContainer"]
+layout_mode = 2
+color = Color(0.964706, 0.941176, 0.890196, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/TextBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 30
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 30
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer/TextBoxContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/TextBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 60)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "LOREM IPSUM"
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/TextBoxContainer/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(1200, 200)
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 28
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam, nisi viverra fermentum accumsan, diam lacus rutrum mi, ac varius ipsum odio sit amet sem. Phasellus maximus odio dolor, non porta est condimentum id. Vivamus fringilla faucibus leo vitae aliquam. Vestibulum suscipit nunc id mi congue, nec venenatis mauris consequat. Pellentesque pharetra diam vel nibh ullamcorper malesuada. Phasellus lacinia iaculis dolor in accumsan. Quisque gravida scelerisque mauris, non fringilla ipsum laoreet ut. Cras sed malesuada mauris, in varius erat. Etiam molestie odio quis gravida mollis. Vestibulum enim nunc, viverra quis nulla nec, posuere finibus urna. Nulla mattis condimentum dictum. Curabitur dolor dolor, porttitor ut purus dictum, blandit mollis odio. "
+autowrap_mode = 2
+text_overrun_behavior = 2
+
+[node name="FillerR" type="MarginContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8

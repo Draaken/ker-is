@@ -1,0 +1,151 @@
+[gd_scene load_steps=10 format=3 uid="uid://be4h4pf5hx71r"]
+
+[ext_resource type="PackedScene" uid="uid://bpehqvb2tyt1a" path="res://MapScene/Plane/plane.tscn" id="1_8kuoa"]
+[ext_resource type="Script" path="res://MapScene/Map.gd" id="1_8o8wv"]
+[ext_resource type="Texture2D" uid="uid://br32wfc3vraag" path="res://MapScene/PlaceHolderMap/Map.png" id="2_6awsm"]
+[ext_resource type="Texture2D" uid="uid://yqgr6mmllxo" path="res://MapScene/PlaceHolderMap/Sea1.png" id="2_wpqgu"]
+[ext_resource type="Texture2D" uid="uid://by4je38sreh" path="res://MapScene/PlaceHolderMap/3.png" id="3_eccor"]
+[ext_resource type="Texture2D" uid="uid://c0ve03k2b0i8i" path="res://MapScene/PlaceHolderMap/2.png" id="4_prmff"]
+[ext_resource type="Texture2D" uid="uid://cv8i5tipwblj8" path="res://MapScene/PlaceHolderMap/1.png" id="5_fpg0s"]
+[ext_resource type="PackedScene" uid="uid://dmasthyopfrgg" path="res://MapScene/Areas/interraction_area.tscn" id="8_gc275"]
+[ext_resource type="PackedScene" uid="uid://cnhklcs1hke2d" path="res://DialogueScene/scenes/dialogue_scene.tscn" id="9_hll5q"]
+
+[node name="MapScene" type="Node2D"]
+script = ExtResource("1_8o8wv")
+
+[node name="Placeholder map" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="Placeholder map"]
+custom_minimum_size = Vector2(1.2e+07, 1.2e+07)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.117647, 0.223529, 0.419608, 1)
+
+[node name="Map" type="Sprite2D" parent="Placeholder map"]
+modulate = Color(1, 1, 1, 0.101961)
+position = Vector2(890.016, -2454.13)
+scale = Vector2(1.54192, 1.54192)
+texture = ExtResource("2_6awsm")
+
+[node name="Sea1" type="Sprite2D" parent="Placeholder map"]
+visible = false
+position = Vector2(-259, -527)
+texture = ExtResource("2_wpqgu")
+
+[node name="3" type="Sprite2D" parent="Placeholder map"]
+position = Vector2(1558.5, 816.5)
+texture = ExtResource("3_eccor")
+
+[node name="2" type="Sprite2D" parent="Placeholder map"]
+position = Vector2(1574.5, 416.5)
+texture = ExtResource("4_prmff")
+
+[node name="1" type="Sprite2D" parent="Placeholder map"]
+position = Vector2(-2437, -582)
+texture = ExtResource("5_fpg0s")
+
+[node name="Polygon2D7" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(-160, -2408)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(2582, 1178, 2497, 1156, 2517, 1113, 2452, 1073, 2498, 989, 2705, 1009, 2708, 1136)
+
+[node name="Polygon2D" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(219, -874)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-1512, 744, -1361, 716, -1273, 427, -1248, 678, -986, 684, -890, 527, -789, 749, -648, 787, -532, 666, -651, 477, -542, 502, -424, 726, -61, 1102)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(-1047, -2167)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-1242, 887, -1451, 684, -1461, 586, -1248, 678, -1107, 506, -890, 527, -793, 613, -706, 679, -535, 711, -382, 809, -514, 902, -339, 1092, -774, 1197)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(1034, -309)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-258, -106, -148, -66, -159, -10, -258, -28, -280, -79)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(1186, -252)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-257, -72, -214, -55, -258, -28, -285, -47)
+
+[node name="Polygon2D8" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(3224, -776)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-273, -70, -150, -8, -148, 33, -186, 61, -265, 17)
+
+[node name="Polygon2D9" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(3088, -288)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-273, -70, -124, 116, -53, 147, -70, 218, -203, 115)
+
+[node name="Polygon2D10" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(3122, -430)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-186, 165, -170, 128, -107, 167, -63, 142, -70, 218, -133, 237)
+
+[node name="Polygon2D11" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(3169, -600)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-73, 103, -78, 166, -70, 218, -106, 210, -110, 156, -106, 117)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(6780, 1658)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-296, -4, -371, -589, -916, -1045, -1593, -1056, -2062, -1486, -3317, -1267, -3703, -1481, -3641, -1981, -3165, -2285, -2865, -2580, -2185, -2551, -1724, -2180, -582, -2547, -411, -2788, -1565, -2627, -2568, -3010, -2442, -3735, -2082, -4269, -2197, -4630, -2772, -4816, -2677, -4940, -2102, -4797, -1621, -4545, -1180, -5556, -1080, -6020, 1178, -6090, 1125, -107)
+
+[node name="Polygon2D6" type="Polygon2D" parent="Placeholder map"]
+position = Vector2(-160, -2408)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(589, 889, 478, 1084, 441, 895, 286, 1057, -306, 1037, -982, 889, -1490, 650, -706, 679, -542, 620, -326, 596, 222, 562, 1261, 673, 656, 993)
+
+[node name="Plane" parent="." instance=ExtResource("1_8kuoa")]
+position = Vector2(958, 540)
+
+[node name="Camera2D" type="Camera2D" parent="Plane"]
+position_smoothing_enabled = true
+drag_left_margin = 0.4
+drag_right_margin = 0.4
+editor_draw_drag_margin = true
+
+[node name="Pins" type="Node2D" parent="."]
+
+[node name="Clouds" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Clouds"]
+position = Vector2(0, -264)
+polygon = PackedVector2Array(-5904, -535, -4961, -323, -4440, 334, -3979, 953, -2733, 998, -1842, 1761, -943, 2033, -37, 1473, 1371, 2063, 2217, 2310, 3838, 2306, 4922, 2021, 5665, 1450, 5550, 841, 5703, 118, 6521, -244, 7073, 3010, -6170, 3010)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Clouds"]
+polygon = PackedVector2Array(-5946, -547, -4928, -359, -4775, -1650, -4519, -2728, -2712, -3219, -1367, -2926, 179, -3239, 2054, -2562, 4068, -2016, 4815, -1484, 4102, -273, 4804, 711, 5669, 1724, 5647, -3548, -6210, -4476)
+
+[node name="Area" type="Node2D" parent="."]
+
+[node name="Erwan" parent="Area" instance=ExtResource("8_gc275")]
+position = Vector2(1797, 811)
+
+[node name="CollisionPolygon2D" parent="Area/Erwan" index="0"]
+position = Vector2(-40.0001, -20)
+scale = Vector2(1.09344, 1.09344)
+polygon = PackedVector2Array(-185, -58, -91, -143, 29, -151, 210.344, -125.292, 320.089, -27.4362, 307.286, 80.4796, 214, 105, 55, 156, -128, 127, -208, 77)
+
+[node name="Indicator" parent="Area/Erwan" index="1"]
+polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
+
+[node name="Line2D" parent="Area/Erwan" index="2"]
+texture_repeat = 2
+points = PackedVector2Array(-276, 20, -262, -48, -241, -102, -202, -148, -135, -188, -73, -199, 13, -195, 88, -187, 172, -164, 220, -127, 242, -76, 245, -25, 242, 34, 233, 76)
+
+[node name="DialogueScene" parent="." instance=ExtResource("9_hll5q")]
+visible = false
+
+[editable path="Area/Erwan"]

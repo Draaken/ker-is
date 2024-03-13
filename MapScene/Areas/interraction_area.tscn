@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://dmasthyopfrgg"]
+
+[ext_resource type="Script" path="res://MapScene/Areas/interraction_area.gd" id="1_xq286"]
+[ext_resource type="Texture2D" uid="uid://b43go72mcuseh" path="res://MapScene/Areas/dot_line.png" id="2_hvykc"]
+
+[node name="InterractionArea" type="Area2D"]
+monitoring = false
+script = ExtResource("1_xq286")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+
+[node name="Indicator" type="Polygon2D" parent="."]
+visible = false
+position = Vector2(0, 24.5)
+scale = Vector2(13.25, 13.25)
+color = Color(0, 0.631373, 0.443137, 1)
+polygon = PackedVector2Array(2, 2, 0, 0, 2, -2, 4, 0)
+
+[node name="Line2D" type="Line2D" parent="."]
+texture = ExtResource("2_hvykc")
+texture_mode = 1

@@ -1,0 +1,49 @@
+[gd_scene load_steps=7 format=3 uid="uid://bpehqvb2tyt1a"]
+
+[ext_resource type="Script" path="res://MapScene/Plane/plane.gd" id="1_jjlvd"]
+[ext_resource type="Texture2D" uid="uid://cf81bugf23hyu" path="res://MapScene/Plane/Ressources/PlaneFlying1.png" id="2_qbila"]
+[ext_resource type="Texture2D" uid="uid://dp4lj75v6mjfl" path="res://MapScene/Plane/Ressources/PlaneFlying2.png" id="3_rjirn"]
+[ext_resource type="Texture2D" uid="uid://bhvjpb0c4g745" path="res://MapScene/Plane/Ressources/PlaneLanded.png" id="4_3hcfh"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4i0v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qbila")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_rjirn")
+}],
+"loop": true,
+"name": &"Flying",
+"speed": 16.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3hcfh")
+}],
+"loop": true,
+"name": &"Landed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_334sk"]
+size = Vector2(167, 128)
+
+[node name="Plane" type="Node2D"]
+script = ExtResource("1_jjlvd")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+rotation = 1.5708
+scale = Vector2(0.4, 0.4)
+sprite_frames = SubResource("SpriteFrames_o4i0v")
+animation = &"Flying"
+
+[node name="LandingBox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LandingBox"]
+position = Vector2(-15.5, 0)
+shape = SubResource("RectangleShape2D_334sk")
+
+[connection signal="area_entered" from="LandingBox" to="." method="_on_landing_box_area_entered"]
+[connection signal="area_exited" from="LandingBox" to="." method="_on_landing_box_area_exited"]
