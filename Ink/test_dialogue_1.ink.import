@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cdmrtcqvb05rd"
+path="res://.godot/imported/test_dialogue_1.ink-6ad7ae2a100b8d70e3cecf3afea558f7.res"
+
+[deps]
+
+source_file="res://Ink/test_dialogue_1.ink"
+dest_files=["res://.godot/imported/test_dialogue_1.ink-6ad7ae2a100b8d70e3cecf3afea558f7.res"]
+
+[params]
+
+is_main_file=true
+compress=true

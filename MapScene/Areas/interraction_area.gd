@@ -1,13 +1,13 @@
 extends Area2D
 class_name LandingZone
-var dialogue_scene
+var DialogueScene
 var CurentStoryScript = "prout"
 
 signal interaction_started(StoryScript)
 
 func _ready():
-	dialogue_scene = get_tree().get_root().get_node("MapScene/DialogueScene")
-	self.interaction_started.connect(dialogue_scene.start_dialogue)
+	DialogueScene = get_node("/root/MapScene/UI/DialogueScene")
+	self.interaction_started.connect(DialogueScene.StartDialogue)
 
 func interraction_start():
 	$Indicator.show()
@@ -18,4 +18,5 @@ func interraction_stop():
 	$Indicator.hide()
 
 func choose_storylet():
-	return
+	var res = load("res://Ink/test_dialogue_1.ink")
+	return (res)

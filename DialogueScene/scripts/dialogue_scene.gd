@@ -31,6 +31,6 @@ func activate():
 func desactivate():
 	hide()
 
-func start_dialogue(StoryScript):
+func StartDialogue(StoryScript):
 	activate()
 	pass

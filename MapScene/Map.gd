@@ -15,7 +15,8 @@ func _ready():
 	
 	
 	
-	
+func _process(_delta):
+	$UI/FPS.text = str(Engine.get_frames_per_second())
 	
 
 	
