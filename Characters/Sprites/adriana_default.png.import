@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vh3q58kei4dq"
-path="res://.godot/imported/Adriana.png-027ef1c425de29f5527ee72dab93b1bf.ctex"
+path="res://.godot/imported/adriana_default.png-65884d7f9fb6a0370e67dfb716ce6a2f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Adriana/Adriana.png"
-dest_files=["res://.godot/imported/Adriana.png-027ef1c425de29f5527ee72dab93b1bf.ctex"]
+source_file="res://Characters/Sprites/adriana_default.png"
+dest_files=["res://.godot/imported/adriana_default.png-65884d7f9fb6a0370e67dfb716ce6a2f.ctex"]
 
 [params]
 

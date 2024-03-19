@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://m8njyplyoxtq"
-path="res://.godot/imported/Briane.png-66c450c9c218c009c520b259bd9eff2c.ctex"
+path="res://.godot/imported/brianne_default.png-7a1ab8a271e6b3840103a6114abde42a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Brianne/Briane.png"
-dest_files=["res://.godot/imported/Briane.png-66c450c9c218c009c520b259bd9eff2c.ctex"]
+source_file="res://Characters/Sprites/brianne_default.png"
+dest_files=["res://.godot/imported/brianne_default.png-7a1ab8a271e6b3840103a6114abde42a.ctex"]
 
 [params]
 

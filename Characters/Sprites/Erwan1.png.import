@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dkfqm6las5n8a"
-path="res://.godot/imported/Erwan1.png-83a6497a44992903ab44383deae6c77e.ctex"
+path="res://.godot/imported/Erwan1.png-3ea8a56450907de677597ac68c5ebd60.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Characters/Erwan/Erwan1.png"
-dest_files=["res://.godot/imported/Erwan1.png-83a6497a44992903ab44383deae6c77e.ctex"]
+source_file="res://Characters/Sprites/Erwan1.png"
+dest_files=["res://.godot/imported/Erwan1.png-3ea8a56450907de677597ac68c5ebd60.ctex"]
 
 [params]
 

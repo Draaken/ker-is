@@ -7,7 +7,7 @@ signal interaction_started(StoryScript)
 
 func _ready():
 	DialogueScene = get_node("/root/MapScene/UI/DialogueScene")
-	self.interaction_started.connect(DialogueScene.StartDialogue)
+	self.interaction_started.connect(DialogueScene.Activate)
 
 func interraction_start():
 	$Indicator.show()

@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://DialogueScene/scripts/DialogueScene.cs" id="1_7mxpi"]
 [ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://Places/IleOuest/IleOuestWhite.png" id="2_8s2f6"]
-[ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://Characters/Adriana/Adriana.png" id="3_fgjjr"]
-[ext_resource type="Texture2D" uid="uid://m8njyplyoxtq" path="res://Characters/Brianne/Briane.png" id="4_ghts4"]
+[ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://Characters/Sprites/adriana_default.png" id="3_fgjjr"]
+[ext_resource type="Texture2D" uid="uid://m8njyplyoxtq" path="res://Characters/Sprites/brianne_default.png" id="4_ghts4"]
 
 [node name="DialogueScene" type="Node2D"]
 script = ExtResource("1_7mxpi")
@@ -22,7 +22,7 @@ z_index = 10
 z_as_relative = false
 offset_right = 1920.0
 offset_bottom = 1080.0
-color = Color(0.0117647, 0.14902, 0.4, 0.47451)
+color = Color(0.0705882, 0.156863, 0.321569, 0.47451)
 
 [node name="ForegroundContainer" type="MarginContainer" parent="."]
 z_index = 20
@@ -35,8 +35,6 @@ theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 70
 
 [node name="LeftSpriteContainer" type="MarginContainer" parent="ForegroundContainer"]
-z_index = 20
-z_as_relative = false
 custom_minimum_size = Vector2(500, 800)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -47,8 +45,6 @@ texture = ExtResource("3_fgjjr")
 offset = Vector2(300, 500)
 
 [node name="RightSpriteContainer" type="MarginContainer" parent="ForegroundContainer"]
-z_index = 20
-z_as_relative = false
 custom_minimum_size = Vector2(500, 800)
 layout_mode = 2
 size_flags_horizontal = 8
@@ -68,6 +64,8 @@ size_flags_horizontal = 3
 size_flags_vertical = 8
 
 [node name="TextBoxContainer" type="MarginContainer" parent="ForegroundContainer/DialogueContainer"]
+z_index = -5
+custom_minimum_size = Vector2(1200, 400)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_constants/margin_left = 30
@@ -81,12 +79,10 @@ color = Color(0.964706, 0.941176, 0.890196, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ForegroundContainer/DialogueContainer/TextBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 8
-theme_override_constants/margin_left = 60
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 60
-theme_override_constants/margin_bottom = 30
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_constants/margin_left = 100
+theme_override_constants/margin_right = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer"]
 layout_mode = 2
