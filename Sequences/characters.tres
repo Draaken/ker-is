@@ -1,0 +1,7 @@
+[gd_resource type="Resource" script_class="Characters" load_steps=2 format=3 uid="uid://cfgd0f6liss7l"]
+
+[ext_resource type="Script" path="res://scripts/characters.gd" id="1_xdt4p"]
+
+[resource]
+script = ExtResource("1_xdt4p")
+list = ["Brianne", "Erwan", "Yoann"]

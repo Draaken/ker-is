@@ -13,7 +13,13 @@ config_version=5
 config/name="Ker Is"
 run/main_scene="res://MapScene/map_scene.tscn"
 config/features=PackedStringArray("4.2", "C#", "Forward Plus")
+boot_splash/bg_color=Color(0, 0.721569, 0.603922, 1)
 config/icon="res://icon.svg"
+
+[autoload]
+
+MapParameters="*res://singletons/map_parameters.gd"
+Metrics="*res://singletons/metrics.tscn"
 
 [display]
 

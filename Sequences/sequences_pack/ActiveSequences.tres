@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SequencesPack" load_steps=3 format=3 uid="uid://bryiskgxrfe5"]
+
+[ext_resource type="Script" path="res://scripts/sequences_pack/sequences_pack.gd" id="1_jxtct"]
+[ext_resource type="Resource" uid="uid://chuv8wqynoc0w" path="res://Sequences/IMAK_cassettes1.tres" id="2_m7uh4"]
+
+[resource]
+script = ExtResource("1_jxtct")
+sequences = [ExtResource("2_m7uh4")]

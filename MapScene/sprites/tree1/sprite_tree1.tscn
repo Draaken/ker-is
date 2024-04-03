@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmuucuelnnoq"]
+
+[ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="1_se43m"]
+[ext_resource type="Texture2D" uid="uid://c320knhcbw1xc" path="res://MapScene/sprites/tree1/tree1.png" id="2_afgp5"]
+[ext_resource type="Texture2D" uid="uid://6usup4b2yfdv" path="res://MapScene/sprites/tree1/tree1b.png" id="3_gconq"]
+[ext_resource type="Script" path="res://MapScene/sprites/sprite_wind.gd" id="4_71ume"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgtv1"]
+resource_local_to_scene = true
+shader = ExtResource("1_se43m")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(155, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jsv0w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_afgp5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gconq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Tree1" type="AnimatedSprite2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_hgtv1")
+position = Vector2(155, 50)
+scale = Vector2(1.02974, 1.02974)
+sprite_frames = SubResource("SpriteFrames_jsv0w")
+frame = 1
+flip_h = true
+script = ExtResource("4_71ume")

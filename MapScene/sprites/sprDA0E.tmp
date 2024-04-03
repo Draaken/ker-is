@@ -1,0 +1,17 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmuucuelnnoq"]
+
+[ext_resource type="Shader" path="res://MapScene/sprites/sprite_tree1.gdshader" id="1_1v44n"]
+[ext_resource type="Texture2D" uid="uid://c320knhcbw1xc" path="res://MapScene/sprites/tree1.png" id="1_wnaxf"]
+[ext_resource type="Script" path="res://MapScene/sprites/sprite_tree.gd" id="3_6gj26"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgtv1"]
+shader = ExtResource("1_1v44n")
+shader_parameter/deformation = Vector2(0, 0)
+shader_parameter/sidewaysDeformationFactor = 5.0
+shader_parameter/new_color = Color(0.984314, 0.627451, 0.839216, 1)
+
+[node name="Tree1" type="Sprite2D"]
+material = SubResource("ShaderMaterial_hgtv1")
+position = Vector2(52, 62)
+texture = ExtResource("1_wnaxf")
+script = ExtResource("3_6gj26")

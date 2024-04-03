@@ -13,6 +13,7 @@ public partial class DialogueScene : Node2D
 	private MarginContainer Foreground;
 	private ColorRect BlueFilter;
 	private MarginContainer TrucGaucheDroite;
+	//ptdr je me déteste avec mes noms de variables olala, mais en gros c'est le margin container qui décide si la bulle de texte est allignée à gauche où à droite
 	private Label CoreText;
 	private Label NameText;
 	private Sprite2D RightSprite;
@@ -163,9 +164,20 @@ public partial class DialogueScene : Node2D
 		{
 			if (story.CurrentTags[1] == subCharacter[0])
 			{
+				String dirPath = "DialogueScene/Characters/Sprites/" + subCharacter[1];
+				String spriteName = story.CurrentTags[3] +".png";
+				Texture2D sprite;
+
+				if (IsThereFile(dirPath, spriteName))
+				{
+					sprite = GD.Load<Texture2D>(dirPath + "/" + spriteName);
+				}
+				else
+				{
+					GD.Print("Sprite not found, used default sprite isntead. Sprite name:"+spriteName);
+					sprite = GD.Load<Texture2D>(dirPath + "/default.png");
+				}
 				
-				
-				Texture2D sprite = GD.Load<Texture2D>("Characters/Sprites/" + story.CurrentTags[3] +".png");
 				Sprite2D spriteNode;
 
 				if (subCharacter[2] == "left")
@@ -210,5 +222,29 @@ public partial class DialogueScene : Node2D
 	{
 		return Text.Right(Text.Find(":")+1);
 	}
+
+
+	public static bool IsThereFile(string dirPath, string fileNameTarget)
+{
+    using var dir = DirAccess.Open(dirPath);
+    if (dir != null)
+    {
+        if (dir.FileExists(fileNameTarget))
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+    }
+    else
+    {
+        GD.Print("An error occurred when trying to access the path.");
+		return false;
+    }
+}
+
+
 
 }

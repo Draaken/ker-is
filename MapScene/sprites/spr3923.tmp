@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bmuucuelnnoq"]
+
+[ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="1_se43m"]
+[ext_resource type="Texture2D" uid="uid://c320knhcbw1xc" path="res://MapScene/sprites/tree1.png" id="1_wnaxf"]
+[ext_resource type="Script" path="res://MapScene/sprites/sprite_tree.gd" id="3_6gj26"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgtv1"]
+shader = ExtResource("1_se43m")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(0, 0)
+
+[node name="Tree1" type="Sprite2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_hgtv1")
+scale = Vector2(0.833333, 1)
+texture = ExtResource("1_wnaxf")
+script = ExtResource("3_6gj26")

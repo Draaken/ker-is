@@ -1,4 +1,4 @@
-extends Node2D
+extends CharacterBody2D
 
 signal PinReached
 signal Landing
@@ -6,9 +6,8 @@ signal TakingOff
 
 var target_position = Vector2()
 var position_margin = 20
-var full_speed = 200 #velocity constant
-var fly_by_speed = 40
-var velocity = Vector2(0,0)
+@export var full_speed = 200 #velocity constant
+@export var fly_by_speed = 40
 var direction = Vector2()
 var state = "landed"
 
@@ -81,8 +80,8 @@ func move_to(target, delta, speed):
 	tween.play()
 #	direction = (target_position - self.position).normalized()
 	self.rotation = direction.angle()
-	velocity = speed* direction * delta
-	self.position += velocity
+	velocity = speed* direction
+	move_and_slide()
 	
 	
 	

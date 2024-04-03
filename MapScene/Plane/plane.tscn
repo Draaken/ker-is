@@ -30,7 +30,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_334sk"]
 size = Vector2(167, 128)
 
-[node name="Plane" type="Node2D"]
+[node name="Plane" type="CharacterBody2D"]
 script = ExtResource("1_jjlvd")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

@@ -1,0 +1,47 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6s870mcud4nb"]
+
+[ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="1_nxhlm"]
+[ext_resource type="Texture2D" uid="uid://cmofmypf3tkqc" path="res://MapScene/sprites/bush1/bush1.png" id="2_mq6vg"]
+[ext_resource type="Texture2D" uid="uid://bump6n6pokxgj" path="res://MapScene/sprites/bush1/bush1b.png" id="3_m72au"]
+[ext_resource type="Texture2D" uid="uid://b1sde1lp4bctf" path="res://MapScene/sprites/bush1/bush1c.png" id="4_2y42k"]
+[ext_resource type="Script" path="res://MapScene/sprites/sprite_wind.gd" id="4_b16hu"]
+[ext_resource type="Texture2D" uid="uid://c0yonmco6x6cr" path="res://MapScene/sprites/bush1/bush1d.png" id="5_s3pa0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hgtv1"]
+resource_local_to_scene = true
+shader = ExtResource("1_nxhlm")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(155, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_343cx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mq6vg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_m72au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2y42k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_s3pa0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Bush1" type="AnimatedSprite2D"]
+y_sort_enabled = true
+material = SubResource("ShaderMaterial_hgtv1")
+position = Vector2(155, 50)
+scale = Vector2(0.921622, 0.921622)
+sprite_frames = SubResource("SpriteFrames_343cx")
+frame = 2
+flip_h = true
+script = ExtResource("4_b16hu")

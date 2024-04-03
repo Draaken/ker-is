@@ -5,6 +5,7 @@ var mouse_over_land = false
 
 var pin_instance = preload("res://MapScene/Assets/pin.tscn")
 var active_pin
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	plane = $"Plane"
@@ -17,6 +18,9 @@ func _ready():
 	
 func _process(_delta):
 	$UI/FPS.text = str(Engine.get_frames_per_second())
+	
+	var noise_texture: NoiseTexture2D = $"PlaceholderMap/ColorRect".material.get_shader_parameter("noise_foam")
+	noise_texture.noise.offset += Vector3(0.1,0.0,0.0)
 	
 
 	

@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://cnhklcs1hke2d"]
 
 [ext_resource type="Script" path="res://DialogueScene/scripts/DialogueScene.cs" id="1_7mxpi"]
-[ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://Places/IleOuest/IleOuestWhite.png" id="2_8s2f6"]
-[ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://Characters/Sprites/adriana_default.png" id="3_fgjjr"]
-[ext_resource type="Texture2D" uid="uid://m8njyplyoxtq" path="res://Characters/Sprites/brianne_default.png" id="4_ghts4"]
+[ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://DialogueScene/Backgrounds/IleOuest/IleOuestWhite.png" id="2_8s2f6"]
+[ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://DialogueScene/Characters/Sprites/adriana/default.png" id="3_c0atw"]
+[ext_resource type="Texture2D" uid="uid://m8njyplyoxtq" path="res://DialogueScene/Characters/Sprites/brianne/default.png" id="4_6nq6g"]
 
 [node name="DialogueScene" type="Node2D"]
 script = ExtResource("1_7mxpi")
@@ -41,7 +41,7 @@ size_flags_horizontal = 0
 size_flags_vertical = 8
 
 [node name="LeftSprite" type="Sprite2D" parent="ForegroundContainer/LeftSpriteContainer"]
-texture = ExtResource("3_fgjjr")
+texture = ExtResource("3_c0atw")
 offset = Vector2(300, 500)
 
 [node name="RightSpriteContainer" type="MarginContainer" parent="ForegroundContainer"]
@@ -51,7 +51,7 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="RightSprite" type="Sprite2D" parent="ForegroundContainer/RightSpriteContainer"]
-texture = ExtResource("4_ghts4")
+texture = ExtResource("4_6nq6g")
 offset = Vector2(300, 500)
 
 [node name="DialogueContainer" type="HBoxContainer" parent="ForegroundContainer"]

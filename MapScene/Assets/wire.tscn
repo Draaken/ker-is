@@ -1,0 +1,44 @@
+[gd_scene load_steps=8 format=3 uid="uid://bww3e50a2hlki"]
+
+[ext_resource type="Script" path="res://MapScene/Assets/wire.gd" id="1_73yhx"]
+[ext_resource type="Shader" uid="uid://q2llpwossgwb" path="res://MapScene/Assets/wire_shader.tres" id="1_fc3sa"]
+[ext_resource type="Texture2D" uid="uid://cynqrg8tclfmx" path="res://MapScene/Assets/texture_wire.png" id="3_rfgfb"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryloc"]
+
+[sub_resource type="Curve2D" id="Curve2D_73km0"]
+resource_local_to_scene = true
+_data = {
+"points": PackedVector2Array(-64.4231, -21.8752, 64.4231, 10, 1, -1, -75.9595, 10, 75.9595, -29.1087, 217, -1)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtgik"]
+resource_local_to_scene = true
+shader = ExtResource("1_fc3sa")
+shader_parameter/new_color = Color(0.172549, 0.172549, 0.172549, 1)
+shader_parameter/speedX = 1.0
+shader_parameter/disX = 12.385
+shader_parameter/speedY = 1.0
+shader_parameter/disY = 70.0
+shader_parameter/offset = Vector2(0, 0)
+
+[sub_resource type="Gradient" id="Gradient_0d6ov"]
+offsets = PackedFloat32Array(0.0853659, 0.487805, 0.920732)
+colors = PackedColorArray(0, 0, 0, 1, 0.637843, 0.637843, 0.637843, 1, 0, 0, 0, 1)
+
+[node name="Wire" type="Path2D"]
+material = SubResource("ShaderMaterial_ryloc")
+curve = SubResource("Curve2D_73km0")
+script = ExtResource("1_73yhx")
+
+[node name="Line2D" type="Line2D" parent="."]
+material = SubResource("ShaderMaterial_mtgik")
+points = PackedVector2Array(1, -1, 4.02799, -0.538574, 7.07213, -0.0917969, 10.1322, 0.340332, 13.2079, 0.757813, 16.299, 1.16064, 19.4052, 1.54883, 22.5264, 1.92236, 25.6622, 2.28125, 28.8124, 2.62549, 31.9768, 2.95508, 35.1551, 3.27002, 38.3471, 3.57031, 41.5525, 3.85596, 44.7711, 4.12695, 48.0025, 4.3833, 51.2467, 4.625, 54.5033, 4.85205, 57.772, 5.06445, 61.0527, 5.26221, 64.3451, 5.44531, 67.6488, 5.61377, 70.9638, 5.76758, 74.2897, 5.90674, 77.6263, 6.03125, 80.9733, 6.14111, 84.3305, 6.23633, 87.6977, 6.31689, 91.0745, 6.38281, 94.4608, 6.43408, 97.8563, 6.4707, 101.261, 6.49268, 104.674, 6.5, 108.095, 6.49268, 111.525, 6.4707, 114.963, 6.43408, 118.408, 6.38281, 121.861, 6.31689, 125.321, 6.23633, 128.788, 6.14111, 132.262, 6.03125, 135.742, 5.90674, 139.229, 5.76758, 142.721, 5.61377, 146.219, 5.44531, 149.723, 5.26221, 153.232, 5.06445, 156.746, 4.85205, 160.264, 4.625, 163.787, 4.3833, 167.314, 4.12695, 170.845, 3.85596, 174.38, 3.57031, 177.919, 3.27002, 181.46, 2.95508, 185.005, 2.62549, 188.552, 2.28125, 192.102, 1.92236, 195.654, 1.54883, 199.208, 1.16064, 202.764, 0.757813, 206.322, 0.340332, 209.88, -0.0917969, 213.44, -0.538574, 217, -1)
+width = 3.0
+default_color = Color(0, 0, 0, 1)
+gradient = SubResource("Gradient_0d6ov")
+texture = ExtResource("3_rfgfb")
+texture_mode = 1
+antialiased = true
+metadata/_edit_lock_ = true
