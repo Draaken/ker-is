@@ -1,27 +1,15 @@
 @tool
 extends Resource
-class_name Sequence
+class_name SequenceClass
 
-const metrics_manager = preload("res://singletons/metrics_manager.gd")
+const metrics_manager = preload("res://scripts/autoload/metrics_database.gd")
 const characters_enum = metrics_manager.characters
-const metrics: Dictionary = metrics_manager.metrics
-var conditions_number: int
 @export var conditions : Array[MetricCondition]
-var starter : characters_enum
+var starter_characters : characters_enum
 @export var one_use_only = true
 @export var ink_file: InkStory
 @export var local_metrics = {}
 
-enum logic_signs {
-	EQUAL=1,
-	STRICTLY_OVER=2,
-	STRICTLY_UNDER=4,
-	NOT=8
-}
-
-var metric: String
-var logic: logic_signs
-var metric_value
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -65,18 +53,61 @@ func _get_property_list() -> Array[Dictionary]:
 	var ret: Array[Dictionary] = []
 	
 	ret.append({
-		name = "starter",
+		name = "starter_characters",
 		type = TYPE_INT,
 		hint = PROPERTY_HINT_FLAGS,
 		hint_string = enum_to_hint_string(characters_enum),
 		usage = PROPERTY_USAGE_DEFAULT
 	})
-	ret.append({
-		name = "conditions_number",
-		type = TYPE_INT
-	})
+	notify_property_list_changed()
+	return ret
+	
+#func get_enum_value(enum_variable):
+	#var value = enum_variable
+	#var key = enum_variable.keys()[enum_variable.keys().find(value)]
+	#return key
+
+func is_valid()->bool:
+	if conditions.size() == 0:
+		return true
+	for i in conditions.size():
+		var metric = conditions[i].metric
+		var is_condition_true: bool
+		var condition_value = conditions[i].metric_value
+		var logic = conditions[i].logic
+		
+		var metric_value = MetricsDatabase.metrics_values[metric]
+		
+		match logic:
+			0: is_condition_true = metric_value == condition_value
+			1: is_condition_true = metric_value > condition_value
+			2: is_condition_true = metric_value < condition_value
+			3: is_condition_true = metric_value != condition_value
+		
+		#if one of the condition is false, return false
+		if not is_condition_true:
+			return false
+		
+	return true
+	
+func set_up_storylet(character:int):
+	pass
+#la il faudra:
+# - convertir le int du character enum en un string
+# - aller chercher le knot correspondant dans le fichier ink
+# - jouer le knot pour tester les local_metrics de tous les sub-knots
+# - la ressource est désormais à la première ligne du storylets concerné :thumbs_up:
+
+func get_priority(character: int)->int:
+	set_up_storylet(character)
+#simple comme bonjour:
+#suffit de retourner le tag de priority du storylet en cours
+	return 0
+	
+	
+	
 	#var condition_array = []
-	#for i in conditions_number-1:
+	#for i in conditions_number:
 		#condition_array.append({
 			#name = "metric",
 			#type = TYPE_STRING,
@@ -130,8 +161,7 @@ func _get_property_list() -> Array[Dictionary]:
 		#name = "Metric Value",
 		#type = TYPE_INT
 	#})
-	notify_property_list_changed()
-	return ret
+	
 	
 	#return [
 		#{

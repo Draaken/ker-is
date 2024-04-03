@@ -1,14 +1,23 @@
 @tool
 
-extends StateMachinesManager
+extends Node
 
-const metrics: Dictionary = {
-	"storm": {
-		"NONE": 1,
-		"COMING": 2,
-		"FINISHING":4
-	}
+enum metrics {
+	storm,
+	state_pressure,
+}
 	
+
+#dictionary that connect the metric to it's possible values
+#used by the metric_condition ressource to match the selected metric with the values it can take
+const METRIC_VALUES_BY_TYPE := { 
+	metrics.storm: storm,
+	metrics.state_pressure: state_pressure
+}
+
+var metrics_values = {
+	metrics.storm : storm.FINISHING,
+	metrics.state_pressure: state_pressure.COMING
 }
 
 enum characters {
@@ -23,6 +32,7 @@ enum storm {
 	STRONG=4,
 	FINISHING=8
 }
+var storm_value: storm = storm.NONE
 
 enum state_pressure {
 	NONE=1,
@@ -30,13 +40,11 @@ enum state_pressure {
 	STRONG=4,
 	FINISHING=8
 }
+var state_pressure_value: state_pressure = state_pressure.COMING
 
-@export var SequencesPack: Resource
 
-var Metrics: Dictionary = {
-	"storm" : storm
-	
-}
+
+
 #@export var Storm = {
 	#
 	#"none": true, 

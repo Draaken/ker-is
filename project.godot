@@ -18,8 +18,9 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-MapParameters="*res://singletons/map_parameters.gd"
-Metrics="*res://singletons/metrics.tscn"
+MapParameters="*res://autoload/map_parameters.gd"
+SequencesManager="*res://autoload/sequences_manager.tscn"
+MetricsDatabase="*res://scripts/autoload/metrics_database.gd"
 
 [display]
 

@@ -1,8 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://brgwl3ryt68kc"]
-
-[ext_resource type="Script" path="res://singletons/metrics_manager.gd" id="1_x64xc"]
-[ext_resource type="Resource" uid="uid://bryiskgxrfe5" path="res://Sequences/sequences_pack/ActiveSequences.tres" id="2_aivai"]
-
-[node name="Metrics" type="Node"]
-script = ExtResource("1_x64xc")
-SequencesPack = ExtResource("2_aivai")

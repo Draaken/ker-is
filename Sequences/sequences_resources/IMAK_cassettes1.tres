@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=2 format=3 uid="uid://chuv8wqynoc0w"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_u0klw"]
+
+[resource]
+script = ExtResource("1_u0klw")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+one_use_only = true
+local_metrics = {}
+starter_characters = 2

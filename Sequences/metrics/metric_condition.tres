@@ -1,6 +1,6 @@
 [gd_resource type="Resource" script_class="MetricCondition" load_steps=2 format=3 uid="uid://djxu2ykwpcco7"]
 
-[ext_resource type="Script" path="res://scripts/metrics/metric_condition.gd" id="1_kxnkv"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_kxnkv"]
 
 [resource]
 resource_local_to_scene = true

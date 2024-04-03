@@ -2,7 +2,8 @@
 extends Resource
 class_name MetricCondition
 
-const metrics_manager = preload("res://singletons/metrics_manager.gd")
+const metrics_manager = preload("res://scripts/autoload/metrics_database.gd")
+const metrics_enum = metrics_manager.metrics
 
 enum logic_signs {
 	EQUAL=1,
@@ -11,9 +12,9 @@ enum logic_signs {
 	NOT=8
 }
 
-var metric: String
+var metric: int
 var logic: logic_signs
-var metric_value
+var metric_value: int
 
 
 
@@ -31,8 +32,10 @@ func _get_property_list() -> Array[Dictionary]:
 	
 	ret.append({
 		name = "metric",
-		type = TYPE_STRING,
-		usage = PROPERTY_USAGE_DEFAULT
+		type = TYPE_INT,
+		hint = PROPERTY_HINT_ENUM,
+		hint_string = enum_to_hint_string(metrics_enum),
+		usage = PROPERTY_USAGE_DEFAULT,
 	})
 	ret.append({
 		name = "logic",
@@ -42,14 +45,6 @@ func _get_property_list() -> Array[Dictionary]:
 		usage = PROPERTY_USAGE_DEFAULT
 	})
 	
-	var metric_value_enum
-	match metric:
-		"storm": 
-			const tem_val = metrics_manager.storm
-			metric_value_enum = tem_val
-		_: 
-			metric_value_enum = {}
-			print("rab")
 		
 	
 		
@@ -57,7 +52,7 @@ func _get_property_list() -> Array[Dictionary]:
 		name = "metric_value",
 		type = TYPE_INT,
 		hint = PROPERTY_HINT_ENUM,
-		hint_string = enum_to_hint_string(metric_value_enum),
+		hint_string = enum_to_hint_string(metrics_manager.METRIC_VALUES_BY_TYPE[metric]),
 		usage = PROPERTY_USAGE_DEFAULT
 	})
 	notify_property_list_changed()

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="SequencesPack" load_steps=4 format=3 uid="uid://dayfxjbno0bmw"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequences_pack/sequences_pack.gd" id="1_kvrr5"]
+[ext_resource type="Resource" uid="uid://chuv8wqynoc0w" path="res://sequences/sequences_resources/IMAK_cassettes1.tres" id="2_nadl5"]
+[ext_resource type="Resource" uid="uid://cxao31i5wn3e4" path="res://sequences/sequences_resources/IO_eoliennes.tres" id="3_w61uh"]
+
+[resource]
+script = ExtResource("1_kvrr5")
+sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_nadl5"), ExtResource("3_w61uh")])

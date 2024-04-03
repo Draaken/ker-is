@@ -638,331 +638,322 @@ metadata/_edit_lock_ = true
 [node name="Tree1" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_ufel0")
 position = Vector2(-75.2, 15.8443)
-scale = Vector2(1.15448, 1.15448)
+scale = Vector2(1.2, 1.2)
 
 [node name="Tree2" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_aei6n")
 position = Vector2(-11.2, 20.8442)
-scale = Vector2(0.881203, 0.881203)
-frame = 0
+scale = Vector2(0.923171, 0.923171)
 
 [node name="Tree3" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_7fyup")
 position = Vector2(2.79996, -4.1557)
-scale = Vector2(1.2, 1.2)
+scale = Vector2(0.911262, 0.911262)
 
 [node name="Tree4" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_rrf5p")
 position = Vector2(-42.2, -17.1558)
-scale = Vector2(0.9501, 0.9501)
+scale = Vector2(1.00803, 1.00803)
 
 [node name="Tree20" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_mugb1")
 position = Vector2(-385, -25)
-scale = Vector2(1.06693, 1.06693)
+scale = Vector2(0.861184, 0.861184)
 
 [node name="Tree24" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_lv2b8")
 position = Vector2(-552, -135)
-scale = Vector2(0.872769, 0.872769)
+scale = Vector2(1.08957, 1.08957)
 
 [node name="Tree18" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_cgcug")
 position = Vector2(178, -36)
-scale = Vector2(1.09438, 1.09438)
+scale = Vector2(1.11887, 1.11887)
 
 [node name="Tree13" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_dx540")
 position = Vector2(-297.2, -125.156)
-scale = Vector2(1.14046, 1.14046)
+scale = Vector2(0.970011, 0.970011)
 
 [node name="Tree12" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_sahu8")
 position = Vector2(-322.2, -112.156)
-scale = Vector2(0.994832, 0.994832)
-frame = 0
+scale = Vector2(0.85668, 0.85668)
 
 [node name="Tree5" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_4rfcn")
 position = Vector2(-58.2, 36.8443)
-scale = Vector2(0.980771, 0.980771)
+scale = Vector2(0.946274, 0.946274)
 
 [node name="Tree6" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_a8i1l")
 position = Vector2(-97.2, 29.8442)
-scale = Vector2(0.955792, 0.955792)
+scale = Vector2(1.07774, 1.07774)
 
 [node name="Tree7" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_sfma3")
 position = Vector2(-29.2, 41.8443)
-scale = Vector2(0.967115, 0.967115)
+scale = Vector2(0.902735, 0.902735)
 frame = 0
 
 [node name="Tree8" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_f4i23")
 position = Vector2(12.8, 25.8442)
-scale = Vector2(0.955516, 0.955516)
+scale = Vector2(1.04828, 1.04828)
 frame = 0
 
 [node name="Tree9" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_6tmfg")
 position = Vector2(43.8, 36.8441)
-scale = Vector2(0.894522, 0.894522)
+scale = Vector2(0.989666, 0.989666)
+frame = 0
 
 [node name="Tree10" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_hw7m6")
 position = Vector2(17.8, 58.8443)
-scale = Vector2(1.0497, 1.0497)
-frame = 0
+scale = Vector2(0.977243, 0.977243)
 
 [node name="Tree11" parent="Sprites/Vegetation" instance=ExtResource("4_l2q2i")]
 material = SubResource("ShaderMaterial_lt5ng")
 position = Vector2(-100.2, -9.15576)
-scale = Vector2(0.820986, 0.820986)
+scale = Vector2(1.04316, 1.04316)
+frame = 0
 
 [node name="Bush1" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_vvkld")
 position = Vector2(-164.2, 15.8441)
-scale = Vector2(0.832434, 0.832434)
-frame = 1
+scale = Vector2(1.10029, 1.10029)
 
 [node name="Bush2" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_3fxje")
 position = Vector2(-115.2, 35.8443)
-scale = Vector2(1.08383, 1.08383)
-frame = 0
+scale = Vector2(1.04936, 1.04936)
 
 [node name="Bush3" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_xw2oo")
 position = Vector2(-53.2, 52.8441)
-scale = Vector2(0.977443, 0.977443)
-frame = 1
+scale = Vector2(0.967159, 0.967159)
 
 [node name="Bush4" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_403pc")
 position = Vector2(-36.2, 13.8442)
-scale = Vector2(1.12082, 1.12082)
+scale = Vector2(1.08947, 1.08947)
 
 [node name="Bush5" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_h5wny")
 position = Vector2(-117.2, -19.1557)
-scale = Vector2(0.940519, 0.940519)
-frame = 2
+scale = Vector2(0.995916, 0.995916)
 
 [node name="Bush6" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_ayt8q")
 position = Vector2(90.8, 24.8443)
-scale = Vector2(1.06492, 1.06492)
+scale = Vector2(0.99758, 0.99758)
 frame = 0
 
 [node name="Bush7" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_jxxd5")
 position = Vector2(55.8, 57.8442)
-scale = Vector2(0.959786, 0.959786)
+scale = Vector2(0.976248, 0.976248)
 
 [node name="Bush8" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_ob3oa")
 position = Vector2(62.8, 90.8442)
-scale = Vector2(1.2, 1.2)
-frame = 1
+scale = Vector2(1.04592, 1.04592)
 
 [node name="Bush9" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_q2nuu")
 position = Vector2(-300.2, -112.156)
-scale = Vector2(1.04481, 1.04481)
+scale = Vector2(0.983752, 0.983752)
+frame = 1
 
 [node name="Bush10" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_3ny5a")
 position = Vector2(-221, -79)
-scale = Vector2(1.04549, 1.04549)
-frame = 0
+scale = Vector2(0.98194, 0.98194)
 
 [node name="Bush16" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_xdt46")
 position = Vector2(-204, -33)
-scale = Vector2(0.932908, 0.932908)
+scale = Vector2(0.971079, 0.971079)
 
 [node name="Bush17" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_4ejdf")
 position = Vector2(-167, -50)
-scale = Vector2(1.07833, 1.07833)
-frame = 0
+scale = Vector2(1.05386, 1.05386)
+frame = 2
 
 [node name="Bush30" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_vktnq")
 position = Vector2(-245, 24)
-scale = Vector2(0.931969, 0.931969)
-frame = 2
+scale = Vector2(0.969994, 0.969994)
+frame = 0
 
 [node name="Bush31" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_xa4xt")
 position = Vector2(-331, 0)
-scale = Vector2(0.855066, 0.855066)
-frame = 1
+scale = Vector2(1.1064, 1.1064)
 
 [node name="Bush11" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_j04bs")
 position = Vector2(-179, -173)
-scale = Vector2(0.954275, 0.954275)
-frame = 1
+scale = Vector2(1.03333, 1.03333)
 
 [node name="Bush22" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_b7ny1")
 position = Vector2(-171, -141)
-scale = Vector2(0.973554, 0.973554)
+scale = Vector2(1.2, 1.2)
+frame = 0
 
 [node name="Bush19" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_blwu5")
 position = Vector2(252, -27)
-scale = Vector2(1.04132, 1.04132)
+scale = Vector2(1.03124, 1.03124)
 frame = 2
 
 [node name="Bush20" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_e660g")
 position = Vector2(-202, -140)
-scale = Vector2(1.03934, 1.03934)
+scale = Vector2(1.01375, 1.01375)
 frame = 0
 
 [node name="Bush21" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_nly14")
 position = Vector2(-180, -130)
-scale = Vector2(0.9719, 0.9719)
-frame = 2
+scale = Vector2(0.933498, 0.933498)
 
 [node name="Bush12" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_taggm")
 position = Vector2(194.8, 64.8442)
-scale = Vector2(0.918906, 0.918906)
+scale = Vector2(1.04514, 1.04514)
 
 [node name="Bush23" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_tiv4f")
 position = Vector2(214.8, 69.8442)
-scale = Vector2(1.12458, 1.12458)
+scale = Vector2(1.08675, 1.08675)
 frame = 2
 
 [node name="Bush24" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_65sjd")
 position = Vector2(247.8, 85.8443)
-scale = Vector2(0.912225, 0.912225)
+scale = Vector2(0.919804, 0.919804)
+frame = 2
 
 [node name="Bush25" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_5ua8v")
 position = Vector2(272.8, 110.844)
-scale = Vector2(0.999409, 0.999409)
+scale = Vector2(1.02147, 1.02147)
 frame = 1
 
 [node name="Bush26" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_gxl4p")
 position = Vector2(235.8, 117.844)
-scale = Vector2(1.05441, 1.05441)
+scale = Vector2(0.925154, 0.925154)
 frame = 2
 
 [node name="Bush28" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_axald")
 position = Vector2(313, 22)
-scale = Vector2(0.991348, 0.991348)
-frame = 0
+scale = Vector2(1.2, 1.2)
+frame = 2
 
 [node name="Bush27" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_oq4ts")
 position = Vector2(314.8, 144.844)
-scale = Vector2(0.983842, 0.983842)
-frame = 0
+scale = Vector2(1.05391, 1.05391)
 
 [node name="Bush13" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_fjc24")
 position = Vector2(-564, -130)
-scale = Vector2(0.957796, 0.957796)
-frame = 0
+scale = Vector2(1.04061, 1.04061)
 
 [node name="Bush29" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_ewjxf")
 position = Vector2(-609, -184)
-scale = Vector2(0.913014, 0.913014)
+scale = Vector2(1.02495, 1.02495)
+frame = 2
 
 [node name="Bush32" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_rvuut")
 position = Vector2(-529, -69)
-scale = Vector2(1.12437, 1.12437)
+scale = Vector2(1.1294, 1.1294)
 frame = 0
 
 [node name="Bush33" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_rebpo")
 position = Vector2(-524, -111)
-scale = Vector2(1.14429, 1.14429)
-frame = 2
+scale = Vector2(1.02648, 1.02648)
+frame = 0
 
 [node name="Bush14" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_djaox")
 position = Vector2(-324.2, -123.156)
-scale = Vector2(1.18627, 1.18627)
+scale = Vector2(0.91027, 0.91027)
+frame = 1
 
 [node name="Bush18" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_bukf1")
 position = Vector2(-336.2, -103.156)
-scale = Vector2(0.912897, 0.912897)
-frame = 1
+scale = Vector2(1.00791, 1.00791)
 
 [node name="Bush15" parent="Sprites/Vegetation" instance=ExtResource("6_py6xd")]
 material = SubResource("ShaderMaterial_r8rvk")
 position = Vector2(-709, -108)
-scale = Vector2(1.07406, 1.07406)
+scale = Vector2(1.0144, 1.0144)
+frame = 2
 
 [node name="Tree14" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_li0o2")
 position = Vector2(108, -23)
-scale = Vector2(0.992423, 0.992423)
-frame = 2
+scale = Vector2(1.0424, 1.0424)
+frame = 0
 
 [node name="Tree15" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_2v6sk")
 position = Vector2(268, -70)
-scale = Vector2(0.945243, 0.945243)
-frame = 1
+scale = Vector2(1.2, 1.2)
 
 [node name="Tree19" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_r08qr")
 position = Vector2(-344, -30)
-scale = Vector2(0.945918, 0.945918)
-frame = 1
+scale = Vector2(1.2, 1.2)
+frame = 0
 
 [node name="Tree21" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_1ovrt")
 position = Vector2(-472, -100)
-scale = Vector2(0.889336, 0.889336)
-frame = 2
+scale = Vector2(0.995606, 0.995606)
 
 [node name="Tree25" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_ieh72")
 position = Vector2(-472, -130)
-scale = Vector2(1.05465, 1.05465)
-frame = 2
+scale = Vector2(0.900396, 0.900396)
 
 [node name="Tree22" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_mkd5g")
 position = Vector2(-503, -127)
-scale = Vector2(0.902139, 0.902139)
+scale = Vector2(0.921825, 0.921825)
+frame = 0
 
 [node name="Tree23" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_2oweq")
 position = Vector2(-641, -106)
-scale = Vector2(0.975806, 0.975806)
+scale = Vector2(0.94967, 0.94967)
 
 [node name="Tree16" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_a4uah")
 position = Vector2(217, 26)
-scale = Vector2(1.00811, 1.00811)
+scale = Vector2(1.02921, 1.02921)
 
 [node name="Tree26" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_0pf4v")
 position = Vector2(240, 18)
-scale = Vector2(0.948788, 0.948788)
+scale = Vector2(0.819897, 0.819897)
 
 [node name="Tree17" parent="Sprites/Vegetation" instance=ExtResource("7_486y2")]
 material = SubResource("ShaderMaterial_sd0d1")
 position = Vector2(307, 6)
-scale = Vector2(0.863533, 0.863533)
-frame = 2
+scale = Vector2(0.962164, 0.962164)
+frame = 1
 
 [node name="Poles" type="Node2D" parent="Sprites"]
 y_sort_enabled = true
