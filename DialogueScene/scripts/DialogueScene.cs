@@ -6,9 +6,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
 
-public partial class DialogueScene : Node2D
+public partial class DialogueScene : Control
 {
 
+	private int CharacterInt;
+	private Node localSequenceManager;
 	private InkStory story;
 	private MarginContainer Foreground;
 	private ColorRect BlueFilter;
@@ -31,6 +33,7 @@ public partial class DialogueScene : Node2D
 
 	public override void _Ready()
 	{	
+		localSequenceManager = GetNode<Node>("LocalSequenceManager");
 		Foreground = GetNode<MarginContainer>("ForegroundContainer");
 		BlueFilter = GetNode<ColorRect>("BlueFilter");
 		BlueFilter.Visible = false;
@@ -55,13 +58,23 @@ public partial class DialogueScene : Node2D
 			{
 				ContinueStory();
 			}
+			else
+			{
+				Desactivate();
+			}
 		}
 	}
 
-	private void Activate(InkStory StoryScript)
+	private void SetUp(Resource Sequence, int Character)
+	{
+		CharacterInt = Character;
+		localSequenceManager.Call("load_sequence", Sequence, CharacterInt);
+	}
+	private void Activate(InkStory StoryScript, String CharacterString)
 	{
 		Visible = true;
 		story = StoryScript;
+		story.ChoosePathString(CharacterString);
 
 		Timer timer = new() { WaitTime = 2.0, OneShot = true };
 		AddChild(timer);
@@ -78,12 +91,23 @@ public partial class DialogueScene : Node2D
 
 	private void Desactivate()
 	{
-		Visible = false;
+		Foreground.Visible = false;
+		Timer timer = new() { WaitTime = 0.5, OneShot = true };
+		AddChild(timer);
+		timer.Start();
+		timer.Timeout += delegate
+		{	
+			Visible = false;
+			BlueFilter.Visible = false;
+		};
 	}
 
 	private void StartDialogue()
 	{	
 
+		LeftSprite.Hide();
+		RightSprite.Hide();
+		
 		BlueFilter.Visible = true;
 		if (story.CanContinue)
 			{
@@ -100,6 +124,7 @@ public partial class DialogueScene : Node2D
 			timer.QueueFree();
 		};
 		
+		
 	}
 
 	private void ContinueStory()
@@ -107,7 +132,40 @@ public partial class DialogueScene : Node2D
 		String storyText = story.Continue();
 		GD.Print("story continued");
 
+		while (storyText.StartsWith(">>"))
+			{
+				if (storyText.StartsWith(">>>DEBUG"))
+				{
+					GD.Print(storyText);
+					storyText = story.Continue();
+					continue;
+				}
 
+				String line = storyText;
+				String function_to_call = line.Right(2);
+				string[] substrings = function_to_call.Split(",");
+				for(int i=0; i<substrings.Length; i++)
+				{
+					substrings[i] = substrings[i].Trim();
+				}
+				switch(substrings[0])
+				{
+					case "EndOfSequence":
+						EndOfSequence();
+						break;
+					case "ChangeMetric":
+						//ChangeMetric, MetricString, ValueString, isAdding
+						ChangeMetric(substrings[1], substrings[2], Convert.ToBoolean(substrings[3]));
+						break;
+					case "UpdateMap":
+						//UpdateMap, ElementString, RemoveOrAdd
+						break;
+					default: 
+						GD.Print("Error: Cannot convert the following instruction from InkFile:"+substrings[0]);
+						break;
+				}
+				storyText = story.Continue();
+			}
 		while (story.CurrentTags.Any() && (story.CurrentTags[0] == "skip" || story.CurrentTags[0] == "knot" || story.CurrentTags[0] == "c"))
 		{
 			if (story.CurrentTags[0] == "skip")
@@ -119,9 +177,10 @@ public partial class DialogueScene : Node2D
 			else if (story.CurrentTags[0] == "knot")
 				{
 					Characters = new List<List<String>>{};
-					for (int i=0; i< Int32.Parse(RemovePrefix(story.CurrentTags[2])); i++)
+					int CharactersNumber = Int32.Parse(RemovePrefix(story.CurrentTags[3]));
+					for (int i=0; i< CharactersNumber; i++)
 					{
-						int j = i*3 + 3;
+						int j = i*3 + 4;
 
 						
 						Characters.Add(new List<String>{});
@@ -183,13 +242,13 @@ public partial class DialogueScene : Node2D
 				if (subCharacter[2] == "left")
 				{
 					spriteNode = LeftSprite;
-					spriteNode.Texture = sprite;
 					spriteNode.FlipH = true;
+					GD.Print("Bonom left");
 				}
 				else
 				{	
+					GD.Print("Bonom right");
 					spriteNode = RightSprite;
-					spriteNode.Texture = sprite;
 				}
 
 				if (story.CurrentTags[2] == "speaking")
@@ -205,18 +264,55 @@ public partial class DialogueScene : Node2D
 
 					NameText.Text = subCharacter[1];
 					spriteNode.ZIndex = 0;
+					
 				}
 				else
 				{
 					spriteNode.ZIndex = -11;
 				}
 
-				break;
+				spriteNode.Texture = sprite;
+				
+				spriteNode.Show();
 			} 
 			
 		}
 		
 	}
+
+	public void ChangeMetric(String Metric, String Value, bool isAdding = false)
+	{
+		localSequenceManager.Call("change_metric", Metric, Value, isAdding);
+		//Node metricDatabase = GetNode<Node>("/root/metrics_database");
+		
+		//int int_value;
+		//if (int.TryParse(Value, out int_value))
+		//{
+		//	if (isAdding)
+		//	{
+		//
+		//	}
+			//mettre int_value dans la variable de destination	
+		//}
+		//else
+		//{
+			//match le string au int et le mettre dans la variable de destination
+		//}
+	}
+
+	public void EndOfSequence()
+	{
+		localSequenceManager.Call("end_of_sequence", CharacterInt);
+	}
+
+	public void TriggerEvent(String eventName)
+	{
+		switch(eventName)
+		{
+		
+		}
+	}
+
 
 	private String RemovePrefix(String Text)
 	{

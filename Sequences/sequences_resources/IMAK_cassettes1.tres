@@ -1,10 +1,13 @@
-[gd_resource type="Resource" script_class="SequenceClass" load_steps=2 format=3 uid="uid://chuv8wqynoc0w"]
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://chuv8wqynoc0w"]
 
 [ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_u0klw"]
+[ext_resource type="Resource" uid="uid://cseldp242xibe" path="res://sequences/sequences_resources/ink/IMAK_cassettes1.ink" id="1_u3igl"]
 
 [resource]
 script = ExtResource("1_u0klw")
 conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
 one_use_only = true
+ink_file = ExtResource("1_u3igl")
 local_metrics = {}
-starter_characters = 2
+starter_characters = 12
+characters = 14

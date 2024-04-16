@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://cseldp242xibe"
+path="res://.godot/imported/IMAK_cassettes1.ink-929479cab7233e186dbde88181cf358a.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/ink/IMAK_cassettes1.ink"
+dest_files=["res://.godot/imported/IMAK_cassettes1.ink-929479cab7233e186dbde88181cf358a.res"]
+
+[params]
+
+is_main_file=true
+compress=true

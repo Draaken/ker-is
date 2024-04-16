@@ -18,7 +18,7 @@ var metric_value: int
 
 
 
-static func enum_to_hint_string(an_enum: Dictionary) -> String:
+func enum_to_hint_string(an_enum: Dictionary) -> String:
 	return ",".join(an_enum.keys().map(
 		func (key: String) -> String:
 			return "%s:%d" % [key, an_enum[key]]
@@ -46,17 +46,35 @@ func _get_property_list() -> Array[Dictionary]:
 	})
 	
 		
+	#ret.append({
+			#name = "metric_value",
+			#type = TYPE_INT,
+			#
+			#hint = PROPERTY_HINT_RANGE,
+			#hint_string = "0,100,1",
+			#usage = PROPERTY_USAGE_DEFAULT
+		#})
+	var value = metrics_manager.METRIC_VALUES_BY_TYPE[metric]
+	if type_string(typeof(value)) == "Dictionary":
+		ret.append({
+			name = "metric_value",
+			type = TYPE_INT,
+			hint = PROPERTY_HINT_ENUM,
+			hint_string = enum_to_hint_string(value),
+			usage = PROPERTY_USAGE_DEFAULT
+		})
+	if type_string(typeof(value)) == "String" && value == "range":
+		ret.append({
+			name = "metric_value",
+			type = TYPE_INT,
+			
+			hint = PROPERTY_HINT_RANGE,
+			hint_string = "0,100,1",
+			usage = PROPERTY_USAGE_DEFAULT
+		})
 	
-		
-	ret.append({
-		name = "metric_value",
-		type = TYPE_INT,
-		hint = PROPERTY_HINT_ENUM,
-		hint_string = enum_to_hint_string(metrics_manager.METRIC_VALUES_BY_TYPE[metric]),
-		usage = PROPERTY_USAGE_DEFAULT
-	})
+	
 	notify_property_list_changed()
 	return ret
-
 
 

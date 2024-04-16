@@ -2,13 +2,15 @@
 extends Resource
 class_name SequenceClass
 
-const metrics_manager = preload("res://scripts/autoload/metrics_database.gd")
-const characters_enum = metrics_manager.characters
+
+const characters_enum = MetricsDatabase.characters
 @export var conditions : Array[MetricCondition]
 var starter_characters : characters_enum
+var characters : characters_enum
 @export var one_use_only = true
 @export var ink_file: InkStory
 @export var local_metrics = {}
+var ink_reader = preload("res://sequences/ink_reader.tres")
 
 
 # Called when the node enters the scene tree for the first time.
@@ -59,6 +61,14 @@ func _get_property_list() -> Array[Dictionary]:
 		hint_string = enum_to_hint_string(characters_enum),
 		usage = PROPERTY_USAGE_DEFAULT
 	})
+	
+	ret.append({
+		name = "characters",
+		type = TYPE_INT,
+		hint = PROPERTY_HINT_FLAGS,
+		hint_string = enum_to_hint_string(characters_enum),
+		usage = PROPERTY_USAGE_DEFAULT
+	})
 	notify_property_list_changed()
 	return ret
 	
@@ -72,11 +82,12 @@ func is_valid()->bool:
 		return true
 	for i in conditions.size():
 		var metric = conditions[i].metric
+		var metric_name = MetricsDatabase.METRICS_BY_NAME[metric]
 		var is_condition_true: bool
 		var condition_value = conditions[i].metric_value
 		var logic = conditions[i].logic
 		
-		var metric_value = MetricsDatabase.metrics_values[metric]
+		var metric_value = MetricsDatabase.metrics_values_live[metric_name]
 		
 		match logic:
 			0: is_condition_true = metric_value == condition_value
@@ -91,7 +102,10 @@ func is_valid()->bool:
 	return true
 	
 func set_up_storylet(character:int):
-	pass
+	ink_reader.story = ink_file
+	
+	var character_string = MetricsDatabase.characters_name[character]
+	ink_reader.SetUpStorylet(character_string)
 #la il faudra:
 # - convertir le int du character enum en un string
 # - aller chercher le knot correspondant dans le fichier ink
@@ -102,7 +116,7 @@ func get_priority(character: int)->int:
 	set_up_storylet(character)
 #simple comme bonjour:
 #suffit de retourner le tag de priority du storylet en cours
-	return 0
+	return ink_reader.GetPriority()
 	
 	
 	

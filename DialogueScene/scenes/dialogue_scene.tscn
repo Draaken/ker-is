@@ -1,15 +1,22 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnhklcs1hke2d"]
+[gd_scene load_steps=6 format=3 uid="uid://cnhklcs1hke2d"]
 
 [ext_resource type="Script" path="res://DialogueScene/scripts/DialogueScene.cs" id="1_7mxpi"]
+[ext_resource type="Script" path="res://DialogueScene/scripts/local_sequence_manager.gd" id="2_3sw38"]
 [ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://DialogueScene/Backgrounds/IleOuest/IleOuestWhite.png" id="2_8s2f6"]
 [ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://DialogueScene/Characters/Sprites/adriana/default.png" id="3_c0atw"]
-[ext_resource type="Texture2D" uid="uid://m8njyplyoxtq" path="res://DialogueScene/Characters/Sprites/brianne/default.png" id="4_6nq6g"]
+[ext_resource type="Texture2D" uid="uid://dtlw7qe1w2f77" path="res://DialogueScene/Characters/Sprites/yoann/default.png" id="4_q6q1s"]
 
-[node name="DialogueScene" type="Node2D"]
+[node name="DialogueScene" type="Control"]
+layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_7mxpi")
+
+[node name="LocalSequenceManager" type="Node" parent="."]
+script = ExtResource("2_3sw38")
 
 [node name="BackgroundContainer" type="MarginContainer" parent="."]
 custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
@@ -20,6 +27,7 @@ texture = ExtResource("2_8s2f6")
 [node name="BlueFilter" type="ColorRect" parent="."]
 z_index = 10
 z_as_relative = false
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 color = Color(0.0705882, 0.156863, 0.321569, 0.47451)
@@ -27,6 +35,7 @@ color = Color(0.0705882, 0.156863, 0.321569, 0.47451)
 [node name="ForegroundContainer" type="MarginContainer" parent="."]
 z_index = 20
 custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
 theme_override_constants/margin_left = 70
@@ -51,8 +60,8 @@ size_flags_horizontal = 8
 size_flags_vertical = 8
 
 [node name="RightSprite" type="Sprite2D" parent="ForegroundContainer/RightSpriteContainer"]
-texture = ExtResource("4_6nq6g")
-offset = Vector2(300, 500)
+texture = ExtResource("4_q6q1s")
+offset = Vector2(200, 500)
 
 [node name="DialogueContainer" type="HBoxContainer" parent="ForegroundContainer"]
 layout_mode = 2
@@ -79,7 +88,7 @@ color = Color(0.964706, 0.941176, 0.890196, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="ForegroundContainer/DialogueContainer/TextBoxContainer"]
 layout_mode = 2
-size_flags_horizontal = 8
+size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/margin_left = 100
 theme_override_constants/margin_right = 100
@@ -103,6 +112,7 @@ layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam, nisi viverra fermentum accumsan, diam lacus rutrum mi, ac varius ipsum odio sit amet sem. Phasellus maximus odio dolor, non porta est condimentum id. Vivamus fringilla faucibus leo vitae aliquam. Vestibulum suscipit nunc id mi congue, nec venenatis mauris consequat. Pellentesque pharetra diam vel nibh ullamcorper malesuada. Phasellus lacinia iaculis dolor in accumsan. Quisque gravida scelerisque mauris, non fringilla ipsum laoreet ut. Cras sed malesuada mauris, in varius erat. Etiam molestie odio quis gravida mollis. Vestibulum enim nunc, viverra quis nulla nec, posuere finibus urna. Nulla mattis condimentum dictum. Curabitur dolor dolor, porttitor ut purus dictum, blandit mollis odio. "
+vertical_alignment = 1
 autowrap_mode = 2
 text_overrun_behavior = 2
 

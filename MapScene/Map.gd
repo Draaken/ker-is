@@ -25,6 +25,7 @@ func _process(_delta):
 
 	
 func _unhandled_input(event):
+
 	if event.is_action_pressed("left_click"):
 		set_pin("Flying")
 	if event.is_action_pressed("right_click"):
