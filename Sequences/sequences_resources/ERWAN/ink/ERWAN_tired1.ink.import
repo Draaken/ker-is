@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dfduy0sb405t3"
+path="res://.godot/imported/ERWAN_tired1.ink-ca2a03cedbee4a432918abea55f5830d.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/ERWAN/ink/ERWAN_tired1.ink"
+dest_files=["res://.godot/imported/ERWAN_tired1.ink-ca2a03cedbee4a432918abea55f5830d.res"]
+
+[params]
+
+is_main_file=true
+compress=true

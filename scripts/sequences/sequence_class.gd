@@ -6,6 +6,10 @@ class_name SequenceClass
 const characters_enum = MetricsDatabase.characters
 @export var conditions : Array[MetricCondition]
 var starter_characters : characters_enum
+var default_characters: characters_enum :
+	set(value):
+		default_characters = value
+		characters = value
 var characters : characters_enum
 @export var one_use_only = true
 @export var ink_file: InkStory
@@ -15,13 +19,12 @@ var ink_reader = preload("res://sequences/ink_reader.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body .
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
-
 
 static func enum_to_hint_string(an_enum: Dictionary) -> String:
 	return ",".join(an_enum.keys().map(
@@ -63,7 +66,7 @@ func _get_property_list() -> Array[Dictionary]:
 	})
 	
 	ret.append({
-		name = "characters",
+		name = "default_characters",
 		type = TYPE_INT,
 		hint = PROPERTY_HINT_FLAGS,
 		hint_string = enum_to_hint_string(characters_enum),
@@ -82,7 +85,7 @@ func is_valid()->bool:
 		return true
 	for i in conditions.size():
 		var metric = conditions[i].metric
-		var metric_name = MetricsDatabase.METRICS_BY_NAME[metric]
+		var metric_name = MetricsDatabase.METRICS_NAME_BY_INDEX[metric]
 		var is_condition_true: bool
 		var condition_value = conditions[i].metric_value
 		var logic = conditions[i].logic
@@ -90,10 +93,10 @@ func is_valid()->bool:
 		var metric_value = MetricsDatabase.metrics_values_live[metric_name]
 		
 		match logic:
-			0: is_condition_true = metric_value == condition_value
-			1: is_condition_true = metric_value > condition_value
-			2: is_condition_true = metric_value < condition_value
-			3: is_condition_true = metric_value != condition_value
+			1: is_condition_true = metric_value == condition_value
+			2: is_condition_true = metric_value > condition_value
+			3: is_condition_true = metric_value < condition_value
+			4: is_condition_true = metric_value != condition_value
 		
 		#if one of the condition is false, return false
 		if not is_condition_true:
@@ -105,7 +108,10 @@ func set_up_storylet(character:int):
 	ink_reader.story = ink_file
 	
 	var character_string = MetricsDatabase.characters_name[character]
-	ink_reader.SetUpStorylet(character_string)
+	var is_there_content = ink_reader.SetUpStorylet(character_string)
+	return is_there_content
+	#return un booléen qui dit si le ink CanContinue, ou si le perso n'a pas de storylet dans les conditions actuelles
+	
 #la il faudra:
 # - convertir le int du character enum en un string
 # - aller chercher le knot correspondant dans le fichier ink
@@ -113,10 +119,15 @@ func set_up_storylet(character:int):
 # - la ressource est désormais à la première ligne du storylets concerné :thumbs_up:
 
 func get_priority(character: int)->int:
-	set_up_storylet(character)
+	var is_there_content = set_up_storylet(character)
 #simple comme bonjour:
 #suffit de retourner le tag de priority du storylet en cours
-	return ink_reader.GetPriority()
+
+	if is_there_content:
+		return ink_reader.GetPriority()
+	else:
+		print("No content for this character in this sequence:" + MetricsDatabase.characters_name[character])
+		return -1
 	
 	
 	

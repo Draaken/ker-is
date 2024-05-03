@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://d27wh6io7apuc"
+path="res://.godot/imported/BRIANNE_generique.ink-f1d0116213b2b76781443affa11bd9a9.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/BRIANNE/ink/BRIANNE_generique.ink"
+dest_files=["res://.godot/imported/BRIANNE_generique.ink-f1d0116213b2b76781443affa11bd9a9.res"]
+
+[params]
+
+is_main_file=true
+compress=true

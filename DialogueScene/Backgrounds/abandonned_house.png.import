@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gy5oupdmd8cl"
-path="res://.godot/imported/IleOuestWhite.png-ad3dffbf77ea3b708c47f74dc9968e9c.ctex"
+uid="uid://be4nkn648e57k"
+path="res://.godot/imported/abandonned_house.png-7fac83033ed22700ebe34e70335144e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://DialogueScene/Backgrounds/IleOuest/IleOuestWhite.png"
-dest_files=["res://.godot/imported/IleOuestWhite.png-ad3dffbf77ea3b708c47f74dc9968e9c.ctex"]
+source_file="res://DialogueScene/Backgrounds/abandonned_house.png"
+dest_files=["res://.godot/imported/abandonned_house.png-7fac83033ed22700ebe34e70335144e7.ctex"]
 
 [params]
 

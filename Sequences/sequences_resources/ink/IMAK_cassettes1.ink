@@ -50,8 +50,10 @@ LIST Adri = (default), knows_house, visited_house, talked_house_with_yoann
 /
 #c #adriana #not_speaking #default
 /
-Hey Adriana! Ca fait plaisir de te voir dans le coin. Faut que je te montre un truc. On a fouillé une vieille baraque abandonnée avec les copaines, on a trouvé des trucs incroyables dans la cave.
-Le type étais un gros fan de musique, il y avais du matos partout! Des bon trucs hein, on a récupéré plein d'instruments. Bon la cave était dans un salle état, ça avait bien pris l'eau.
+Hey Adriana! Ca fait plaisir de te voir dans le coin. Faut que je te montre un truc. 
+On a fouillé une vieille baraque abandonnée avec les copaines, on a trouvé des trucs incroyables dans la cave.
+Le type étais un gros fan de musique, il y avait du matos partout! 
+Des bon trucs hein, on a récupéré plein d'instruments. Bon la cave était dans un salle état, ça avait bien pris l'eau.
 
 #c #yoann #not_speaking #default
 /
@@ -63,7 +65,8 @@ Mais vous pillez des maisons comme ça? Ils sont passés où les habitants?
 /
 #c #adriana #not_speaking #suspicious
 /
-T'inquiète, ça fait un moment qu'ils se sont barrés les proprios. C'était sûrement leur maison de vacances d'ailleurs, tu verrais la baraque. Les types ont du voir l'eau monter, et on décidé de plus jamais foutre les pieds ici.
+T'inquiète, ça fait un moment qu'ils se sont barrés les proprios. C'était sûrement leur maison de vacances d'ailleurs, tu verrais la baraque. 
+Les types ont du voir l'eau monter, et on décidé de plus jamais foutre les pieds ici.
 Mais tout a déjà été vidé depuis bien longtemps. Enfin à part la cave, elle avait échappé aux derniers visiteurs visiblement.
 
 #c #yoann #not_speaking #default
@@ -76,20 +79,20 @@ Hm, j'imagine que ça ne profite à personne si ça prend l'eau dans une maison 
 /
 #c #adriana #not_speaking #default
 /
-La maison est en sacré ruines de toutes façons, elle est plus vraiment habitable. 
-Enfin bref, avec le matos de musique il y avais de l'électronique, des cassettes, des trucs comme ça... j'ai essayé de jeter un oeil mais je comprend rien. Tu voudrais pas amener ça à Erwan pour voir si ça l'intéresse?
+Avec le matos de musique il y avait de l'électronique, des cassettes, des trucs comme ça... j'ai essayé de jeter un oeil mais je comprends rien.
+Tu voudrais pas amener ça à Erwan pour voir si ça l'intéresse?
 #c #yoann #not_speaking #default
 /
 #c #adriana #speaking #concerned
 /
-Oui bien sûr, je lui donnerais quand je passerais le voir. 
-Dis, tu peux me montrer où elle est cette maison? J'irais bien faire un tour, ça m'intrigue.
+Oui bien sûr, je lui donnerai quand je passerai le voir. 
+Tu peux me montrer où elle est cette maison? J'irais bien faire un tour, ça m'intrigue.
 #c #yoann #speaking #default
 /
 #c #adriana #not_speaking #default
 /
-Euh ouais, pas de problème. Je te le met sur ta carte... attend voir...
-Voilà, c'était dans le coin. Fait attention à toi, c'est un peu en bordel là bas, il y a des vitres pétées, des trucs effondrés.
+Euh ouais, pas de problème. Je te le mets sur ta carte... attend voir...
+Voilà, c'était dans le coin. Fais attention à toi, c'est un peu en bordel là bas, il y a des vitres pétées, des trucs effondrés.
 
 >>UpdateMap, VillaLocation, Add
 ~Adri = knows_house
@@ -143,9 +146,9 @@ J'ai ramassé une vieille cassette, une histoire de surf ou quelque chose du gen
 /
 #c #adriana #not_speaking #default
 /
-Ah ouais, nous on a trouvé la cave, qu'étais pas en si mauvais état. Il y avais plein de matos de musique, des instruments tout ça. Les proprios devaient bien être pétés de thunes vu tout ce qu'on a trouvé, et la taille de la baraque.
+Ah ouais, nous on a trouvé la cave, qu'étais pas en si mauvais état. Il y avais plein de matos de musique. Les proprios devaient vivre la belle vie là bas.
 Mais ça fait des années qu'elle a été pillée cette maison. C'était une résidence secondaire de toute façon, les types sont juste jamais revenus quand l'eau a commencé à monter.
-
+    
 #c #yoann #not_speaking #default
 /
 #c #adriana #speaking #default
@@ -183,6 +186,7 @@ Oui oui bien sûr, je lui donnerais quand je passerais le voir. A plus Yoann!
 #c #adriana #not_speaking #default
 /
 Trop bien, ciao Adri!
+~Adri = talked_house_with_yoann
 ~Yoann = gave_tape
 ->END
 
@@ -411,7 +415,7 @@ Hello Yoann, j'ai montré ce que t'avais trouvé dans la villa à Erwan, il éta
 /
 #c #adriana #not_speaking #default
 /
-Trop bien. Ca se trouve on pourra écouter des cassettes. Ca serait vraiment stylé. La quantité de musique qu'on porurait redécouvrir, ça serait vraiment cool.
+Trop bien. Ca se trouve on pourra écouter des cassettes. Ca serait vraiment stylé. La quantité de musique qu'il y a à redécouvrir, ça serait vraiment cool.
 ~Yoann = knows_erwan_is_repairing
 ->END
 =erwan_gave_tape_player
@@ -456,7 +460,7 @@ Il est trop fort. Il a dit qu'il allait voir si il pouvait réparer d'autres lec
 Ok trop cool, encore merci pour avoir fait les livraisons! A la prochaine Adri.
 
 >>ChangeMetric, magneto_tech, AUDIO, false
->>ChangeMetric, yoann_opinion, 10
+>>ChangeMetric, yoann_opinion, 10, true
 >>EndOfSequence
 ->END
 
@@ -467,7 +471,7 @@ Ok trop cool, encore merci pour avoir fait les livraisons! A la prochaine Adri.
 {Yoann?Yoann.default && Erwan?Erwan.default: ->seen_house_not_seen_yoann}
 {Yoann?Yoann.gave_tape && Erwan?Erwan.default: ->yoann_gave_tape} //première fois qu'on voit Erwan
 {Yoann?Yoann.gave_tape && Erwan?Erwan.received_tape: ->give_tape_player} //on reviens: Erwan donne le lecteur cassettes
-{not (Yoann?Yoann.received_tape_player) && Erwan?Erwan.gave_tape_player: ->tape_player_received_not_given} //on reviens voir Erwan sans avoir donné le lecteur à Yoann
+//{not (Yoann?Yoann.received_tape_player) && Erwan?Erwan.gave_tape_player: ->tape_player_received_not_given} //on reviens voir Erwan sans avoir donné le lecteur à Yoann
 {Yoann?Yoann.received_tape_player && Erwan?Erwan.gave_tape_player:->tape_player_given}//on reviens voir Erwan après avoir donné le lecteur: fin de séquence pour Erwan
 
 
@@ -555,13 +559,13 @@ Oui, je ne suis pas sur d'où iels ont choppé ça, mais ça a bien pris l'eau. 
 /
 #c #adriana #not_speaking #default
 /
-Je vais jeter un oeil et je te dirais si j'arrive à bricoler quelque chose avec ce qui fonctionne encore. A plus Adri, bon vol!
+Je vais jeter un oeil et je te dirais si j'arrive à bricoler quelque chose avec ce qui fonctionne encore.
 
 #c #erwan #not_speaking #default
 /
 #c #adriana #speaking #default
 /
-Ciao Erwan, prend soin de toi!
+Ok, je repasserais plus tard. Ciao Erwan, prend soin de toi!
 
 ~Erwan = received_tape
 ->END
@@ -611,14 +615,15 @@ Ah oui je vois, intense. Je vais amener ça à Yoann, on verra si ça l'intéres
 /
 #c #adriana #not_speaking #default
 /
-Ciao! Repasse quand tu veux.
->>ChangeMetric: cassettes,THE_RAGING_THINGS_1,false
+Ciao! Repasse quand tu veux. Je vais voir si je peux réparer d'autres trucs.
+>>ChangeMetric, cassettes,THE_RAGING_THINGS_1,true
+>>ChangeMetric, erwan_opinion, 5, true
 ~Erwan = gave_tape_player
 ->END
 
 =tape_player_received_not_given
 #knot
-#2
+#1
 
 #background: ERWAN
 
@@ -661,13 +666,13 @@ Salut Adriana!
 /
 #c #adriana #speaking #default
 /
-Hey Erwan, j'ai donné le lecteur cassettes à Yoann, ça lui a bien fait plaisir.
+Hey Erwan, j'ai donné le lecteur cassettes à Yoann, ça lui a bien fait plaisir. Il te remercie.
 
 #c #erwan #speaking #default
 /
 #c #adriana #not_speaking #default
 /
-Trop cool. Il y avais un lecteur de cassettes vidéo aussi, si on trouve plus de matériel on pourrait peut être le réparer. Enfin bref, content que ça ai plus aux gars de l'IMAK.
+Trop cool. Je manque de matos pour réparer les autres lecteurs, mais peut être que plus tard ça pourra se faire. 
 >>EndOfSequence
 ->END
 
@@ -693,12 +698,12 @@ Trop cool. Il y avais un lecteur de cassettes vidéo aussi, si on trouve plus de
 #c #adriana #speaking #default
 /
 Hey! Il y a quelqu'un?
-C'est immense... L'endroit a été abandonné il y a longtemps.
-Tiens, du monde est passé récemment, il y a des traces de pas dans la poussière. Je me demande où sont passés les gens qui vivaient là.
+C'est immense comme maison... Et ça a été abandonné il y a longtemps.
+Je me demande où sont passés les gens qui vivaient là.
 Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
 "Compilation Surf & Bass". Ca me dit rien, on dirait qu'elle est faite maison.
 
->>ChangeMetric: cassettes,SURF_AND_BASS,false
+>>ChangeMetric, cassettes,SURF_AND_BASS,true
 ~Adri = visited_house
 ->END
 =do_knows_house
@@ -715,8 +720,14 @@ Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
 
 #c #adriana #speaking #default
 /
-Hey! Il y a quelqu'un?
-L'endroit a été abandonné il y a longtemps... C'est immense. Et dire que personne ne devais vivre là pendant huit mois de l'année. C'est fou.
+Ca doit être la villa dont parlais Yoann. C'est immense.
+Hey! Il y a quelqu'un? 
+Effectivement, personne n'a vécu là depuis un moment, c'est complètement en ruines.
+Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
+"Compilation Surf & Bass". Aucune idée de ce que ça veut dire. Ca intéressera peut être Yoann.
+
+
+>>ChangeMetric, cassettes,SURF_AND_BASS,true
 ~Adri = visited_house
 ->END
 

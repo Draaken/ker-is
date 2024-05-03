@@ -10,4 +10,4 @@ one_use_only = true
 ink_file = ExtResource("1_u3igl")
 local_metrics = {}
 starter_characters = 12
-characters = 14
+default_characters = 14

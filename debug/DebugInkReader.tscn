@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://n5xhbbbw7sxp"]
+
+[ext_resource type="Script" path="res://DialogueScene/scripts/local_sequence_manager.gd" id="1_2nk02"]
+[ext_resource type="Script" path="res://debug/DebugInkReader.cs" id="1_ukwhj"]
+
+[node name="DebugInkReader" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 31.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 20
+script = ExtResource("1_ukwhj")
+
+[node name="Choices" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+alignment = 1
+
+[node name="LocalSequenceManager" type="Node" parent="."]
+script = ExtResource("1_2nk02")

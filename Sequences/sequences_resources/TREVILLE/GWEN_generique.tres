@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://kht3eqm8r7xd"]
+
+[ext_resource type="Resource" uid="uid://db0x3tbi6alhv" path="res://sequences/sequences_resources/TREVILLE/ink/GWEN_generique.ink" id="1_8faj2"]
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_q6oxi"]
+
+[resource]
+script = ExtResource("1_q6oxi")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+one_use_only = false
+ink_file = ExtResource("1_8faj2")
+local_metrics = {}
+starter_characters = 16
+default_characters = 16

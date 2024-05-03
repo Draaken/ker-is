@@ -1,0 +1,445 @@
+[gd_scene load_steps=25 format=3 uid="uid://c1l0snsmq8gqo"]
+
+[ext_resource type="Material" uid="uid://c16g0i816fq38" path="res://MapScene/watershadermaterial.tres" id="2_gjfrv"]
+[ext_resource type="Texture2D" uid="uid://br32wfc3vraag" path="res://MapScene/PlaceHolderMap/Map.png" id="3_jr0u6"]
+[ext_resource type="Texture2D" uid="uid://yqgr6mmllxo" path="res://MapScene/PlaceHolderMap/Sea1.png" id="4_d8o41"]
+[ext_resource type="PackedScene" uid="uid://cd63sh3ytn6md" path="res://MapScene/Islands/latreille/la_treille.tscn" id="5_v4uhi"]
+[ext_resource type="Texture2D" uid="uid://by4je38sreh" path="res://MapScene/PlaceHolderMap/3.png" id="6_2a673"]
+[ext_resource type="Texture2D" uid="uid://c0ve03k2b0i8i" path="res://MapScene/PlaceHolderMap/2.png" id="7_r784h"]
+[ext_resource type="Texture2D" uid="uid://cv8i5tipwblj8" path="res://MapScene/PlaceHolderMap/1.png" id="8_00t3y"]
+[ext_resource type="PackedScene" uid="uid://bmuucuelnnoq" path="res://MapScene/sprites/tree1/sprite_tree1.tscn" id="9_vvloj"]
+[ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="10_ffidg"]
+[ext_resource type="PackedScene" uid="uid://c6s870mcud4nb" path="res://MapScene/sprites/bush1/sprite_bush1.tscn" id="11_33lu8"]
+[ext_resource type="Script" path="res://debug/AreaTest.gd" id="12_ci8d8"]
+[ext_resource type="PackedScene" uid="uid://bh8bbtlcnjrlh" path="res://debug/button_area_debug.tscn" id="12_lrdjm"]
+[ext_resource type="PackedScene" uid="uid://n5xhbbbw7sxp" path="res://debug/DebugInkReader.tscn" id="13_n28ot"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1aepq"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(760.996, -356)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pxeou"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(671.996, -402)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi0pj"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(679.996, -350)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lxaet"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(714.996, -397)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ajeby"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(735.996, -330)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34ubk"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(849.996, -289)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ic4ej"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(715.996, -373)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eadu5"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(655.996, -377)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cs85y"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(686.996, -367)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrkbi"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(686.996, -367)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bb1c0"]
+resource_local_to_scene = true
+shader = ExtResource("10_ffidg")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(686.996, -367)
+
+[node name="DebugMapScene" type="Node2D"]
+
+[node name="PlaceholderMap" type="Node2D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="ColorRect" type="ColorRect" parent="PlaceholderMap"]
+texture_repeat = 2
+material = ExtResource("2_gjfrv")
+custom_minimum_size = Vector2(40000, 40000)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0980392, 0.74902, 0.835294, 1)
+
+[node name="Map" type="Sprite2D" parent="PlaceholderMap"]
+visible = false
+modulate = Color(1, 1, 1, 0.101961)
+position = Vector2(890.016, -2454.13)
+scale = Vector2(1.54192, 1.54192)
+texture = ExtResource("3_jr0u6")
+
+[node name="Sea1" type="Sprite2D" parent="PlaceholderMap"]
+visible = false
+position = Vector2(-259, -527)
+texture = ExtResource("4_d8o41")
+
+[node name="Islands" type="Node2D" parent="PlaceholderMap"]
+z_index = 10
+y_sort_enabled = true
+position = Vector2(-259, -527)
+scale = Vector2(1.2, 1.2)
+
+[node name="La Treille" parent="PlaceholderMap/Islands" instance=ExtResource("5_v4uhi")]
+position = Vector2(-495.998, 1228.67)
+scale = Vector2(0.833333, 0.833333)
+
+[node name="3" type="Sprite2D" parent="PlaceholderMap/Islands"]
+position = Vector2(1810.83, 1752.5)
+scale = Vector2(1.17717, 1.08364)
+texture = ExtResource("6_2a673")
+
+[node name="2" type="Sprite2D" parent="PlaceholderMap/Islands"]
+z_index = 1
+position = Vector2(2078.33, 1479.17)
+rotation = -0.137004
+scale = Vector2(0.679081, 0.918396)
+texture = ExtResource("7_r784h")
+
+[node name="1" type="Sprite2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-2854.83, 643.667)
+texture = ExtResource("8_00t3y")
+
+[node name="Polygon2D7" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(1242.5, -1378.33)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(2582, 1178, 2497, 1156, 2517, 1113, 2452, 1073, 2498, 989, 2705, 1009, 2708, 1136)
+
+[node name="Polygon2D21" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(295.833, -1322.5)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(2578.33, 1143.33, 2539.17, 1134.17, 2547.5, 1115, 2580.83, 1100.83, 2600.83, 1121.67)
+
+[node name="Polygon2D22" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(1093.7, -1045.31)
+scale = Vector2(0.725489, 0.725488)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(2569.03, 1126.1, 2539.17, 1131.85, 2547.5, 1115, 2580.83, 1100.83, 2583.96, 1119.21)
+
+[node name="Polygon2D2" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-1397.5, -2027.5)
+rotation = -0.162194
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-1242, 887, -1451, 684, -1461, 586, -1248, 678, -1107, 506, -890, 527, -793, 613, -706, 679, -535, 711, -382, 809, -514, 902, -339, 1092, -774, 1197)
+
+[node name="Polygon2D4" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-2862.5, -2445.83)
+rotation = -0.221287
+scale = Vector2(1.40013, 1.40013)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-1185.38, 907.152, -1167.4, 810.823, -1233.9, 620.555, -1155.96, 711.841, -1119.52, 711.048, -1197.14, 545.508, -1184.95, 496.837, -1061.02, 616.756, -1056.22, 571.943, -1120.76, 476.097, -1113.09, 429.22, -1109.96, 374, -980.771, 559.801, -793, 613, -706, 679, -535, 711, -238.909, 840.788, -249.002, 902.468, -399.306, 897.295, -486.734, 936.187, -586.422, 1137.73, -702.275, 1154.24, -1001.01, 1080.87, -1137.02, 998.662)
+
+[node name="Polygon2D3" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(1025.83, 221)
+color = Color(0.670588, 0.65098, 0.309804, 1)
+polygon = PackedVector2Array(-258, -106, -148, -66, -159, -10, -258, -28, -280, -79)
+
+[node name="Polygon2D4" type="Polygon2D" parent="PlaceholderMap/Islands/Polygon2D3"]
+position = Vector2(152, 57)
+color = Color(0.670588, 0.65098, 0.309804, 1)
+polygon = PackedVector2Array(-257, -72, -214, -55, -258, -28, -285, -47)
+
+[node name="Vegetation" type="Node2D" parent="PlaceholderMap/Islands/Polygon2D3"]
+y_sort_enabled = true
+
+[node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
+material = SubResource("ShaderMaterial_1aepq")
+position = Vector2(-175.833, -78.5)
+scale = Vector2(1.07815, 1.07815)
+frame = 1
+
+[node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
+material = SubResource("ShaderMaterial_pxeou")
+position = Vector2(-250, -116.833)
+scale = Vector2(0.992711, 0.992711)
+
+[node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
+material = SubResource("ShaderMaterial_oi0pj")
+position = Vector2(-243.333, -73.5)
+scale = Vector2(1.15685, 1.15685)
+frame = 1
+
+[node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
+material = SubResource("ShaderMaterial_lxaet")
+position = Vector2(-214.167, -112.667)
+scale = Vector2(1.14567, 1.14567)
+frame = 1
+
+[node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_ajeby")
+position = Vector2(-196.667, -56.8334)
+scale = Vector2(1.15072, 1.15072)
+
+[node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_34ubk")
+position = Vector2(-101.667, -22.6667)
+scale = Vector2(0.863037, 0.863037)
+
+[node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_ic4ej")
+position = Vector2(-213.333, -92.6667)
+scale = Vector2(0.853567, 0.853567)
+frame = 1
+
+[node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_eadu5")
+position = Vector2(-263.333, -96)
+scale = Vector2(0.845142, 0.845142)
+
+[node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_cs85y")
+position = Vector2(-237.5, -87.6667)
+scale = Vector2(0.819036, 0.819036)
+
+[node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_yrkbi")
+position = Vector2(-237.5, -87.6667)
+scale = Vector2(0.819745, 0.819745)
+
+[node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
+material = SubResource("ShaderMaterial_bb1c0")
+position = Vector2(-237.5, -87.6667)
+scale = Vector2(1.07889, 1.07889)
+frame = 2
+
+[node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-1460, 1098.33)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-250.833, -105, -123.333, -64.1666, -50.8334, 14.1667, -445, -84.1666, -384.167, -129.167)
+
+[node name="Polygon2D14" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(701.666, 1607.5)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-280, -65.8333, -380.833, -73.3333, -405.833, -95.8333, -384.167, -129.167, -290.833, -111.667)
+
+[node name="Polygon2D15" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(915, 1675)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-330.833, -79.1666, -375, -89.9999, -395.833, -110, -384.167, -129.167, -346.667, -114.167)
+
+[node name="Polygon2D16" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-1688.33, 1065.83)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-330, -97.4999, -375, -89.9999, -406.666, -104.167, -384.167, -129.167, -346.667, -114.167)
+
+[node name="Polygon2D17" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-1431.67, 664.167)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-289.167, -72.5, -374.167, -62.5, -405.833, -77.5, -384.167, -129.167, -312.5, -127.5)
+
+[node name="Polygon2D18" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-2725.83, -813.333)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-289.167, -72.5, -374.167, -62.5, -405.833, -77.5, -384.167, -129.167, -312.5, -127.5)
+
+[node name="Polygon2D20" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-2841.67, -1760.83)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-15.8333, -39.1663, -230, -17.4998, -374.167, -62.5, -405.833, -77.5, -384.167, -129.167, -80.8333, -125, 2.5, -105)
+
+[node name="Polygon2D19" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-2653.33, -929.167)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-343.333, -88.3333, -374.167, -62.5, -405.833, -77.5, -384.167, -129.167, -358.333, -117.5)
+
+[node name="Polygon2D8" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(5880.67, 57.5)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-273, -70, -150, -8, -148, 33, -186, 61, -265, 17)
+
+[node name="Polygon2D9" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(5744.67, 545.501)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-273, -70, -124, 116, -53, 147, -70, 218, -203, 115)
+
+[node name="Polygon2D10" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(5778.67, 403.5)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-186, 165, -170, 128, -107, 167, -63, 142, -70, 218, -133, 237)
+
+[node name="Polygon2D11" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(5825.67, 233.5)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-73, 103, -78, 166, -70, 218, -106, 210, -110, 156, -106, 117)
+
+[node name="Polygon2D5" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(8477.5, 3846.67)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(-296, -4, -371, -589, -916, -1045, -2525.83, -556.667, -2899.17, -1216.67, -3317, -1267, -3703, -1481, -3641, -1981, -3165, -2285, -2865, -2580, -2185, -2551, -1724, -2180, -582, -2547, -411, -2788, -1565, -2627, -2568, -3010, -2442, -3735, -2082, -4269, -2197, -4630, -2772, -4816, -2677, -4940, -2102, -4797, -1621, -4545, -1180, -5556, -1080, -6020, 1178, -6090, 1125, -107)
+
+[node name="Polygon2D6" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(-537.5, -2327.5)
+scale = Vector2(0.899999, 0.899999)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(589, 889, 478, 1084, 441, 895, 286, 1057, -306, 1037, -982, 889, -1490, 650, -706, 679, -542, 620, -326, 596, 222, 562, 1261, 673, 656, 993)
+
+[node name="Polygon2D12" type="Polygon2D" parent="PlaceholderMap/Islands"]
+position = Vector2(80.8333, -3720.83)
+scale = Vector2(1.36667, 1.36667)
+color = Color(0.588235, 0.521569, 0.211765, 1)
+polygon = PackedVector2Array(872.559, 854.264, -85.3656, 940.239, -604.876, 1173.78, -1640.83, 1342.5, -2160.97, 1190.24, -2411.58, 1243.9, -2427.43, 1172.56, -2313.41, 1087.19, -2370.12, 985.971, -2309.14, 720.728, -2168.9, 426.216, -1934.75, 89.6316, -1954.26, -178.661, -2207.92, -442.074, -2046.95, -622.562, -1673.17, -679.269, -799.388, -865.244, -215.853, -741.464, -55.4876, -478.05, -49.9999, -214.026, 570.121, -59.1487, 585.364, -668.903, 239.024, -1020.73, -84.9636, -869.669, -773.779, -973.781, -1698.78, -803.659, -2430, -860.833, -2431.7, -1000.61, -1898.17, -1056.1, -1898.17, -1167.07, -2523.16, -1218.9, -2520.12, -1290.85, -1970.73, -1320.12, -1479.26, -1445.73, -566.462, -1368.9, 1228.33, -1457.5, 2853.33, -869.166, 2656.78, -2.4613, 3156.09, -154.88, 3027.43, 229.265, 2809.14, 453.655, 2701.21, 591.459, 2503.33, 674.166, 2262.8, 677.435, 2076.82, 866.459, 2087.8, 1163.41, 2004.87, 1206.09, 1952.43, 1153.65, 1925, 849.995, 1807.31, 718.898, 1613.41, 754.874, 1525.61, 829.874, 1243.9, 815.24, 1143.9, 918.288, 947.559, 939.02)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(271, -763)
+zoom = Vector2(0.165, 0.165)
+process_callback = 0
+position_smoothing_enabled = true
+drag_left_margin = 0.4
+drag_right_margin = 0.4
+editor_draw_drag_margin = true
+
+[node name="Pins" type="Node2D" parent="."]
+z_index = 20
+
+[node name="Clouds" type="Control" parent="."]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -549.0
+offset_top = 94.0
+offset_right = -509.0
+offset_bottom = 134.0
+scale = Vector2(1.56, 1.56)
+
+[node name="Polygon2D" type="Polygon2D" parent="Clouds"]
+visible = false
+position = Vector2(0, -264)
+polygon = PackedVector2Array(-5904, -535, -4961, -323, -4440, 334, -3979, 953, -2733, 998, -1842, 1761, -943, 2033, 111.538, 1970.41, 1371, 2063, 2217, 2310, 3884.62, 2380.03, 4658.97, 1905.67, 5353.45, 1081.24, 5703, 118, 6430.17, -854.103, 8119.83, -354.965, 7669.87, 3696.05, -5999.36, 3515.28)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Clouds"]
+polygon = PackedVector2Array(-5946, -547, -4928, -359, -4775, -1650, -4519, -2728, -2712, -3219, -1367, -2926, 179, -3239, 3705.17, -3219.83, 5343.1, -3793.97, 6505.17, -3589.65, 7125.86, -2632.76, 6015.52, -1543.97, 6095.69, -1003.45, 6563.79, -671.552, 7700.86, 789.655, 9718.96, 2250.86, 8466.38, -5937.93, -6210, -4476)
+
+[node name="AreaTest" type="Node2D" parent="."]
+z_index = 1000
+z_as_relative = false
+position = Vector2(2209, 1594)
+script = ExtResource("12_ci8d8")
+
+[node name="Erwan" parent="AreaTest" instance=ExtResource("12_lrdjm")]
+text = "ERWAN"
+character = 2
+
+[node name="TREVILLE" parent="AreaTest" instance=ExtResource("12_lrdjm")]
+offset_left = -48.0
+offset_top = -470.0
+offset_right = 291.0
+offset_bottom = -344.0
+text = "TREVILLE"
+character = 16
+
+[node name="IMAK" parent="AreaTest" instance=ExtResource("12_lrdjm")]
+offset_left = -1640.0
+offset_top = -1997.0
+offset_right = -1301.0
+offset_bottom = -1871.0
+text = "IMAK"
+character = 4
+
+[node name="Villa" parent="AreaTest" instance=ExtResource("12_lrdjm")]
+offset_left = -6472.0
+offset_top = -3428.0
+offset_right = -6133.0
+offset_bottom = -3302.0
+text = "Villa abandonnée"
+character = 8
+
+[node name="IO" parent="AreaTest" instance=ExtResource("12_lrdjm")]
+offset_left = -6377.0
+offset_top = -1245.0
+offset_right = -5949.0
+offset_bottom = -1119.0
+text = "ILE OUEST"
+character = 1
+
+[node name="CanvasLayer" type="CanvasLayer" parent="AreaTest"]
+
+[node name="DebugInkReader" parent="AreaTest/CanvasLayer" instance=ExtResource("13_n28ot")]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_right = 0.0
+anchor_bottom = 1.0
+offset_top = -1358.0
+offset_right = 300.0
+offset_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 0
+mouse_filter = 2
+alignment = 2
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="FPS" type="Label" parent="UI"]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[editable path="AreaTest/IMAK"]
+[editable path="AreaTest/Villa"]
+[editable path="AreaTest/IO"]

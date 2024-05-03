@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=5 format=3 uid="uid://b7xl2pfm4gb4x"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_pta1s"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_yie73"]
+[ext_resource type="Resource" uid="uid://dfduy0sb405t3" path="res://sequences/sequences_resources/ERWAN/ink/ERWAN_tired1.ink" id="2_rms5i"]
+
+[sub_resource type="Resource" id="Resource_6tqe7"]
+script = ExtResource("1_yie73")
+metric = 9
+logic = 2
+metric_value = 30
+
+[resource]
+script = ExtResource("1_pta1s")
+conditions = Array[ExtResource("1_yie73")]([SubResource("Resource_6tqe7")])
+one_use_only = false
+ink_file = ExtResource("2_rms5i")
+local_metrics = {}
+starter_characters = 2
+default_characters = 2

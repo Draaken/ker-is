@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=6 format=3 uid="uid://b3hi7lwwp2b4o"]
+
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_ow7qu"]
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_wsqn1"]
+[ext_resource type="Resource" uid="uid://2jh5hbfqhf14" path="res://sequences/sequences_resources/BRIANNE/ink/BRIANNE_livraisonGWEN.ink" id="2_a6oit"]
+
+[sub_resource type="Resource" id="Resource_5tswa"]
+script = ExtResource("1_ow7qu")
+metric = 11
+logic = 4
+metric_value = 40
+
+[sub_resource type="Resource" id="Resource_gvses"]
+script = ExtResource("1_ow7qu")
+metric = 5
+logic = 8
+metric_value = 0
+
+[resource]
+script = ExtResource("1_wsqn1")
+conditions = Array[ExtResource("1_ow7qu")]([SubResource("Resource_5tswa"), SubResource("Resource_gvses")])
+one_use_only = false
+ink_file = ExtResource("2_a6oit")
+local_metrics = {}
+starter_characters = 1
+default_characters = 1

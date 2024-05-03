@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="SequencesPack" load_steps=3 format=3 uid="uid://dh4um54v81ted"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequences_pack/sequences_pack.gd" id="1_4jpro"]
+[ext_resource type="Resource" uid="uid://b7xl2pfm4gb4x" path="res://sequences/sequences_resources/ERWAN/ERWAN_tired1.tres" id="2_j1iuj"]
+
+[resource]
+script = ExtResource("1_4jpro")
+sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_j1iuj")])

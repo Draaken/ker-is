@@ -12,6 +12,7 @@ public partial class DialogueScene : Control
 	private int CharacterInt;
 	private Node localSequenceManager;
 	private InkStory story;
+	private Sprite2D BackgroundSprite;
 	private MarginContainer Foreground;
 	private ColorRect BlueFilter;
 	private MarginContainer TrucGaucheDroite;
@@ -37,6 +38,7 @@ public partial class DialogueScene : Control
 		Foreground = GetNode<MarginContainer>("ForegroundContainer");
 		BlueFilter = GetNode<ColorRect>("BlueFilter");
 		BlueFilter.Visible = false;
+		BackgroundSprite = GetNode<Sprite2D>("BackgroundContainer/BackgroundSprite");
 		Foreground.Visible = false;
 
 		TrucGaucheDroite = GetNode<MarginContainer>("ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer");
@@ -76,6 +78,11 @@ public partial class DialogueScene : Control
 		story = StoryScript;
 		story.ChoosePathString(CharacterString);
 
+		if (story.CurrentTags[0] == "knot")
+		{
+			SetUpBackground(RemovePrefix(story.CurrentTags[2]).Trim());
+		}
+
 		Timer timer = new() { WaitTime = 2.0, OneShot = true };
 		AddChild(timer);
 		timer.Start();
@@ -105,6 +112,7 @@ public partial class DialogueScene : Control
 	private void StartDialogue()
 	{	
 
+		
 		LeftSprite.Hide();
 		RightSprite.Hide();
 		
@@ -176,6 +184,8 @@ public partial class DialogueScene : Control
 
 			else if (story.CurrentTags[0] == "knot")
 				{
+					SetUpBackground(RemovePrefix(story.CurrentTags[2]).Trim());
+					
 					Characters = new List<List<String>>{};
 					int CharactersNumber = Int32.Parse(RemovePrefix(story.CurrentTags[3]));
 					for (int i=0; i< CharactersNumber; i++)
@@ -216,7 +226,23 @@ public partial class DialogueScene : Control
 		
 		
 	}
+	private void SetUpBackground(string background)
+	{
+		String dirPath = "DialogueScene/Backgrounds";
+		String spriteName = background +".png";
+		Texture2D sprite;
 
+		if (IsThereFile(dirPath, spriteName))
+		{
+			sprite = GD.Load<Texture2D>(dirPath + "/" + spriteName);
+		}
+		else
+		{
+			GD.Print("Background not found, used default background isntead. Background name:"+ background);
+			sprite = GD.Load<Texture2D>(dirPath + "/default.png");
+		}
+		BackgroundSprite.Texture = sprite;
+	}
 	private void SetupCharacter()
 	{
 		foreach (List<String> subCharacter in Characters)
@@ -243,11 +269,10 @@ public partial class DialogueScene : Control
 				{
 					spriteNode = LeftSprite;
 					spriteNode.FlipH = true;
-					GD.Print("Bonom left");
+
 				}
 				else
 				{	
-					GD.Print("Bonom right");
 					spriteNode = RightSprite;
 				}
 

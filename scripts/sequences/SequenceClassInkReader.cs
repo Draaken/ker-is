@@ -8,14 +8,29 @@ using System.Collections.Generic;
 public partial class SequenceClassInkReader : Resource
 {
     private InkStory story;
-    private void SetUpStorylet(string Character)
+    private bool SetUpStorylet(string Character)
     {
         story.ChoosePathString(Character);
-        String storyText = story.Continue();
-        while (storyText.StartsWith(">>>DEBUG"))
+        if (story.CanContinue)
         {
-            GD.Print(storyText);
-            storyText = story.Continue();
+            String storyText = story.Continue();
+            while (storyText.StartsWith(">>>DEBUG"))
+            {
+                GD.Print(storyText);
+                if (story.CanContinue)
+                {
+                    storyText = story.Continue();
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
     private int GetPriority()

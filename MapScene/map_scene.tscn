@@ -259,62 +259,65 @@ y_sort_enabled = true
 [node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_1aepq")
 position = Vector2(-175.833, -78.5)
-scale = Vector2(1.06441, 1.06441)
+scale = Vector2(1.02666, 1.02666)
+frame = 1
 
 [node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_pxeou")
 position = Vector2(-250, -116.833)
-scale = Vector2(0.963392, 0.963392)
+scale = Vector2(0.823338, 0.823338)
+frame = 1
 
 [node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_oi0pj")
 position = Vector2(-243.333, -73.5)
-scale = Vector2(0.961653, 0.961653)
-frame = 0
+scale = Vector2(1.03521, 1.03521)
+frame = 1
 
 [node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_lxaet")
 position = Vector2(-214.167, -112.667)
-scale = Vector2(1.03667, 1.03667)
-frame = 0
+scale = Vector2(1.02218, 1.02218)
 
 [node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ajeby")
 position = Vector2(-196.667, -56.8334)
-scale = Vector2(0.877826, 0.877826)
-frame = 2
+scale = Vector2(1.17942, 1.17942)
+frame = 0
 
 [node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_34ubk")
 position = Vector2(-101.667, -22.6667)
-scale = Vector2(1.05564, 1.05564)
+scale = Vector2(1.09099, 1.09099)
 
 [node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ic4ej")
 position = Vector2(-213.333, -92.6667)
-scale = Vector2(0.94351, 0.94351)
+scale = Vector2(0.997075, 0.997075)
+frame = 0
 
 [node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_eadu5")
 position = Vector2(-263.333, -96)
-scale = Vector2(1.0964, 1.0964)
+scale = Vector2(0.945077, 0.945077)
+frame = 1
 
 [node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_cs85y")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.04539, 1.04539)
-frame = 0
+scale = Vector2(1.02775, 1.02775)
+frame = 1
 
 [node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_yrkbi")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.01839, 1.01839)
-frame = 1
+scale = Vector2(1.06624, 1.06624)
+frame = 0
 
 [node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_bb1c0")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(0.928517, 0.928517)
+scale = Vector2(0.931136, 0.931136)
 frame = 2
 
 [node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]
@@ -466,6 +469,21 @@ polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
 [node name="Line2D" parent="Area/Erwan" index="2"]
 points = PackedVector2Array(-276, 20, -262, -48, -241, -102, -202, -148, -135, -188, -73, -199, 13, -195, 88, -187, 172, -164, 220, -127, 242, -76, 245, -25, 242, 34, 233, 76)
 
+[node name="TREVILLE" parent="Area" instance=ExtResource("8_gc275")]
+position = Vector2(2205, 1147)
+character = 16
+
+[node name="CollisionPolygon2D" parent="Area/TREVILLE" index="0"]
+position = Vector2(-40.0001, -20)
+scale = Vector2(1.09344, 1.09344)
+polygon = PackedVector2Array(-185, -58, -91, -143, 29, -151, 210.344, -125.292, 320.089, -27.4362, 307.286, 80.4796, 214, 105, 55, 156, -128, 127, -208, 77)
+
+[node name="Indicator" parent="Area/TREVILLE" index="1"]
+polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
+
+[node name="Line2D" parent="Area/TREVILLE" index="2"]
+points = PackedVector2Array(-276, 20, -262, -48, -241, -102, -202, -148, -135, -188, -73, -199, 13, -195, 88, -187, 172, -164, 220, -127, 242, -76, 245, -25, 242, 34, 233, 76)
+
 [node name="ABANDONNED_VILLA" parent="Area" instance=ExtResource("8_gc275")]
 position = Vector2(-4105, -1602)
 character = 8
@@ -514,6 +532,7 @@ offset_right = 40.0
 offset_bottom = 23.0
 
 [editable path="Area/Erwan"]
+[editable path="Area/TREVILLE"]
 [editable path="Area/ABANDONNED_VILLA"]
 [editable path="Area/IO"]
 [editable path="Area/IMAK"]

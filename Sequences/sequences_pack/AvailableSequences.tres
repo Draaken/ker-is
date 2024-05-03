@@ -1,9 +1,14 @@
-[gd_resource type="Resource" script_class="SequencesPack" load_steps=4 format=3 uid="uid://dayfxjbno0bmw"]
+[gd_resource type="Resource" script_class="SequencesPack" load_steps=9 format=3 uid="uid://dayfxjbno0bmw"]
 
 [ext_resource type="Script" path="res://scripts/sequences/sequences_pack/sequences_pack.gd" id="1_kvrr5"]
 [ext_resource type="Resource" uid="uid://chuv8wqynoc0w" path="res://sequences/sequences_resources/IMAK_cassettes1.tres" id="2_nadl5"]
-[ext_resource type="Resource" uid="uid://cxao31i5wn3e4" path="res://sequences/sequences_resources/IO_eoliennes.tres" id="3_w61uh"]
+[ext_resource type="Resource" uid="uid://ci04pqpf2hhe5" path="res://sequences/sequences_resources/ERWAN/ERWAN_generique.tres" id="4_ecuwx"]
+[ext_resource type="Resource" uid="uid://dfnnrcfe0dnxv" path="res://sequences/sequences_resources/ERWAN/ERWAN_past1.tres" id="4_wj4n6"]
+[ext_resource type="Resource" uid="uid://b7xl2pfm4gb4x" path="res://sequences/sequences_resources/ERWAN/ERWAN_tired1.tres" id="5_hw8y1"]
+[ext_resource type="Resource" uid="uid://b3hi7lwwp2b4o" path="res://sequences/sequences_resources/BRIANNE/BRIANNE_livraisonGWEN.tres" id="6_8tnpo"]
+[ext_resource type="Resource" uid="uid://clpbt7bi76rbs" path="res://sequences/sequences_resources/BRIANNE/BRIANNE_generique.tres" id="7_jy37l"]
+[ext_resource type="Resource" uid="uid://kht3eqm8r7xd" path="res://sequences/sequences_resources/TREVILLE/GWEN_generique.tres" id="8_cp8l7"]
 
 [resource]
 script = ExtResource("1_kvrr5")
-sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_nadl5"), ExtResource("3_w61uh")])
+sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_nadl5"), ExtResource("4_wj4n6"), ExtResource("4_ecuwx"), ExtResource("5_hw8y1"), ExtResource("6_8tnpo"), ExtResource("7_jy37l"), ExtResource("8_cp8l7")])

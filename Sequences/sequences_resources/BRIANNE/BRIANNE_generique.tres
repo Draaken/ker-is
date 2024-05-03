@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://clpbt7bi76rbs"]
+
+[ext_resource type="Resource" uid="uid://d27wh6io7apuc" path="res://sequences/sequences_resources/BRIANNE/ink/BRIANNE_generique.ink" id="1_5ao3p"]
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_7hwck"]
+
+[resource]
+script = ExtResource("1_7hwck")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+one_use_only = false
+ink_file = ExtResource("1_5ao3p")
+local_metrics = {}
+starter_characters = 1
+default_characters = 1

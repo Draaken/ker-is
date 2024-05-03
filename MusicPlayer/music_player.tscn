@@ -1,0 +1,20 @@
+[gd_scene load_steps=6 format=3 uid="uid://clpo76pegb1jh"]
+
+[ext_resource type="Script" path="res://MusicPlayer/MusicPlayer.gd" id="1_b06a6"]
+[ext_resource type="AudioStream" uid="uid://dnm7t6dah1vmq" path="res://Sound/OST/1.wav" id="2_7u84a"]
+[ext_resource type="AudioStream" uid="uid://bxvvxgend3r4d" path="res://Sound/OST/2.mp3" id="3_wel7w"]
+[ext_resource type="AudioStream" uid="uid://bmlip0kr78b3i" path="res://Sound/OST/Diablo1.mp3" id="4_xd68p"]
+[ext_resource type="AudioStream" uid="uid://c6hff5245owrj" path="res://Sound/OST/Diablo2.mp3" id="5_1wsp5"]
+
+[node name="MusicPlayer" type="Node"]
+script = ExtResource("1_b06a6")
+tracks = Array[AudioStream]([ExtResource("2_7u84a"), ExtResource("3_wel7w"), ExtResource("4_xd68p"), ExtResource("5_1wsp5")])
+
+[node name="Player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_7u84a")
+
+[node name="TrackDelay" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="finished" from="Player" to="." method="_on_track_finished"]
+[connection signal="timeout" from="TrackDelay" to="." method="_on_track_delay_timeout"]

@@ -13,4 +13,5 @@ func _process(delta):
 
 func _on_button_pressed():
 	SequencesManager.choose_sequence_to_play(MetricsDatabase.characters.ERWAN).resource_path.get_file()
+	
 	#Label.text = SequencesManager.choose_sequence_to_play(MetricsDatabase.characters.ERWAN).resource_path.get_file()

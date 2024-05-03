@@ -84,41 +84,49 @@ func choose_sequence_to_play(character: int)->SequenceClass:
 		for temp_sequence in active_sequences.sequences:
 			var characters_mask = temp_sequence.characters
 			if (characters_mask & character) == character:
-				character_active_sequences.append(temp_sequence)
+				if temp_sequence.get_priority(character) != -1:
+					character_active_sequences.append(temp_sequence)
+				
+		#among the active sequences, is there any for our character?
 		if character_active_sequences.size() == 0:
+			#if no sequences for our character, add a new one
 			var new_sequence = choose_sequence_to_add(character)
 			if new_sequence == null:
 				print("No more valid sequences anywhere :(((")
 			else:
 				final_sequence = new_sequence
 			active_sequences.sequences.append(final_sequence)
-		
-		#if there's active sequences, randomly choose if we had a new one or not
-		if random.randf_range(0.0,1.0) < new_sequence_rand_factor:
-			#if we add new sequence, we first check if it's priority is higher than
-			#the highest priority in the active sequence, to not interrupt action
-			#with a petty sequence
-			var new_sequence = choose_sequence_to_add(character)
-			var old_sequence = choose_sequence_from_active(character)
-			if new_sequence == null:
-				final_sequence = choose_sequence_from_active(character)
-			else:
-				var new_sequence_priority = new_sequence.get_priority(character)
-				var old_sequence_priority = old_sequence.get_priority(character)
-				if new_sequence_priority >= old_sequence_priority && old_sequence_priority < 3:
-					final_sequence = new_sequence
-					#add the sequence to the active ones so that it can be continued later
-					active_sequences.sequences.append(new_sequence)
-				#elif new_sequence.get_priority(character) == old_sequence.get_priority(character):
-					#if random.randf_range(0.0,1.0) < 0.5:
-				else:
-					#if the sequence has less priority than the active ones,
-					#or the active one is priority over 3 discard it
-					final_sequence = old_sequence
-					active_sequences.append(new_sequence)
 		else:
-			final_sequence = choose_sequence_from_active(character)
-	else:
+			#if there's active sequences, randomly choose if we had a new one or not
+			if random.randf_range(0.0,1.0) < new_sequence_rand_factor:
+				#if we add new sequence, we first check if it's priority is higher than
+				#the highest priority in the active sequence, to not interrupt action
+				#with a petty sequence
+				var new_sequence = choose_sequence_to_add(character)
+				var old_sequence = choose_sequence_from_active(character)
+				if new_sequence == null:
+					final_sequence = choose_sequence_from_active(character)
+				else:
+					var new_sequence_priority = new_sequence.get_priority(character)
+					var old_sequence_priority = old_sequence.get_priority(character)
+					if new_sequence_priority >= old_sequence_priority && old_sequence_priority < 3:
+						final_sequence = new_sequence
+						#add the sequence to the active ones so that it can be continued later
+						active_sequences.sequences.append(new_sequence)
+					#elif new_sequence.get_priority(character) == old_sequence.get_priority(character):
+						#if random.randf_range(0.0,1.0) < 0.5:
+					else:
+						#if the sequence has less priority than the active ones,
+						#or the active one is priority over 3 discard it
+						final_sequence = old_sequence
+						
+						#pourquoi ajouter la séquence puisque qu'elle n'est pas choisie?
+						#peut être que c'était utile dans ce cas ouspy
+						
+						#active_sequences.sequences.append(new_sequence)
+			else:
+				final_sequence = choose_sequence_from_active(character)
+	else: #no more sequence to play: we add a new one
 		var new_sequence = choose_sequence_to_add(character)
 		if new_sequence == null:
 			print("No more valid sequences anywhere :(((")
@@ -129,6 +137,7 @@ func choose_sequence_to_play(character: int)->SequenceClass:
 	#--------------------------------------------------
 	print("Choosen sequence to play:" + final_sequence.resource_path.get_file())
 	print("Priority:" + str(final_sequence.get_priority(character)))
+	print("Characters:" +str(final_sequence.characters))
 	#--------------------------------------------------
 	return final_sequence
 
@@ -138,16 +147,22 @@ func choose_sequence_from_active(character: int)->SequenceClass:
 	#--------------------------------------------------
 	print("Choosing a sequence from active sequences list")
 	#--------------------------------------------------
-	var temp_priority = 0
+	var best_priority = 0
 	var top_sequences: Array[SequenceClass] = []
 	for temp_sequence in character_active_sequences:
 			
-		if temp_sequence.get_priority(character) == temp_priority:
+		var temp_sequence_priority = temp_sequence.get_priority(character)
+		
+		if temp_sequence_priority == -1:
+			continue
+		
+		if temp_sequence_priority == best_priority:
 			top_sequences.append(temp_sequence)
 		#if the sequence priority is equal to the previous best, add to the list
 			
-		elif temp_sequence.get_priority(character) > temp_priority:
+		elif temp_sequence.get_priority(character) > best_priority:
 			top_sequences = [temp_sequence]
+			best_priority = temp_sequence_priority
 		#if the sequence priority is over the previous best, erase the list and add it
 		
 	var random_index: int = random.randi_range(0, top_sequences.size()-1)
