@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://eku2cr5k1sy5"
+path="res://.godot/imported/dummy_story.ink-ac077e491ca2b1030837f6f136fc978d.res"
+
+[deps]
+
+source_file="res://sequences/dummy_story.ink"
+dest_files=["res://.godot/imported/dummy_story.ink-ac077e491ca2b1030837f6f136fc978d.res"]
+
+[params]
+
+is_main_file=true
+compress=true

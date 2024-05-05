@@ -38,7 +38,7 @@ public partial class InkStory : Resource
     }
 
     private string rawStory = string.Empty;
-    private Ink.Runtime.Story runtimeStory = null!;
+    public Ink.Runtime.Story runtimeStory = null!;
 
     private readonly Dictionary<string, HashSet<Callable>> observers = new();
     private readonly Dictionary<string, Ink.Runtime.Story.VariableObserver> internalObservers = new();
@@ -51,7 +51,7 @@ public partial class InkStory : Resource
         };
     }
 
-    private void InitializeRuntimeStory()
+    public void InitializeRuntimeStory()
     {
         if (runtimeStory != null)
         {

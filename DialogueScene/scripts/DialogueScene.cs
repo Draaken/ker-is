@@ -9,7 +9,9 @@ using System.Text.RegularExpressions;
 public partial class DialogueScene : Control
 {
 
+	private bool Activated;
 	private int CharacterInt;
+
 	private Node localSequenceManager;
 	private InkStory story;
 	private Sprite2D BackgroundSprite;
@@ -34,6 +36,8 @@ public partial class DialogueScene : Control
 
 	public override void _Ready()
 	{	
+		Activated = false;
+
 		localSequenceManager = GetNode<Node>("LocalSequenceManager");
 		Foreground = GetNode<MarginContainer>("ForegroundContainer");
 		BlueFilter = GetNode<ColorRect>("BlueFilter");
@@ -56,14 +60,15 @@ public partial class DialogueScene : Control
 	{
 		if (@event.IsActionPressed ("left_click"))
 		{
-			if (story.CanContinue)
-			{
-				ContinueStory();
-			}
-			else
-			{
-				Desactivate();
-			}
+			if (Activated)
+				if (story.CanContinue)
+				{
+					ContinueStory();
+				}
+				else
+				{
+					Desactivate();
+				}
 		}
 	}
 
@@ -73,7 +78,8 @@ public partial class DialogueScene : Control
 		localSequenceManager.Call("load_sequence", Sequence, CharacterInt);
 	}
 	private void Activate(InkStory StoryScript, String CharacterString)
-	{
+	{	
+		Activated = true;
 		Visible = true;
 		story = StoryScript;
 		story.ChoosePathString(CharacterString);
@@ -98,6 +104,8 @@ public partial class DialogueScene : Control
 
 	private void Desactivate()
 	{
+		story.ResetCallstack();
+		Activated = false;
 		Foreground.Visible = false;
 		Timer timer = new() { WaitTime = 0.5, OneShot = true };
 		AddChild(timer);
@@ -117,7 +125,7 @@ public partial class DialogueScene : Control
 		RightSprite.Hide();
 		
 		BlueFilter.Visible = true;
-		if (story.CanContinue)
+		if (story.CanContinue && Activated)
 			{
 				ContinueStory();
 				

@@ -134,6 +134,10 @@ Je crois que je suis déjà impliquée…
 ->END
 
 ==TREVILLE==
+{Adri?spoke_to_brianne:->A}
+>>EndOfSequence
+
+=A
 #knot
 #3
 
@@ -154,19 +158,19 @@ Je crois que je suis déjà impliquée…
 /
 #c #adriana #not_speaking #default
 /
-La petite pilote est descendue du ciel. Quelle nouvelle tu nous amènes aujourd'hui?
+La petite pilote est descendue du ciel. Quelle nouvelle tu nous amènes cette fois?
 
 #c #gwen #not_speaking #default
 /
 #c #adriana #speaking #default
 /
-Pas de grandes révélation Gwen, par contre j'ai quatre sacs d'olives pour le village. Tu m'aides à les décharger?
+Pas de grandes révélation Gwen, mais j'ai quatre sacs d'olives pour le village. Tu m'aides à les décharger?
 
 #c #gwen #speaking #default
 /
 #c #adriana #not_speaking #default
 /
-Oui bien sûr. Garde un sac, tu l'as bien mérité.
+Oui bien sûr. Et garde un sac, tu l'as bien mérité.
 
 #c #gwen #speaking #default
 /
@@ -202,7 +206,7 @@ Non je ne crois pas. Elle avais l'air très pressée.
 /
 #c #adriana #not_speaking #smiling
 /
-Je comprend. Ce n'est pas important. Merci beaucoup Adriana! Tu reviens bientôt?
+Je comprend. Ce n'est pas important... Merci beaucoup Adriana! Tu reviens bientôt?
 
 #c #gwen #not_speaking #default
 /

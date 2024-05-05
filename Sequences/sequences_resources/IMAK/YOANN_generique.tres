@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://b18uopm8x0528"]
+
+[ext_resource type="Resource" uid="uid://c3sprob1bu83r" path="res://sequences/sequences_resources/IMAK/ink/YOANN_generique.ink" id="1_hfhnk"]
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_ppwi5"]
+
+[resource]
+script = ExtResource("1_ppwi5")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+one_use_only = false
+ink_file = ExtResource("1_hfhnk")
+local_metrics = {}
+starter_characters = 4
+default_characters = 4

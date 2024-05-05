@@ -14,19 +14,37 @@ func end_of_sequence(character_int):
 	if current_sequence.characters == 0: 
 	#ie: it was the last character with storylets in the sequence
 	#if that's the case we remove the sequence from the active sequences list
-		current_sequence.characters = current_sequence.default_characters
-		var active_sequences = SequencesManager.active_sequences.sequences
-		for i in range(active_sequences.size()-1,-1,-1):
-			if active_sequences[i] == current_sequence:
-				active_sequences.remove_at(i)
-				break
+		remove_sequence()
+	else:
+		var can_be_continued = false
+		var current_characters =current_sequence.characters
+		#grave broken pour l'instant: ça fait aussi jouer le storylet de "get_priority"
+		#au lecteur de dialogue :(
 		
-		#chose if the sequence is discarded or added back to the list of available sequences
-		if current_sequence.one_use_only:
-			SequencesManager.finished_sequences.sequences.append(current_sequence)
-		else:
-			SequencesManager.available_sequences.sequences.append(current_sequence)
+		for i in current_characters:
+			if current_characters & i+1:
+				if current_sequence.get_priority(i+1) != -1:
+					can_be_continued = true
+					break
+		if not can_be_continued:
+			remove_sequence()
 			
+			
+func remove_sequence():
+	current_sequence.characters = current_sequence.default_characters
+	var active_sequences = SequencesManager.active_sequences.sequences
+	for i in range(active_sequences.size()-1,-1,-1):
+		if active_sequences[i] == current_sequence:
+			active_sequences.remove_at(i)
+			break
+		
+	#chose if the sequence is discarded or added back to the list of available sequences
+	if current_sequence.one_use_only:
+		SequencesManager.finished_sequences.sequences.append(current_sequence)
+	else:
+		SequencesManager.available_sequences.sequences.append(current_sequence)
+
+
 func change_metric(metric_string, value_string, is_adding = false):
 	var metric = MetricsDatabase.METRICS_BY_NAME[metric_string]
 	var metric_variable = MetricsDatabase.metrics_values_live[metric_string]

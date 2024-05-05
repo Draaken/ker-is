@@ -15,8 +15,10 @@ enum metrics {
 	yoann_opinion,
 	erwan_opinion,
 	brianne_opinion,
+	gwen_opinion,
 	erwan_stress,
 	brianne_gwen_flirt,
+	
 }
 const METRICS_NAME_BY_INDEX := {
 	metrics.storm: "storm",
@@ -31,6 +33,7 @@ const METRICS_NAME_BY_INDEX := {
 	metrics.yoann_opinion: "yoann_opinion",
 	metrics.erwan_opinion: "erwan_opinion",
 	metrics.brianne_opinion: "brianne_opinion",
+	metrics.gwen_opinion: "gwen_opinion",
 	metrics.erwan_stress: "erwan_stress",
 	metrics.brianne_gwen_flirt: "brianne_gwen_flirt",
 }
@@ -47,7 +50,8 @@ const METRICS_BY_NAME := {
 	
 	"yoann_opinion": metrics.yoann_opinion,
 	"erwan_opinion": metrics.erwan_opinion,
-	"brianne_opinion": metrics.brianne_opinion ,
+	"brianne_opinion": metrics.brianne_opinion,
+	"gwen_opinion": metrics.gwen_opinion,
 	"erwan_stress": metrics.erwan_stress,
 	"brianne_gwen_flirt": metrics.brianne_gwen_flirt,
 }
@@ -67,6 +71,7 @@ const METRIC_VALUES_BY_TYPE := {
 	metrics.yoann_opinion: "range",
 	metrics.erwan_opinion : "range",
 	metrics.brianne_opinion: "range",
+	metrics.gwen_opinion: "range",
 	metrics.erwan_stress: "range",
 	metrics.brianne_gwen_flirt: "range",
 }
@@ -84,7 +89,7 @@ const METRICS_VALUES_BY_VALUES_STRING := {
 
 #the metrics updated at runtime. This is what should be saved
 var metrics_values_live = {
-	"storm_state" : storm.FINISHING,
+	"storm" : storm.FINISHING,
 	"state_pressure": state_pressure.COMING,
 	"magneto_tech": magneto_tech.NONE,
 	"zadio": zadio.NONE,
@@ -96,6 +101,7 @@ var metrics_values_live = {
 	"yoann_opinion": 0,
 	"erwan_opinion": 0,
 	"brianne_opinion": 0,
+	"gwen_opinion": 0,
 	"erwan_stress": 0,
 	"brianne_gwen_flirt": 0,
 }

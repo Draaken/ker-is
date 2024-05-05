@@ -23,4 +23,4 @@ one_use_only = false
 ink_file = ExtResource("2_a6oit")
 local_metrics = {}
 starter_characters = 1
-default_characters = 1
+default_characters = 17

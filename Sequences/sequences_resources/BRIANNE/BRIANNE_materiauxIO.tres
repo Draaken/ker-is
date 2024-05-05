@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=6 format=3 uid="uid://bymjo7hckf04y"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_0utlc"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_2dgww"]
+[ext_resource type="Resource" uid="uid://du1kpdt7f53x7" path="res://sequences/sequences_resources/BRIANNE/ink/BRIANNE_materiauxIO.ink" id="1_rgyte"]
+
+[sub_resource type="Resource" id="Resource_theyx"]
+script = ExtResource("1_2dgww")
+metric = 5
+logic = 8
+metric_value = 0
+
+[sub_resource type="Resource" id="Resource_0kf7h"]
+script = ExtResource("1_2dgww")
+metric = 11
+logic = 4
+metric_value = 90
+
+[resource]
+script = ExtResource("1_0utlc")
+conditions = Array[ExtResource("1_2dgww")]([SubResource("Resource_theyx"), SubResource("Resource_0kf7h")])
+one_use_only = true
+ink_file = ExtResource("1_rgyte")
+local_metrics = {}
+starter_characters = 17
+default_characters = 17

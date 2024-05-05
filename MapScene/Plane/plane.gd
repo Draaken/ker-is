@@ -53,9 +53,13 @@ func land():
 	state = "landed"
 	$Sprite.animation = "Landed"
 	emit_signal("Landing")
-	
-	if landing_area:
-		landing_area.interraction_start()
+	var collision = $LandingBox.get_overlapping_areas() 
+	if collision.size() >0:
+		for area in collision:
+			if area is LandingZone:
+				area.interraction_start()
+	#if landing_area:
+		#landing_area.interraction_start()
 
 #func circle(target,delta):
 	#direction = (target - self.position).normalized()

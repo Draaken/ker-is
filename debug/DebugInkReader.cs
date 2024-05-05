@@ -8,7 +8,7 @@ using System.Text.RegularExpressions;
 
 public partial class DebugInkReader : VBoxContainer
 {
-
+	private bool Activated;
 	private int CharacterInt;
 	private Node localSequenceManager;
 	private InkStory story;
@@ -28,6 +28,7 @@ public partial class DebugInkReader : VBoxContainer
 
 	public override void _Ready()
 	{	
+		Activated = false;
 		localSequenceManager = GetNode<Node>("LocalSequenceManager");
 
 
@@ -37,7 +38,7 @@ public partial class DebugInkReader : VBoxContainer
 	public void Display()
 	{
 	
-		while (story.CanContinue)
+		while (story.CanContinue && Activated)
 		{
 			ContinueStory();
 		}
@@ -53,15 +54,20 @@ public partial class DebugInkReader : VBoxContainer
 	}
 	private void Activate(InkStory StoryScript, String CharacterString)
 	{
+		Activated = true;
 		Visible = true;
 		story = StoryScript;
 		story.ChoosePathString(CharacterString);
 
 		StartDialogue();
-		Display();
-	
-		
-		
+		Display();	
+	}
+
+	private void Desactivate()
+	{
+		story.ResetCallstack();
+		Activated = false;
+
 	}
 
 
@@ -78,7 +84,6 @@ public partial class DebugInkReader : VBoxContainer
 	{
 		String storyText = story.Continue();
 		GD.Print("story continued");
-
 		while (storyText.StartsWith(">>"))
 			{
 				if (storyText.StartsWith(">>>DEBUG"))

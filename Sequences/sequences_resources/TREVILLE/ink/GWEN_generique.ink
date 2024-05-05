@@ -101,7 +101,7 @@ Je reviendrais alors, bonne récolte!
 /
 #c #adriana #not_speaking #default
 /
-Salut ma petite Adri. Je suis désolé je n'ai pas trop de temps à t'accorder… On se revoit bientôt?
+Salut ma petite Adri. Je suis désolée je n'ai pas trop de temps à t'accorder… On se revoit bientôt?
 
 #c #gwen #not_speaking #default
 /

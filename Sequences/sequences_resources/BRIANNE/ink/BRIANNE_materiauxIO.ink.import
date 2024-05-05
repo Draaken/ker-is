@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://du1kpdt7f53x7"
+path="res://.godot/imported/BRIANNE_materiauxIO.ink-7d370844fb698361d8a2ceb2681b914c.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/BRIANNE/ink/BRIANNE_materiauxIO.ink"
+dest_files=["res://.godot/imported/BRIANNE_materiauxIO.ink-7d370844fb698361d8a2ceb2681b914c.res"]
+
+[params]
+
+is_main_file=true
+compress=true

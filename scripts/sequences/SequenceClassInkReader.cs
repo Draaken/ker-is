@@ -3,13 +3,21 @@ using System;
 using GodotInk;
 using Ink;
 using System.Collections.Generic;
+using System.Data;
+using Ink.Runtime;
 
 [GlobalClass]
 public partial class SequenceClassInkReader : Resource
 {
     private InkStory story;
-    private bool SetUpStorylet(string Character)
+    private string stateBackup;
+
+    private bool SetUpStorylet(InkStory Sequence, string Character)
     {
+        story = Sequence;
+
+
+        stateBackup = story.SaveState();
         story.ChoosePathString(Character);
         if (story.CanContinue)
         {
@@ -36,6 +44,7 @@ public partial class SequenceClassInkReader : Resource
     private int GetPriority()
 	{
         int priority = Int32.Parse(story.CurrentTags[1]);
+        story.LoadState(stateBackup);
         return priority;
     }
 }

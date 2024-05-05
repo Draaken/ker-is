@@ -52,7 +52,7 @@ LIST Adri = (default), knows_house, visited_house, talked_house_with_yoann
 /
 Hey Adriana! Ca fait plaisir de te voir dans le coin. Faut que je te montre un truc. 
 On a fouillé une vieille baraque abandonnée avec les copaines, on a trouvé des trucs incroyables dans la cave.
-Le type étais un gros fan de musique, il y avait du matos partout! 
+Le type était un gros fan de musique, il y avait du matos partout! 
 Des bon trucs hein, on a récupéré plein d'instruments. Bon la cave était dans un salle état, ça avait bien pris l'eau.
 
 #c #yoann #not_speaking #default
@@ -146,7 +146,7 @@ J'ai ramassé une vieille cassette, une histoire de surf ou quelque chose du gen
 /
 #c #adriana #not_speaking #default
 /
-Ah ouais, nous on a trouvé la cave, qu'étais pas en si mauvais état. Il y avais plein de matos de musique. Les proprios devaient vivre la belle vie là bas.
+Ah ouais, nous on a trouvé la cave, qu'était pas en si mauvais état. Il y avais plein de matos de musique. Les proprios devaient vivre la belle vie là bas.
 Mais ça fait des années qu'elle a été pillée cette maison. C'était une résidence secondaire de toute façon, les types sont juste jamais revenus quand l'eau a commencé à monter.
     
 #c #yoann #not_speaking #default
@@ -179,7 +179,7 @@ Ca ce trouve il pourrait même refaire fonctionner des trucs. Moi j'ai essayé d
 /
 #c #adriana #speaking #concerned
 /
-Oui oui bien sûr, je lui donnerais quand je passerais le voir. A plus Yoann!
+Oui oui bien sûr, je lui donnerais la prochaine fois que je le verrai. A plus Yoann!
 
 #c #yoann #speaking #default
 /
@@ -415,7 +415,7 @@ Hello Yoann, j'ai montré ce que t'avais trouvé dans la villa à Erwan, il éta
 /
 #c #adriana #not_speaking #default
 /
-Trop bien. Ca se trouve on pourra écouter des cassettes. Ca serait vraiment stylé. La quantité de musique qu'il y a à redécouvrir, ça serait vraiment cool.
+Trop bien. Ca se trouve on pourra écouter des cassettes. Ca serait vraiment stylé. La quantité de musique qu'il y a à redécouvrir... Ca serait vraiment cool.
 ~Yoann = knows_erwan_is_repairing
 ->END
 =erwan_gave_tape_player
@@ -539,13 +539,13 @@ Yo Erwan. J'ai vu Yoann, il voulait te passer ça. C'est du matos de musique, ou
 /
 #c #adriana #not_speaking #default
 /
-Oh wow, c'est génial. Ca fait longtemps que j'avais pas vu ce genre d'équipement. Ca m'intéresse carrément. Bon il y a plein de trucs dans un sale état mais je devrais pouvoir utiliser certains trucs.
-{Adri?visited_house:
+Oh wow, c'est génial. Ca fait longtemps que j'avais pas vu ce genre d'équipement. Ca m'intéresse carrément. Ca à l'air en sale état, mais je devrais pouvoir en tirer quelque chose!
+{Adri>visited_house:
 #c #erwan #not_speaking #excited
 /
 #c #adriana #speaking #default
 /
-J'ai été voir la maison où iels ont trouvé ça, ça m'étonne pas que le matos soit en mauvais état. L'endroit est en ruine et il y a de l'eau partout. J'espère que tu trouveras des choses intéressantes quand même.
+J'ai été voir la maison où iels ont trouvé ça, ça m'étonne pas que le matos soit abimé. L'endroit est en ruine et il y a de l'eau partout. J'espère que tu trouveras des choses intéressantes quand même.
 
 -else:
 #c #erwan #not_speaking #excited
@@ -698,9 +698,8 @@ Trop cool. Je manque de matos pour réparer les autres lecteurs, mais peut être
 #c #adriana #speaking #default
 /
 Hey! Il y a quelqu'un?
-C'est immense comme maison... Et ça a été abandonné il y a longtemps.
-Je me demande où sont passés les gens qui vivaient là.
-Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
+C'est immense comme maison... Et ça a été abandonné il y a un moment.
+Une cassette? J'ai pas vu ce genre de truc depuis longtemps.
 "Compilation Surf & Bass". Ca me dit rien, on dirait qu'elle est faite maison.
 
 >>ChangeMetric, cassettes,SURF_AND_BASS,true
@@ -723,7 +722,7 @@ Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
 Ca doit être la villa dont parlais Yoann. C'est immense.
 Hey! Il y a quelqu'un? 
 Effectivement, personne n'a vécu là depuis un moment, c'est complètement en ruines.
-Une vieille cassette par terre... J'ai pas vu ce genre de truc depuis longtemps.
+Une cassette? J'ai pas vu ce genre de truc depuis longtemps.
 "Compilation Surf & Bass". Aucune idée de ce que ça veut dire. Ca intéressera peut être Yoann.
 
 

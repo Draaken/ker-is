@@ -95,8 +95,8 @@ func is_valid()->bool:
 		match logic:
 			1: is_condition_true = metric_value == condition_value
 			2: is_condition_true = metric_value > condition_value
-			3: is_condition_true = metric_value < condition_value
-			4: is_condition_true = metric_value != condition_value
+			4: is_condition_true = metric_value < condition_value
+			8: is_condition_true = metric_value != condition_value
 		
 		#if one of the condition is false, return false
 		if not is_condition_true:
@@ -105,10 +105,9 @@ func is_valid()->bool:
 	return true
 	
 func set_up_storylet(character:int):
-	ink_reader.story = ink_file
 	
 	var character_string = MetricsDatabase.characters_name[character]
-	var is_there_content = ink_reader.SetUpStorylet(character_string)
+	var is_there_content = ink_reader.SetUpStorylet(ink_file, character_string)
 	return is_there_content
 	#return un booléen qui dit si le ink CanContinue, ou si le perso n'a pas de storylet dans les conditions actuelles
 	
@@ -126,7 +125,7 @@ func get_priority(character: int)->int:
 	if is_there_content:
 		return ink_reader.GetPriority()
 	else:
-		print("No content for this character in this sequence:" + MetricsDatabase.characters_name[character])
+		print("No content for this character in this sequence:" + resource_path.get_file() + MetricsDatabase.characters_name[character])
 		return -1
 	
 	

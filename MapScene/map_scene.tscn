@@ -259,65 +259,62 @@ y_sort_enabled = true
 [node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_1aepq")
 position = Vector2(-175.833, -78.5)
-scale = Vector2(1.02666, 1.02666)
+scale = Vector2(1.11113, 1.11113)
 frame = 1
 
 [node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_pxeou")
 position = Vector2(-250, -116.833)
-scale = Vector2(0.823338, 0.823338)
+scale = Vector2(1.01943, 1.01943)
 frame = 1
 
 [node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_oi0pj")
 position = Vector2(-243.333, -73.5)
-scale = Vector2(1.03521, 1.03521)
+scale = Vector2(1.02958, 1.02958)
 frame = 1
 
 [node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_lxaet")
 position = Vector2(-214.167, -112.667)
-scale = Vector2(1.02218, 1.02218)
+scale = Vector2(1.02998, 1.02998)
 
 [node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ajeby")
 position = Vector2(-196.667, -56.8334)
-scale = Vector2(1.17942, 1.17942)
-frame = 0
+scale = Vector2(0.989414, 0.989414)
 
 [node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_34ubk")
 position = Vector2(-101.667, -22.6667)
-scale = Vector2(1.09099, 1.09099)
+scale = Vector2(0.996764, 0.996764)
 
 [node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ic4ej")
 position = Vector2(-213.333, -92.6667)
-scale = Vector2(0.997075, 0.997075)
-frame = 0
+scale = Vector2(0.901138, 0.901138)
 
 [node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_eadu5")
 position = Vector2(-263.333, -96)
-scale = Vector2(0.945077, 0.945077)
-frame = 1
+scale = Vector2(1.06982, 1.06982)
+frame = 2
 
 [node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_cs85y")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.02775, 1.02775)
-frame = 1
+scale = Vector2(1.02715, 1.02715)
 
 [node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_yrkbi")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.06624, 1.06624)
-frame = 0
+scale = Vector2(1.12174, 1.12174)
+frame = 1
 
 [node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_bb1c0")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(0.931136, 0.931136)
+scale = Vector2(1.15744, 1.15744)
 frame = 2
 
 [node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]

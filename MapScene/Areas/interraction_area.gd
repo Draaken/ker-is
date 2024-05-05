@@ -14,7 +14,8 @@ func _ready():
 func interraction_start():
 	var sequence = SequencesManager.choose_sequence_to_play(character)
 	interaction_started.emit(sequence, character)
-	
+
+
 func interraction_stop():
 	pass 
 #not used for now, dialogue_scene hide itself and doesn't inform the interraction_area

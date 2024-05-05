@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=5 format=3 uid="uid://c7xqscu6c1lnv"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_3t64n"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_vcvhg"]
+[ext_resource type="Resource" uid="uid://dusqguy7m8noe" path="res://sequences/sequences_resources/TREVILLE/ink/GWEN_fishing.ink" id="2_8jr55"]
+
+[sub_resource type="Resource" id="Resource_ibmvd"]
+script = ExtResource("1_vcvhg")
+metric = 0
+logic = 8
+metric_value = 4
+
+[resource]
+script = ExtResource("1_3t64n")
+conditions = Array[ExtResource("1_vcvhg")]([SubResource("Resource_ibmvd")])
+one_use_only = true
+ink_file = ExtResource("2_8jr55")
+local_metrics = {}
+starter_characters = 16
+default_characters = 23
