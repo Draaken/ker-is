@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=5 format=3 uid="uid://clolfcbnsjwsc"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_bgyel"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_h47ig"]
+[ext_resource type="Resource" uid="uid://dxtbswfcyslev" path="res://sequences/sequences_resources/TREVILLE/ink/GWEN_tempete1.ink" id="2_8qxi3"]
+
+[sub_resource type="Resource" id="Resource_t5n1n"]
+script = ExtResource("1_h47ig")
+metric = 0
+logic = 1
+metric_value = 8
+
+[resource]
+script = ExtResource("1_bgyel")
+conditions = [SubResource("Resource_t5n1n")]
+priority = 2
+one_use_only = true
+ink_file = ExtResource("2_8qxi3")
+local_metrics = {}
+starter_characters = 16
+default_characters = 23

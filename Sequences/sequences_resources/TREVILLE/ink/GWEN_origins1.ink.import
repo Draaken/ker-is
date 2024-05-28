@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dqolmdamclwx3"
+path="res://.godot/imported/GWEN_origins1.ink-013fdf7792465a07fbe98cf94749d207.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/TREVILLE/ink/GWEN_origins1.ink"
+dest_files=["res://.godot/imported/GWEN_origins1.ink-013fdf7792465a07fbe98cf94749d207.res"]
+
+[params]
+
+is_main_file=true
+compress=true

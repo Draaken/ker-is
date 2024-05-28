@@ -6,6 +6,8 @@ VAR fish = 0
 VAR erwan_stress = -1
 VAR brianne_gwen_flirt = -1
 
+/start
+
 ===function DEBUG===
     ~return ">>>DEBUG ERWAN_past1 local metrics: Brianne:{Brianne} / Erwan:{Erwan} / Yoann:{Yoann} / Gwen:{Gwen} / fish:{fish}"
 
@@ -15,7 +17,7 @@ VAR brianne_gwen_flirt = -1
 
 {Brianne?Brianne.received_fish: ->seen_brianne}
 {not (Gwen?gave_fish): ->start}
->>EndOfSequence
+
 
 =start
 #knot
@@ -131,7 +133,10 @@ Mais je… je ne… enfin, à bientôt.
 /
 Parfait, ça me fait plaisir que tu ai vu Brianne. Elle va bien? 
 
-A
+#c #gwen #not_speaking #default
+/
+#c #adriana #speaking #default
+/
 Très bien, elle a dit que ses enfants adoraient le poisson.
 
 #c #gwen #speaking #default
@@ -140,7 +145,10 @@ Très bien, elle a dit que ses enfants adoraient le poisson.
 /
 C'est super ça, je penserais à eux la prochaine fois que j'en ramènerais alors.
 
-A
+#c #gwen #not_speaking #default
+/
+#c #adriana #speaking #default
+/
 Ca leur fera plaisir, et à Brianne aussi. A la prochaine Gwen!
 
 }
@@ -283,7 +291,7 @@ Salut Erwan. Tu vas bien?
 J'éspère que ça va aller Erwan... essaye de prendre du repos quand même.
 }
 {erwan_stress <51 && erwan_stress > 10:
-#c #erwan #speaking #annoyed
+#c #erwan #speaking #default
 /
 #c #adriana #not_speaking #default
 /
@@ -291,7 +299,7 @@ J'éspère que ça va aller Erwan... essaye de prendre du repos quand même.
 }
 
 {erwan_stress <11:
-#c #erwan #speaking #annoyed
+#c #erwan #speaking #default
 /
 #c #adriana #not_speaking #default
 /
@@ -310,31 +318,37 @@ Ah, ça fait plaisir à entendre! T'as l'air plus frais effectivement.
 /
 Ca t'intéresse du poisson? Pêché par Gwen, c'est du local!
 
-#c #erwan #speaking #annoyed
+#c #erwan #speaking #default
 /
 #c #adriana #not_speaking #default
 /
 Ah c'est chouette. Oui je veux bien, je mange pas souvent de poisson.
 Je peux en prendre deux?
-#c #erwan #speaking #annoyed
+
+#c #erwan #not_speaking #default
 /
-#c #adriana #not_speaking #default
+#c #adriana #speaking #default
 /
 Oui bien sur. C'est vrai que tout seul tu ne vas pas tout manger.
 
+#c #erwan #speaking #default
+/
+#c #adriana #not_speaking #default
+/
 J'avais essayé de pêcher il y a un moment, mais c'est vraiment pas mon truc, j'arrivais à rien.
 
 #c #erwan #not_speaking #default
 /
 #c #adriana #speaking #default
 /
-Moi j'ai jamais aimé l'idée… je n'arrive pas à tuer un animal. Mais bon, il faut bien se nourrir.
+Moi j'ai jamais aimé l'idée… de pêcher. Je suis pas végétarienne mais j'arrive pas à tuer des animaux...
 
-#c #erwan #speaking #annoyed
+#c #erwan #speaking #default
 /
 #c #adriana #not_speaking #default
 /
-Je vais les faire griller, ça va être super. Merci de m'avoir amené ça Ardi!
+Je comprend.
+Je vais les faire griller, ça va être super. Merci de m'avoir amené ça Adri!
 
 #c #erwan #not_speaking #default
 /

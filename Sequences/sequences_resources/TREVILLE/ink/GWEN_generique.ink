@@ -1,3 +1,4 @@
+/start
 ==TREVILLE==
 {~->A|->B|->C}
 =A

@@ -2,6 +2,8 @@ LIST Yoann = (default), gave_tape, knows_erwan_is_repairing, received_tape_playe
 LIST Erwan = (default), received_tape, gave_tape_player
 LIST Adri = (default), knows_house, visited_house, talked_house_with_yoann
 
+/start
+
 ===function DEBUG===
     ~return ">>>DEBUG Cassettes 1 local metrics: {Yoann} / {Erwan} / {Adri}"
 ==IMAK==
@@ -719,7 +721,7 @@ Une cassette? J'ai pas vu ce genre de truc depuis longtemps.
 
 #c #adriana #speaking #default
 /
-Ca doit être la villa dont parlais Yoann. C'est immense.
+Ca doit être la villa dont parlait Yoann. C'est immense.
 Hey! Il y a quelqu'un? 
 Effectivement, personne n'a vécu là depuis un moment, c'est complètement en ruines.
 Une cassette? J'ai pas vu ce genre de truc depuis longtemps.

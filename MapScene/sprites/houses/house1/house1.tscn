@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://vj4ttg64gb8l"]
+
+[ext_resource type="Texture2D" uid="uid://dpnhc3qrfg41b" path="res://MapScene/sprites/houses/house1/house1.png" id="1_d0gmo"]
+[ext_resource type="Texture2D" uid="uid://cvcobh8ui3lkr" path="res://MapScene/sprites/houses/house1/house1_mask.png" id="2_hckcl"]
+
+[node name="House1" type="Node2D"]
+
+[node name="House1Mask" type="Sprite2D" parent="."]
+texture = ExtResource("2_hckcl")
+
+[node name="House1" type="Sprite2D" parent="House1Mask"]
+texture = ExtResource("1_d0gmo")

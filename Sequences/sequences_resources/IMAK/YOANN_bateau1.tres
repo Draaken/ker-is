@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://dsi2nq5qjnve4"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_5n5mo"]
+[ext_resource type="Resource" uid="uid://g4oxphstb4pv" path="res://sequences/sequences_resources/IMAK/ink/YOANN_bateau1.ink" id="1_softk"]
+
+[resource]
+script = ExtResource("1_5n5mo")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+priority = 1
+one_use_only = true
+ink_file = ExtResource("1_softk")
+local_metrics = {}
+starter_characters = 4
+default_characters = 22

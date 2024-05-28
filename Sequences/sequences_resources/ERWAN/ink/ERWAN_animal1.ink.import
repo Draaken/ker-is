@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://ob3cj6qk5n4d"
+path="res://.godot/imported/ERWAN_animal1.ink-08f0a64e2b8e008712ea7ff2a9863c41.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/ERWAN/ink/ERWAN_animal1.ink"
+dest_files=["res://.godot/imported/ERWAN_animal1.ink-08f0a64e2b8e008712ea7ff2a9863c41.res"]
+
+[params]
+
+is_main_file=true
+compress=true

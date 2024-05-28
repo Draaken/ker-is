@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://d4if04p4wpqa7"]
+[gd_scene load_steps=7 format=3 uid="uid://d4if04p4wpqa7"]
 
 [ext_resource type="PackedScene" uid="uid://be4h4pf5hx71r" path="res://MapScene/map_scene.tscn" id="1_v52n2"]
 [ext_resource type="Script" path="res://MainScene.gd" id="1_xjht6"]
 [ext_resource type="PackedScene" uid="uid://cnhklcs1hke2d" path="res://DialogueScene/scenes/dialogue_scene.tscn" id="2_2patm"]
+[ext_resource type="PackedScene" uid="uid://0jeo10sr0lxj" path="res://ui/map/map.tscn" id="4_8vfyr"]
+[ext_resource type="PackedScene" uid="uid://c76o1dk7vrph2" path="res://animations/intro/intro.tscn" id="5_bh60j"]
+[ext_resource type="PackedScene" uid="uid://b46eb627bnwqe" path="res://ui/pause_menu/pause_menu.tscn" id="6_faeg6"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_xjht6")
@@ -11,5 +14,23 @@ script = ExtResource("1_xjht6")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
+[node name="TransitionScreen" type="ColorRect" parent="UI"]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.858824, 0.92549, 1, 1)
+
 [node name="DialogueScene" parent="UI" instance=ExtResource("2_2patm")]
 visible = false
+
+[node name="Map" parent="UI" instance=ExtResource("4_8vfyr")]
+visible = false
+
+[node name="Intro" parent="UI" instance=ExtResource("5_bh60j")]
+visible = false
+z_index = 200
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("6_faeg6")]

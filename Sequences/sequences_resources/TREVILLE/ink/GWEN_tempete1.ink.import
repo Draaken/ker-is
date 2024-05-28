@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://dxtbswfcyslev"
+path="res://.godot/imported/GWEN_tempete1.ink-0cc43a6213d691ee677b0307deed5510.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/TREVILLE/ink/GWEN_tempete1.ink"
+dest_files=["res://.godot/imported/GWEN_tempete1.ink-0cc43a6213d691ee677b0307deed5510.res"]
+
+[params]
+
+is_main_file=true
+compress=true

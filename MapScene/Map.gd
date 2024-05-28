@@ -1,5 +1,6 @@
 extends Node2D
 
+var can_take_input: bool
 var plane
 var mouse_over_land = false
 
@@ -25,11 +26,11 @@ func _process(_delta):
 
 	
 func _unhandled_input(event):
-
-	if event.is_action_pressed("left_click"):
-		set_pin("Flying")
-	if event.is_action_pressed("right_click"):
-		set_pin("Landing")
+	if can_take_input:
+		if event.is_action_pressed("left_click"):
+			set_pin("Flying")
+		if event.is_action_pressed("right_click"):
+			set_pin("Landing")
 		
 
 func set_pin(type):

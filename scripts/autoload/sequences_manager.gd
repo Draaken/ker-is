@@ -5,7 +5,7 @@ var random = RandomNumberGenerator.new()
 @export var active_sequences: SequencesPack
 @export var finished_sequences: SequencesPack
 var character_active_sequences: Array
-var new_sequence_rand_factor = 0.3
+var new_sequence_rand_factor = 0.4
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
@@ -18,11 +18,19 @@ func choose_sequence_to_add(character: int)->SequenceClass:
 	var valid_sequences: Array[SequenceClass] = []
 	
 	if available_sequences.sequences.size()>0:
+		var top_temp_priority = 0
+		
 		for temp_sequence in available_sequences.sequences:
 			#check if the starter character correspond 
 			var characters_mask = temp_sequence.starter_characters
 			if (characters_mask & character) == character && temp_sequence.is_valid():
-				valid_sequences.append(temp_sequence)
+				if temp_sequence.priority == top_temp_priority:
+					valid_sequences.append(temp_sequence)
+				elif temp_sequence.priority > top_temp_priority:
+					top_temp_priority = temp_sequence.priority
+					valid_sequences = [temp_sequence]
+					
+					
 		if valid_sequences.size() == 0:
 			print("No more valid sequences available for this character :(")
 			return null
@@ -75,9 +83,10 @@ func choose_sequence_to_play(character: int)->SequenceClass:
 			print(i.resource_path.get_file())
 	print("--------------------------------")
 	#-----------------------------------------------------------
+
+		
 	
 #So it's a little hardcore to understand, so i'm gonna help:
-
 	if active_sequences.sequences.size() > 0:
 		
 		character_active_sequences = []
@@ -119,7 +128,8 @@ func choose_sequence_to_play(character: int)->SequenceClass:
 						#if the sequence has less priority than the active ones,
 						#or the active one is priority over 3 discard it
 						final_sequence = old_sequence
-						
+						available_sequences.sequences.append(new_sequence)
+						print("Added sequence back to available list:" + new_sequence.resource_path.get_file())
 						#pourquoi ajouter la séquence puisque qu'elle n'est pas choisie?
 						#peut être que c'était utile dans ce cas ouspy
 						
@@ -141,6 +151,15 @@ func choose_sequence_to_play(character: int)->SequenceClass:
 	#--------------------------------------------------
 	return final_sequence
 
+func force_sequence_to_play(sequence: SequenceClass):
+	active_sequences.sequences.append(sequence)
+	for i in available_sequences.sequences.size():
+		if available_sequences.sequences[i] == sequence:
+			available_sequences.sequences.remove_at(i)
+			#--------------------------------------------------
+			print("Removed sequence from available list:" + sequence.resource_path.get_file())
+			#--------------------------------------------------
+			break
 
 
 func choose_sequence_from_active(character: int)->SequenceClass:
@@ -168,3 +187,4 @@ func choose_sequence_from_active(character: int)->SequenceClass:
 	var random_index: int = random.randi_range(0, top_sequences.size()-1)
 	var final_sequence = top_sequences[random_index]
 	return final_sequence
+

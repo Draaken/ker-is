@@ -6,13 +6,14 @@
 
 [sub_resource type="Resource" id="Resource_715hc"]
 script = ExtResource("1_5jmem")
-metric = 9
+metric = 10
 logic = 2
-metric_value = 40
+metric_value = 20
 
 [resource]
 script = ExtResource("1_4fx02")
-conditions = Array[ExtResource("1_5jmem")]([SubResource("Resource_715hc")])
+conditions = [SubResource("Resource_715hc")]
+priority = 0
 one_use_only = true
 ink_file = ExtResource("2_vp51x")
 local_metrics = {}

@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://be4h4pf5hx71r"]
+[gd_scene load_steps=42 format=3 uid="uid://be4h4pf5hx71r"]
 
 [ext_resource type="PackedScene" uid="uid://bpehqvb2tyt1a" path="res://MapScene/Plane/plane.tscn" id="1_8kuoa"]
 [ext_resource type="Script" path="res://MapScene/Map.gd" id="1_8o8wv"]
@@ -10,11 +10,16 @@
 [ext_resource type="Texture2D" uid="uid://by4je38sreh" path="res://MapScene/PlaceHolderMap/3.png" id="3_eccor"]
 [ext_resource type="Texture2D" uid="uid://c0ve03k2b0i8i" path="res://MapScene/PlaceHolderMap/2.png" id="4_prmff"]
 [ext_resource type="Texture2D" uid="uid://cv8i5tipwblj8" path="res://MapScene/PlaceHolderMap/1.png" id="5_fpg0s"]
+[ext_resource type="PackedScene" uid="uid://bq34fe5wjglj2" path="res://MapScene/Islands/treville/treville.tscn" id="6_a8c72"]
 [ext_resource type="PackedScene" uid="uid://dmasthyopfrgg" path="res://MapScene/Areas/interraction_area.tscn" id="8_gc275"]
 [ext_resource type="PackedScene" uid="uid://cd63sh3ytn6md" path="res://MapScene/Islands/latreille/la_treille.tscn" id="8_xhbjj"]
 [ext_resource type="PackedScene" uid="uid://bmuucuelnnoq" path="res://MapScene/sprites/tree1/sprite_tree1.tscn" id="9_gkxwe"]
 [ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="10_5xp7x"]
 [ext_resource type="PackedScene" uid="uid://c6s870mcud4nb" path="res://MapScene/sprites/bush1/sprite_bush1.tscn" id="11_c0ap3"]
+[ext_resource type="Script" path="res://MapScene/Particles/CloudsShadow.gd" id="12_m64jw"]
+[ext_resource type="Shader" path="res://MapScene/Particles/cloud_shadow.gdshader" id="13_o58yb"]
+[ext_resource type="Texture2D" uid="uid://c4ulastvi81j5" path="res://MapScene/Particles/cloud_noise.tres" id="13_uvrrf"]
+[ext_resource type="Texture2D" uid="uid://cn3enxkc64qrn" path="res://DialogueScene/Backgrounds/TREVILLE.png" id="14_qp8aa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1aepq"]
 resource_local_to_scene = true
@@ -115,6 +120,32 @@ shader_parameter/speedY = 0.3
 shader_parameter/disY = 50.0
 shader_parameter/offset = Vector2(686.996, -367)
 
+[sub_resource type="Gradient" id="Gradient_kxi2g"]
+offsets = PackedFloat32Array(0, 0.927757)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_wa3lm"]
+noise_type = 5
+frequency = 0.0155
+fractal_octaves = 4
+fractal_gain = 0.365
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_dptav"]
+width = 2048
+height = 2048
+seamless = true
+color_ramp = SubResource("Gradient_kxi2g")
+noise = SubResource("FastNoiseLite_wa3lm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xb1hj"]
+shader = ExtResource("13_o58yb")
+shader_parameter/isSoft = false
+shader_parameter/speed = 0.003
+shader_parameter/brightness = 0.0
+shader_parameter/threshold = 1.383
+shader_parameter/fluffiness = 1.081
+shader_parameter/position_offset = null
+shader_parameter/noiseTexture = SubResource("NoiseTexture2D_dptav")
+
 [sub_resource type="Curve" id="Curve_grhp0"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.493902, 0.142857), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 3
@@ -198,12 +229,17 @@ scale = Vector2(1.2, 1.2)
 position = Vector2(-495.998, 1228.67)
 scale = Vector2(0.833333, 0.833333)
 
+[node name="Treville" parent="PlaceholderMap/Islands" instance=ExtResource("6_a8c72")]
+position = Vector2(831.667, 1050.83)
+
 [node name="3" type="Sprite2D" parent="PlaceholderMap/Islands"]
+visible = false
 position = Vector2(1810.83, 1752.5)
 scale = Vector2(1.17717, 1.08364)
 texture = ExtResource("3_eccor")
 
 [node name="2" type="Sprite2D" parent="PlaceholderMap/Islands"]
+visible = false
 z_index = 1
 position = Vector2(2078.33, 1479.17)
 rotation = -0.137004
@@ -259,63 +295,63 @@ y_sort_enabled = true
 [node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_1aepq")
 position = Vector2(-175.833, -78.5)
-scale = Vector2(1.11113, 1.11113)
+scale = Vector2(1.09193, 1.09193)
 frame = 1
 
 [node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_pxeou")
 position = Vector2(-250, -116.833)
-scale = Vector2(1.01943, 1.01943)
-frame = 1
+scale = Vector2(0.960212, 0.960212)
 
 [node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_oi0pj")
 position = Vector2(-243.333, -73.5)
-scale = Vector2(1.02958, 1.02958)
-frame = 1
+scale = Vector2(1.05745, 1.05745)
 
 [node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_lxaet")
 position = Vector2(-214.167, -112.667)
-scale = Vector2(1.02998, 1.02998)
+scale = Vector2(1.14488, 1.14488)
+frame = 1
 
 [node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ajeby")
 position = Vector2(-196.667, -56.8334)
-scale = Vector2(0.989414, 0.989414)
+scale = Vector2(0.850076, 0.850076)
 
 [node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_34ubk")
 position = Vector2(-101.667, -22.6667)
-scale = Vector2(0.996764, 0.996764)
+scale = Vector2(1.2, 1.2)
+frame = 1
 
 [node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ic4ej")
 position = Vector2(-213.333, -92.6667)
-scale = Vector2(0.901138, 0.901138)
+scale = Vector2(0.956451, 0.956451)
+frame = 2
 
 [node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_eadu5")
 position = Vector2(-263.333, -96)
-scale = Vector2(1.06982, 1.06982)
+scale = Vector2(0.950428, 0.950428)
 frame = 2
 
 [node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_cs85y")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.02715, 1.02715)
+scale = Vector2(1.109, 1.109)
+frame = 1
 
 [node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_yrkbi")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.12174, 1.12174)
-frame = 1
+scale = Vector2(0.868609, 0.868609)
 
 [node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_bb1c0")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.15744, 1.15744)
-frame = 2
+scale = Vector2(0.96144, 0.96144)
 
 [node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]
 position = Vector2(-1460, 1098.33)
@@ -394,9 +430,27 @@ scale = Vector2(1.36667, 1.36667)
 color = Color(0.588235, 0.521569, 0.211765, 1)
 polygon = PackedVector2Array(872.559, 854.264, -85.3656, 940.239, -604.876, 1173.78, -1640.83, 1342.5, -2160.97, 1190.24, -2411.58, 1243.9, -2427.43, 1172.56, -2313.41, 1087.19, -2370.12, 985.971, -2309.14, 720.728, -2168.9, 426.216, -1934.75, 89.6316, -1954.26, -178.661, -2207.92, -442.074, -2046.95, -622.562, -1673.17, -679.269, -799.388, -865.244, -215.853, -741.464, -55.4876, -478.05, -49.9999, -214.026, 570.121, -59.1487, 585.364, -668.903, 239.024, -1020.73, -84.9636, -869.669, -773.779, -973.781, -1698.78, -803.659, -2430, -860.833, -2431.7, -1000.61, -1898.17, -1056.1, -1898.17, -1167.07, -2523.16, -1218.9, -2520.12, -1290.85, -1970.73, -1320.12, -1479.26, -1445.73, -566.462, -1368.9, 1228.33, -1457.5, 2853.33, -869.166, 2656.78, -2.4613, 3156.09, -154.88, 3027.43, 229.265, 2809.14, 453.655, 2701.21, 591.459, 2503.33, 674.166, 2262.8, 677.435, 2076.82, 866.459, 2087.8, 1163.41, 2004.87, 1206.09, 1952.43, 1153.65, 1925, 849.995, 1807.31, 718.898, 1613.41, 754.874, 1525.61, 829.874, 1243.9, 815.24, 1143.9, 918.288, 947.559, 939.02)
 
+[node name="CloudsShadow" type="Node2D" parent="."]
+z_index = 10
+position = Vector2(-2059, 396)
+scale = Vector2(1.135, 1.135)
+script = ExtResource("12_m64jw")
+
+[node name="Sprite2D" type="Sprite2D" parent="CloudsShadow"]
+visible = false
+position = Vector2(558, 222)
+scale = Vector2(8.099, 2.882)
+texture = ExtResource("13_uvrrf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="CloudsShadow"]
+material = SubResource("ShaderMaterial_xb1hj")
+position = Vector2(1617.91, -521.146)
+scale = Vector2(17.8965, 11.931)
+texture = ExtResource("14_qp8aa")
+
 [node name="Plane" parent="." instance=ExtResource("1_8kuoa")]
 z_index = 100
-position = Vector2(-1238, 731)
+position = Vector2(1311, 1442)
 
 [node name="Particles" type="Node2D" parent="Plane"]
 z_as_relative = false
@@ -441,7 +495,13 @@ offset_right = -509.0
 offset_bottom = 134.0
 scale = Vector2(1.56, 1.56)
 
-[node name="Polygon2D" type="Polygon2D" parent="Clouds"]
+[node name="TempClouds" type="Polygon2D" parent="Clouds"]
+position = Vector2(0, -264)
+invert_enabled = true
+invert_border = 4125.8
+polygon = PackedVector2Array(-4639.1, 312.077, -4862.18, -1075.74, -4097.44, -1737.28, -3233.97, -1806.51, -2485.9, -1610.36, -1380.77, -1794.97, -88.4615, -1946.9, 783.333, -1771.9, 1347.44, -1484.08, 2222.44, -1207.79, 2452.56, -816.128, 2579.49, -275.103, 2418.59, 81.9487, 2510.26, 588.359, 2706.41, 818.487, 2959.62, 1152.46, 2982.69, 1497.97, 2751.92, 2108.23, 2464.1, 2349.9, 1244.23, 2487.72, -3890.38, 1865.92)
+
+[node name="Polygon1" type="Polygon2D" parent="Clouds"]
 position = Vector2(0, -264)
 polygon = PackedVector2Array(-5904, -535, -4961, -323, -4440, 334, -3979, 953, -2733, 998, -1842, 1761, -943, 2033, 111.538, 1970.41, 1371, 2063, 2217, 2310, 3884.62, 2380.03, 4658.97, 1905.67, 5353.45, 1081.24, 5703, 118, 6430.17, -854.103, 8119.83, -354.965, 7669.87, 3696.05, -5999.36, 3515.28)
 
@@ -452,34 +512,34 @@ polygon = PackedVector2Array(-5946, -547, -4928, -359, -4775, -1650, -4519, -272
 z_index = 20
 
 [node name="Erwan" parent="Area" instance=ExtResource("8_gc275")]
-position = Vector2(2209, 1594)
+position = Vector2(1418, 1450)
 character = 2
 
 [node name="CollisionPolygon2D" parent="Area/Erwan" index="0"]
 position = Vector2(-40.0001, -20)
 scale = Vector2(1.09344, 1.09344)
-polygon = PackedVector2Array(-185, -58, -91, -143, 29, -151, 210.344, -125.292, 320.089, -27.4362, 307.286, 80.4796, 214, 105, 55, 156, -128, 127, -208, 77)
+polygon = PackedVector2Array(273.449, -30.1801, 201.2, -79.5654, 114.318, -107.916, 42.9838, -117.976, -24.6925, -118.891, -93.2834, -108.831, -157.302, -96.0272, -202.114, -66.7618, -235.952, -28.351, -251.5, -0.914551, -254.243, 30.1799, -250.585, 47.5563, 1.82922, 141.754, 85.0529, 103.344, 188.396, 92.369, 202.115, 68.5908, 144.498, 19.2054, 36.5819, 2.74365, 19.2056, -14.6327, 160.046, -41.1545)
 
 [node name="Indicator" parent="Area/Erwan" index="1"]
 polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
 
 [node name="Line2D" parent="Area/Erwan" index="2"]
-points = PackedVector2Array(-276, 20, -262, -48, -241, -102, -202, -148, -135, -188, -73, -199, 13, -195, 88, -187, 172, -164, 220, -127, 242, -76, 245, -25, 242, 34, 233, 76)
+points = PackedVector2Array(246, -54, 185, -97, 139, -113, 70, -130, -6, -142, -61, -143, -112, -137, -154, -130, -203, -119, -242, -101, -276, -70, -299, -37, -308, -12, -314, 21)
 
 [node name="TREVILLE" parent="Area" instance=ExtResource("8_gc275")]
-position = Vector2(2205, 1147)
+position = Vector2(2080, 1647)
 character = 16
 
 [node name="CollisionPolygon2D" parent="Area/TREVILLE" index="0"]
 position = Vector2(-40.0001, -20)
 scale = Vector2(1.09344, 1.09344)
-polygon = PackedVector2Array(-185, -58, -91, -143, 29, -151, 210.344, -125.292, 320.089, -27.4362, 307.286, 80.4796, 214, 105, 55, 156, -128, 127, -208, 77)
+polygon = PackedVector2Array(53.9584, -81.3944, 135.353, -109.745, 216.747, -124.378, 305.458, -118.891, 374.049, -74.0781, 408.802, -21.0345, 418.862, 38.4109, 404.229, 77.7363, 284.424, 105.173, 267.047, 64.9327, 292.655, 31.0946, 275.278, 4.57275, 242.354, 12.8037, 136.267, 85.9673, 85.0529, 81.3945, 128.036, 21.9491, 92.3693, 2.74365, -64.9327, 67.6764, -60.3601, 1.8291, 0.914673, -36.5818, 5.48743, -53.9581)
 
 [node name="Indicator" parent="Area/TREVILLE" index="1"]
 polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
 
 [node name="Line2D" parent="Area/TREVILLE" index="2"]
-points = PackedVector2Array(-276, 20, -262, -48, -241, -102, -202, -148, -135, -188, -73, -199, 13, -195, 88, -187, 172, -164, 220, -127, 242, -76, 245, -25, 242, 34, 233, 76)
+points = PackedVector2Array(-39, -76, 17, -109, 69, -128, 106, -141, 140, -149, 173, -154, 203, -157, 242, -159, 282, -154, 315, -138, 353, -112, 375, -87, 398, -53, 408, -17, 415, 18)
 
 [node name="ABANDONNED_VILLA" parent="Area" instance=ExtResource("8_gc275")]
 position = Vector2(-4105, -1602)
@@ -488,7 +548,7 @@ character = 8
 [node name="CollisionPolygon2D" parent="Area/ABANDONNED_VILLA" index="0"]
 position = Vector2(-40.0001, -20)
 scale = Vector2(1.09344, 1.09344)
-polygon = PackedVector2Array(-21.0344, -84.1381, 90.54, -75.9072, 218.576, -20.12, 234.124, 76.8218, 155.473, 131.694, 55, 156, -101.514, 160.96)
+polygon = PackedVector2Array(-9.14551, -82.309, 90.54, -75.9072, 218.576, -20.12, 234.124, 76.8218, 155.473, 131.694, 55, 156, -68.5908, 158.216)
 
 [node name="Indicator" parent="Area/ABANDONNED_VILLA" index="1"]
 polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
@@ -503,7 +563,7 @@ character = 1
 [node name="CollisionPolygon2D" parent="Area/IO" index="0"]
 position = Vector2(-40.0001, -20)
 scale = Vector2(1.09344, 1.09344)
-polygon = PackedVector2Array(-185, -58, -111.574, -132.609, -24.6926, -146.327, 127.122, -38.4109, 313.689, -1.8291, 307.286, 80.4796, 184.738, 142.669, 55, 156, -128, 127, -208, 77)
+polygon = PackedVector2Array(-171.751, -27.8022, -126.024, -80.8458, -16.2788, -118.342, 27.6194, -106.453, 30.363, -71.7003, 19.3884, -57.0676, -51.0315, -47.0076, -40.9714, -20.4858, 30.363, -32.3749, 87.9792, -19.5713, 193.152, 4.20691, 182.177, 49.0196, 215.101, 57.2505, 226.99, 5.12143, 302.897, 14.2669, 291.008, 46.276, 248.939, 80.1141, 131.877, 100.234, -4.38965, 108.465, -99.5024, 84.6869, -163.521, 48.105)
 
 [node name="Indicator" parent="Area/IO" index="1"]
 polygon = PackedVector2Array(-32, 31, -69, 2, -70, -35, -40, -66, 11, -67)
@@ -516,7 +576,7 @@ position = Vector2(711, -331)
 character = 4
 
 [node name="CollisionPolygon2D" parent="Area/IMAK" index="0"]
-polygon = PackedVector2Array(-84, 179, -295, 48, -254, -198, -45, -232, 219, -98, 279, 72, 280, 195, 49, 210)
+polygon = PackedVector2Array(-161, 158, -259, 91, -289, 26, -256, -172, -145, -227, -45, -232, 82, -179, 194, -115, 279, 72, 265, 170, 160, 215, -5, 228)
 
 [node name="Line2D" parent="Area/IMAK" index="2"]
 points = PackedVector2Array(-290, 27, -272, -104, -260, -158, -232, -197, -174, -216, -121, -231, -56, -234, 19, -209, 73, -179, 183, -116, 247, -17, 276, 110, 269, 155, 242, 193, 158, 216, -1, 228, -121, 180, -257, 98)

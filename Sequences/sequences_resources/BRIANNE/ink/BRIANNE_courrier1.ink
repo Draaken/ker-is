@@ -1,5 +1,5 @@
 LIST Adri = (default), has_letter, gave_letter
-
+/start
 ==IO==
 {not(Adri?has_letter):->start}
 

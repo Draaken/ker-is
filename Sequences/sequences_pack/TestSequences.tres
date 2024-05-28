@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="SequencesPack" load_steps=4 format=3 uid="uid://dh4um54v81ted"]
 
 [ext_resource type="Script" path="res://scripts/sequences/sequences_pack/sequences_pack.gd" id="1_4jpro"]
-[ext_resource type="Resource" uid="uid://bymjo7hckf04y" path="res://sequences/sequences_resources/BRIANNE/BRIANNE_materiauxIO.tres" id="2_t6jd7"]
-[ext_resource type="Resource" uid="uid://chuv8wqynoc0w" path="res://sequences/sequences_resources/IMAK_cassettes1.tres" id="3_a47ov"]
+[ext_resource type="Resource" uid="uid://dsi2nq5qjnve4" path="res://sequences/sequences_resources/IMAK/YOANN_bateau1.tres" id="2_yr4h2"]
+[ext_resource type="Resource" uid="uid://clolfcbnsjwsc" path="res://sequences/sequences_resources/TREVILLE/GWEN_tempete1.tres" id="3_xfhd6"]
 
 [resource]
 script = ExtResource("1_4jpro")
-sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_t6jd7"), ExtResource("3_a47ov")])
+sequences = Array[Resource("res://scripts/sequences/sequence_class.gd")]([ExtResource("2_yr4h2"), ExtResource("3_xfhd6")])

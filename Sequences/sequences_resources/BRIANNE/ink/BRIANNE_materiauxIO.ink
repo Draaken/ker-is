@@ -1,9 +1,9 @@
 LIST Brianne = (default), seen_adri, bored
 LIST Gwen = (default), seen_adri
-
+/start
 
 ===function DEBUG===
-    ~return ">>>DEBUG ERWAN_past1 local metrics: Brianne:{Brianne}  / Gwen:{Gwen}"
+    ~return ">>>DEBUG BRIANNE_materiauxIO local metrics: Brianne:{Brianne}  / Gwen:{Gwen}"
 
 
 
@@ -12,7 +12,7 @@ LIST Gwen = (default), seen_adri
 {DEBUG()}
 {Brianne?Brianne.default && Gwen?Gwen.default :->start}
 {Gwen?Gwen.default && Brianne?Brianne.seen_adri: {->no_delivery|}}
-{Gwen?Gwen.seen_adri && Brianne?Brianne.seen_adri:->delivery}
+{Gwen?Gwen.seen_adri && Brianne>=Brianne.seen_adri:->delivery}
 {Gwen?Gwen.seen_adri && Brianne?Brianne.default:->delivery_not_seen_brianne}
 
 =start
@@ -226,22 +226,22 @@ Tu te fous de ma gueule?
 /
 Oui. Elles vont très bien tes vitres, t'inquiète pas. J'ai bien fait attention.
 
-#c #brianne #speaking #default
+#c #brianne #speaking #smiling
 /
 #c #adriana #not_speaking #smiling
 /
 T'auras ma peau avec tes conneries… 
 Mais merci pour la livraison. Ca va bien nous être utile pour continuer les travaux.
 
-#c #brianne #not_speaking #default
+#c #brianne #not_speaking #smiling
 /
-#c #adriana #speaking #default
+#c #adriana #speaking #smiling
 /
 C'est pour les nouvelles maisons? Ca avance bien?
 
 #c #brianne #speaking #default
 /
-#c #adriana #not_speaking #smiling
+#c #adriana #not_speaking #default
 /
 Ca va à son rythme. Il y a des hauts et des bas, mais ça progresse. Phil nous aide beaucoup avec tout ce qu'il nous envoie.
 
@@ -251,13 +251,13 @@ Ca va à son rythme. Il y a des hauts et des bas, mais ça progresse. Phil nous 
 /
 Au fait, j'ai vu Gwen à Tréville. Elle m'a donné une lettre pour toi.
 
-#c #brianne #speaking #blush
+#c #brianne #speaking #shocked
 /
 #c #adriana #not_speaking #default
 /
 Oh. Merci… Je vais… je… merci Adriana.
 
-#c #brianne #not_speaking #default
+#c #brianne #not_speaking #blush
 /
 #c #adriana #speaking #smiling
 /
@@ -371,7 +371,7 @@ Salut Adriana, tu viens chercher les vitres pour l'Île Ouest? On a ça de prêt
 /
 #c #adriana #speaking #default
 /
-Je n'étais pas au courrant! Mais je peux les amener à l'Ile Ouest bien sûr.
+Je n'étais pas au courant! Mais je peux les amener à l'Ile Ouest bien sûr.
 
 #c #gwen #speaking #default
 /

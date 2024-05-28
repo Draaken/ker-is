@@ -1,16 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnhklcs1hke2d"]
+[gd_scene load_steps=12 format=3 uid="uid://cnhklcs1hke2d"]
 
 [ext_resource type="Script" path="res://DialogueScene/scripts/DialogueScene.cs" id="1_7mxpi"]
 [ext_resource type="Script" path="res://DialogueScene/scripts/local_sequence_manager.gd" id="2_3sw38"]
+[ext_resource type="AudioStream" uid="uid://dj8y5x8q6tqec" path="res://Sound/SFX/xylo1.mp3" id="2_ejj1e"]
 [ext_resource type="Texture2D" uid="uid://vh3q58kei4dq" path="res://DialogueScene/Characters/Sprites/adriana/default.png" id="3_c0atw"]
 [ext_resource type="Texture2D" uid="uid://gy5oupdmd8cl" path="res://DialogueScene/Backgrounds/IO.png" id="3_dot4k"]
-[ext_resource type="Texture2D" uid="uid://dtlw7qe1w2f77" path="res://DialogueScene/Characters/Sprites/yoann/default.png" id="4_q6q1s"]
-[ext_resource type="FontFile" uid="uid://duvcf31lgpfi8" path="res://ui/dialogue/font/CourierPrime-Regular.ttf" id="6_5kke6"]
+[ext_resource type="Texture2D" uid="uid://du8r1hof3lm4c" path="res://ui/dialogue/cartouche_test.png" id="6_4fhr7"]
+[ext_resource type="FontFile" uid="uid://cqt01krdxsvjh" path="res://ui/dialogue/font/CourierPrime/CourierPrime-Italic.ttf" id="6_o3f2j"]
+[ext_resource type="Texture2D" uid="uid://dabuocj4fs2vk" path="res://DialogueScene/Characters/Sprites/gwen/default.png" id="7_6kwth"]
+[ext_resource type="Texture2D" uid="uid://ke1yu7j56osq" path="res://ui/dialogue/speech_direction.png" id="7_6ypge"]
+[ext_resource type="FontFile" uid="uid://bw44coist0u8q" path="res://ui/dialogue/font/NotCourierSans/NotCourierSans-Bold.otf" id="10_n5pnd"]
+[ext_resource type="FontFile" uid="uid://duvcf31lgpfi8" path="res://ui/dialogue/font/CourierPrime/CourierPrime-Regular.ttf" id="11_sxvua"]
 
 [node name="DialogueScene" type="Control"]
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_7mxpi")
+
+[node name="RelationUpSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ejj1e")
 
 [node name="LocalSequenceManager" type="Node" parent="."]
 script = ExtResource("2_3sw38")
@@ -24,6 +32,32 @@ offset_bottom = 40.0
 [node name="BackgroundSprite" type="Sprite2D" parent="BackgroundContainer"]
 position = Vector2(960, 540)
 texture = ExtResource("3_dot4k")
+
+[node name="UIContainer" type="MarginContainer" parent="."]
+custom_minimum_size = Vector2(1920, 1080)
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+theme_override_constants/margin_top = 470
+
+[node name="NameContainer" type="MarginContainer" parent="UIContainer"]
+custom_minimum_size = Vector2(400, 160)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="UIContainer/NameContainer"]
+layout_mode = 2
+texture = ExtResource("6_4fhr7")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="UIContainer/NameContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.0235294, 0.0235294, 0.0235294, 1)
+theme_override_fonts/font = ExtResource("6_o3f2j")
+theme_override_font_sizes/font_size = 30
+text = "LOREM IPSUM "
 
 [node name="BlueFilter" type="ColorRect" parent="."]
 z_index = 10
@@ -44,46 +78,83 @@ theme_override_constants/margin_top = 70
 theme_override_constants/margin_right = 70
 theme_override_constants/margin_bottom = 70
 
-[node name="LeftSpriteContainer" type="MarginContainer" parent="ForegroundContainer"]
+[node name="stand" type="TextureRect" parent="ForegroundContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("3_c0atw")
+flip_h = true
+
+[node name="Sprites" type="MarginContainer" parent="ForegroundContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = -115
+
+[node name="LeftSpriteContainer" type="MarginContainer" parent="ForegroundContainer/Sprites"]
 custom_minimum_size = Vector2(500, 800)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 
-[node name="LeftSprite" type="Sprite2D" parent="ForegroundContainer/LeftSpriteContainer"]
+[node name="LeftSprite" type="Sprite2D" parent="ForegroundContainer/Sprites/LeftSpriteContainer"]
+scale = Vector2(0.8, 0.8)
 texture = ExtResource("3_c0atw")
 offset = Vector2(300, 500)
+flip_h = true
 
-[node name="RightSpriteContainer" type="MarginContainer" parent="ForegroundContainer"]
+[node name="RightSpriteContainer" type="MarginContainer" parent="ForegroundContainer/Sprites"]
 custom_minimum_size = Vector2(500, 800)
 layout_mode = 2
 size_flags_horizontal = 8
 size_flags_vertical = 8
 
-[node name="RightSprite" type="Sprite2D" parent="ForegroundContainer/RightSpriteContainer"]
-texture = ExtResource("4_q6q1s")
-offset = Vector2(200, 500)
+[node name="RightSprite" type="Sprite2D" parent="ForegroundContainer/Sprites/RightSpriteContainer"]
+scale = Vector2(0.8, 0.8)
+texture = ExtResource("7_6kwth")
+offset = Vector2(300, 500)
 
 [node name="DialogueContainer" type="HBoxContainer" parent="ForegroundContainer"]
 layout_mode = 2
 alignment = 1
 
 [node name="FillerL" type="MarginContainer" parent="ForegroundContainer/DialogueContainer"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 8
 
 [node name="TextBoxContainer" type="MarginContainer" parent="ForegroundContainer/DialogueContainer"]
 z_index = -5
-custom_minimum_size = Vector2(1200, 400)
 layout_mode = 2
 size_flags_vertical = 8
-theme_override_constants/margin_left = 30
-theme_override_constants/margin_top = 30
-theme_override_constants/margin_right = 30
-theme_override_constants/margin_bottom = 30
+
+[node name="TextureRect" type="TextureRect" parent="ForegroundContainer/DialogueContainer/TextBoxContainer"]
+layout_mode = 2
+texture = ExtResource("6_4fhr7")
+
+[node name="SpeechRight" type="TextureRect" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 675.0
+offset_top = -30.0
+offset_right = 754.0
+offset_bottom = 39.0
+texture = ExtResource("7_6ypge")
+
+[node name="SpeechLeft" type="TextureRect" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 271.0
+offset_top = -30.0
+offset_right = 350.0
+offset_bottom = 39.0
+texture = ExtResource("7_6ypge")
+flip_h = true
+
+[node name="TextureRect2" type="TextureRect" parent="ForegroundContainer/DialogueContainer/TextBoxContainer"]
+visible = false
+layout_mode = 2
+texture = ExtResource("7_6ypge")
+stretch_mode = 2
 
 [node name="ColorRect" type="ColorRect" parent="ForegroundContainer/DialogueContainer/TextBoxContainer"]
+visible = false
 layout_mode = 2
 color = Color(0.964706, 0.941176, 0.890196, 1)
 
@@ -92,33 +163,42 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_constants/margin_left = 100
+theme_override_constants/margin_top = -15
 theme_override_constants/margin_right = 100
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer"]
 layout_mode = 2
 
-[node name="Name" type="Label" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer"]
+[node name="NameMargin" type="MarginContainer" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = -50
+
+[node name="Name" type="Label" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer/NameMargin"]
 custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_fonts/font = ExtResource("10_n5pnd")
+theme_override_font_sizes/font_size = 28
 text = "LOREM IPSUM"
 autowrap_mode = 2
 text_overrun_behavior = 2
 uppercase = true
 
 [node name="Core" type="Label" parent="ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer"]
-custom_minimum_size = Vector2(800, 200)
+custom_minimum_size = Vector2(800, 150)
 layout_mode = 2
-theme_override_colors/font_color = Color(0.286275, 0.286275, 0.286275, 1)
-theme_override_fonts/font = ExtResource("6_5kke6")
+theme_override_colors/font_color = Color(0.294118, 0.294118, 0.294118, 1)
+theme_override_fonts/font = ExtResource("11_sxvua")
 theme_override_font_sizes/font_size = 29
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque aliquam, nisi viverra fermentum accumsan, diam lacus rutrum mi, ac varius ipsum odio sit amet sem. Phasellus maximus odio dolor, non porta est condimentum id. Vivamus fringilla faucibus leo vitae aliquam. Vestibulum suscipit nunc id mi congue, nec venenatis mauris consequat. Pellentesque pharetra diam vel nibh ullamcorper malesuada. Phasellus lacinia iaculis dolor in accumsan. Quisque gravida scelerisque mauris, non fringilla ipsum laoreet ut. Cras sed malesuada mauris, in varius erat. Etiam molestie odio quis gravida mollis. Vestibulum enim nunc, viverra quis nulla nec, posuere finibus urna. Nulla mattis condimentum dictum. Curabitur dolor dolor, porttitor ut purus dictum, blandit mollis odio. "
-vertical_alignment = 1
+text = "Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+Lorem ipsum dolor sit amet, cons ectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat.
+Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi.
+"
 autowrap_mode = 2
 text_overrun_behavior = 2
 
 [node name="FillerR" type="MarginContainer" parent="ForegroundContainer/DialogueContainer"]
+visible = false
+custom_minimum_size = Vector2(40, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 size_flags_vertical = 8

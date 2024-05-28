@@ -6,6 +6,7 @@
 [resource]
 script = ExtResource("1_q6oxi")
 conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+priority = 1
 one_use_only = false
 ink_file = ExtResource("1_8faj2")
 local_metrics = {}

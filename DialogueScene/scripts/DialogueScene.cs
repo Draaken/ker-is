@@ -9,13 +9,28 @@ using System.Text.RegularExpressions;
 public partial class DialogueScene : Control
 {
 
+	[Signal]
+    public delegate void DesactivatedEventHandler();
+
 	private bool Activated;
 	private int CharacterInt;
+	private bool skipIntro;
+
+	private string oldRightCharacter;
+	private string oldLeftCharacter;
 
 	private Node localSequenceManager;
+
+	private AudioStreamPlayer RelationUpSound;
+
 	private InkStory story;
 	private Sprite2D BackgroundSprite;
 	private MarginContainer Foreground;
+	private MarginContainer Sprites;
+	private HBoxContainer DialogueContainer;
+	private MarginContainer NameContainer;
+	private MarginContainer UIContainer;
+	private Label PlaceNameLabel;
 	private ColorRect BlueFilter;
 	private MarginContainer TrucGaucheDroite;
 	//ptdr je me déteste avec mes noms de variables olala, mais en gros c'est le margin container qui décide si la bulle de texte est allignée à gauche où à droite
@@ -23,12 +38,20 @@ public partial class DialogueScene : Control
 	private Label NameText;
 	private Sprite2D RightSprite;
 	private Sprite2D LeftSprite;
+	private TextureRect LeftSpeechIndicator;
+	private TextureRect RightSpeechIndicator;
 
+	private bool CanClick = true;
 
 	private List<String> GlobalTags;
 	private List<String> LineTags;
 	private List<List<String>> Characters;
 	//For each character contains: id, name, side
+
+	private Color BlueModulation;
+	private Color DefaultModulation;
+	private Color FadeBlackModulation;
+	private Color FadeModulation;
 
 //	private Texture2D brianne_default;
 //	private Texture2D adriana_default;
@@ -37,26 +60,42 @@ public partial class DialogueScene : Control
 	public override void _Ready()
 	{	
 		Activated = false;
+		
 
 		localSequenceManager = GetNode<Node>("LocalSequenceManager");
+
+		RelationUpSound = GetNode<AudioStreamPlayer>("RelationUpSound");
+
 		Foreground = GetNode<MarginContainer>("ForegroundContainer");
+		Sprites = Foreground.GetNode<MarginContainer>("Sprites");
+		DialogueContainer = Foreground.GetNode<HBoxContainer>("DialogueContainer");
+		UIContainer = GetNode<MarginContainer>("UIContainer");
+		NameContainer = UIContainer.GetNode<MarginContainer>("NameContainer");
+		PlaceNameLabel = NameContainer.GetNode<Label>("Label");
+
 		BlueFilter = GetNode<ColorRect>("BlueFilter");
-		BlueFilter.Visible = false;
 		BackgroundSprite = GetNode<Sprite2D>("BackgroundContainer/BackgroundSprite");
-		Foreground.Visible = false;
 
 		TrucGaucheDroite = GetNode<MarginContainer>("ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer");
 		CoreText = GetNode<Label>("ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer/Core");
-		NameText = GetNode<Label>("ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer/Name");
-		RightSprite = GetNode<Sprite2D>("ForegroundContainer/RightSpriteContainer/RightSprite");
-		LeftSprite = GetNode<Sprite2D>("ForegroundContainer/LeftSpriteContainer/LeftSprite");
+		NameText = GetNode<Label>("ForegroundContainer/DialogueContainer/TextBoxContainer/MarginContainer/VBoxContainer/NameMargin/Name");
+		RightSprite = GetNode<Sprite2D>("ForegroundContainer/Sprites/RightSpriteContainer/RightSprite");
+		LeftSprite = GetNode<Sprite2D>("ForegroundContainer/Sprites/LeftSpriteContainer/LeftSprite");
+		LeftSpeechIndicator = GetNode<TextureRect>("ForegroundContainer/DialogueContainer/TextBoxContainer/TextureRect/SpeechLeft");
+		RightSpeechIndicator = GetNode<TextureRect>("ForegroundContainer/DialogueContainer/TextBoxContainer/TextureRect/SpeechRight");
+
+		BlueModulation = new Color(0.7f,0.7f, 0.9f, 1.0f);
+		DefaultModulation = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+		FadeBlackModulation = new Color(0.0f,0.0f,0.0f,0.0f);
+		FadeModulation = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		
 
 //		brianne_default = GD.Load<Texture2D>("res://Characters/Sprites/brianne_default");
 //		adriana_default = GD.Load<Texture2D>("res://Characters/Sprites/adriana_default");
 
 	}
 
-	public override void _Input(InputEvent @event)
+	public override async void _Input(InputEvent @event)
 	{
 		if (@event.IsActionPressed ("left_click"))
 		{
@@ -64,6 +103,10 @@ public partial class DialogueScene : Control
 				if (story.CanContinue)
 				{
 					ContinueStory();
+					CanClick = false;
+					SceneTreeTimer timer = GetTree().CreateTimer(0.2);
+					await ToSignal(timer, "timeout");
+					CanClick = true;
 				}
 				else
 				{
@@ -72,73 +115,133 @@ public partial class DialogueScene : Control
 		}
 	}
 
-	private void SetUp(Resource Sequence, int Character)
+	private void SetUp(Resource Sequence, int Character, String placeName, bool skipIntroParam)
 	{
+
 		CharacterInt = Character;
+		PlaceNameLabel.Text = placeName;
+		skipIntro = skipIntroParam;
+
+		oldRightCharacter = "";
+		oldLeftCharacter = "";
+
+		Foreground.Show();
+		UIContainer.Show();
+
 		localSequenceManager.Call("load_sequence", Sequence, CharacterInt);
 	}
-	private void Activate(InkStory StoryScript, String CharacterString)
+	private async void Activate(InkStory StoryScript, String CharacterString)
 	{	
+		Tween tween;
+		SceneTreeTimer timer;
+		ResetAnimations();
+
 		Activated = true;
 		Visible = true;
+
+		timer = GetTree().CreateTimer(0.3);
+		await ToSignal(timer, "timeout");
+		
+		
+
+		tween = GetTree().CreateTween();
+		tween.TweenProperty(this, "modulate", DefaultModulation, 0.2);
+
 		story = StoryScript;
+		//story.Continue();
+		story.ResetCallstack();
 		story.ChoosePathString(CharacterString);
-
-		if (story.CurrentTags[0] == "knot")
-		{
-			SetUpBackground(RemovePrefix(story.CurrentTags[2]).Trim());
-		}
-
-		Timer timer = new() { WaitTime = 2.0, OneShot = true };
-		AddChild(timer);
-		timer.Start();
-		timer.Timeout += delegate
-		{
-			StartDialogue();
-			timer.QueueFree();
-		};
+		//story.Continue();
 		
-		
-		
+		StartDialogue();
 	}
 
-	private void Desactivate()
+	private void ResetAnimations()
 	{
+		this.Modulate = FadeModulation;
+		Foreground.Modulate = DefaultModulation;
+		BlueFilter.Modulate = FadeModulation;
+		Sprites.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		LeftSprite.Modulate = DefaultModulation;
+		RightSprite.Modulate = DefaultModulation;
+		DialogueContainer.Modulate = new Color(1.0f, 1.0f, 1.0f, 0.0f);
+		NameContainer.Modulate = FadeModulation;
+		
+	}
+	private async void Desactivate()
+	{
+		Tween tween;
+		SceneTreeTimer timer;
+
 		story.ResetCallstack();
 		Activated = false;
-		Foreground.Visible = false;
-		Timer timer = new() { WaitTime = 0.5, OneShot = true };
-		AddChild(timer);
-		timer.Start();
-		timer.Timeout += delegate
-		{	
-			Visible = false;
-			BlueFilter.Visible = false;
-		};
+		
+
+		tween = GetTree().CreateTween();
+		tween.TweenProperty(Foreground, "modulate", FadeBlackModulation, 0.1);
+		await ToSignal(tween, "finished");
+
+		timer = GetTree().CreateTimer(0.5);
+		await ToSignal(timer, "timeout");
+
+		tween = GetTree().CreateTween();
+		tween.TweenProperty(this, "modulate", FadeBlackModulation, 0.1);
+		await ToSignal(tween, "finished");
+		
+		Visible = false;
+
+		EmitSignal(SignalName.Desactivated);
 	}
 
-	private void StartDialogue()
+	private async void StartDialogue()
 	{	
-
+		Tween tween = GetTree().CreateTween();
 		
 		LeftSprite.Hide();
 		RightSprite.Hide();
 		
-		BlueFilter.Visible = true;
+		
 		if (story.CanContinue && Activated)
 			{
 				ContinueStory();
-				
 			}
-		Timer timer = new() { WaitTime = 0.5, OneShot = true };
-		AddChild(timer);
-		timer.Start();
-		timer.Timeout += delegate
-		{
-			GD.Print("showed foreground");
-			Foreground.Visible = true;
-			timer.QueueFree();
-		};
+
+		if (!skipIntro) {
+			SceneTreeTimer startTimer = GetTree().CreateTimer(0.7);
+			await ToSignal(startTimer, "timeout");
+
+			UIContainer.Show();
+			tween = GetTree().CreateTween();
+			tween.TweenProperty(NameContainer, "modulate",DefaultModulation , 0.3);
+			await ToSignal(tween, "finished");
+
+			SceneTreeTimer ForegroundTimer = GetTree().CreateTimer(2.0);
+			await ToSignal(ForegroundTimer, "timeout");
+			NameContainer.Modulate = FadeModulation;
+		}
+
+		//BlueFilter.Visible = true;
+			
+		Tween tweenFilter = GetTree().CreateTween();
+		tweenFilter.TweenProperty(BlueFilter, "modulate", DefaultModulation, 0.1);
+	
+		tween = GetTree().CreateTween();
+		tween.TweenProperty(Sprites, "modulate", new Color(1.0f, 1.0f, 1.0f, 1.0f), 0.1);
+		await ToSignal(tween, "finished");
+
+		//delay between the characters and the textbox appearance
+		SceneTreeTimer textBoxTimer = GetTree().CreateTimer(0.4);
+		await ToSignal(textBoxTimer, "timeout");
+		//
+
+		tween = GetTree().CreateTween();
+		tween.TweenProperty(DialogueContainer, "modulate", new Color(1.0f, 1.0f, 1.0f, 1.0f), 0.1);
+		await ToSignal(tween, "finished");
+			
+
+
+		GD.Print("showed foreground");
+		//Foreground.Visible = true;
 		
 		
 	}
@@ -173,6 +276,10 @@ public partial class DialogueScene : Control
 						//ChangeMetric, MetricString, ValueString, isAdding
 						ChangeMetric(substrings[1], substrings[2], Convert.ToBoolean(substrings[3]));
 						break;
+					case "GetMetric":
+						//GetMetric, MetricName
+						GetMetric(substrings[1]);
+						break;
 					case "UpdateMap":
 						//UpdateMap, ElementString, RemoveOrAdd
 						break;
@@ -194,6 +301,9 @@ public partial class DialogueScene : Control
 				{
 					SetUpBackground(RemovePrefix(story.CurrentTags[2]).Trim());
 					
+					LeftSprite.Hide();
+					RightSprite.Hide();
+
 					Characters = new List<List<String>>{};
 					int CharactersNumber = Int32.Parse(RemovePrefix(story.CurrentTags[3]));
 					for (int i=0; i< CharactersNumber; i++)
@@ -236,11 +346,11 @@ public partial class DialogueScene : Control
 	}
 	private void SetUpBackground(string background)
 	{
-		String dirPath = "DialogueScene/Backgrounds";
+		String dirPath = "res://DialogueScene/Backgrounds";
 		String spriteName = background +".png";
 		Texture2D sprite;
 
-		if (IsThereFile(dirPath, spriteName))
+		if (IsThereFile(dirPath, spriteName) || IsThereFile(dirPath, spriteName + ".remap") || IsThereFile(dirPath, spriteName + ".import"))
 		{
 			sprite = GD.Load<Texture2D>(dirPath + "/" + spriteName);
 		}
@@ -256,20 +366,34 @@ public partial class DialogueScene : Control
 		foreach (List<String> subCharacter in Characters)
 		{
 			if (story.CurrentTags[1] == subCharacter[0])
-			{
-				String dirPath = "DialogueScene/Characters/Sprites/" + subCharacter[1];
+			{	
+				String dirPath = "res://DialogueScene/Characters/Sprites/" + subCharacter[0];
 				String spriteName = story.CurrentTags[3] +".png";
+					
 				Texture2D sprite;
-
-				if (IsThereFile(dirPath, spriteName))
+				
+				if (story.CurrentTags[3] == "empty")
 				{
-					sprite = GD.Load<Texture2D>(dirPath + "/" + spriteName);
+					sprite = null;
 				}
+
 				else
 				{
-					GD.Print("Sprite not found, used default sprite isntead. Sprite name:"+spriteName);
-					sprite = GD.Load<Texture2D>(dirPath + "/default.png");
+					
+					
+
+					if (IsThereFile(dirPath, spriteName) || IsThereFile(dirPath, spriteName + ".remap") || IsThereFile(dirPath, spriteName + ".import"))
+					{
+						sprite = ResourceLoader.Load<Texture2D>(dirPath + "/" + spriteName);
+					}
+					else
+					{
+						GD.Print("Sprite not found, used default sprite isntead. Sprite name:"+spriteName);
+						sprite = ResourceLoader.Load<Texture2D>(dirPath + "/default.png");
+					}
 				}
+				
+				
 				
 				Sprite2D spriteNode;
 
@@ -278,30 +402,72 @@ public partial class DialogueScene : Control
 					spriteNode = LeftSprite;
 					spriteNode.FlipH = true;
 
+					if (oldLeftCharacter != subCharacter[0])
+					{
+						Tween tween = GetTree().CreateTween();
+						LeftSprite.Position = new Vector2(-800, LeftSprite.Position.Y);
+						/* tween.TweenProperty(LeftSprite, "position:x", -600, 0.2);
+						tween.Parallel().TweenProperty(LeftSprite, "modulate", FadeModulation, 0.2); */
+						
+						tween.TweenProperty(LeftSprite, "position:x", 0, 0.2);
+						/* tween.Parallel().TweenProperty(LeftSprite, "modulate", DefaultModulation, 0.1); */
+						oldLeftCharacter = subCharacter[0];
+					}
 				}
 				else
 				{	
 					spriteNode = RightSprite;
+
+					if (oldRightCharacter != subCharacter[0])
+					{
+						Tween tween = GetTree().CreateTween();
+						RightSprite.Position = new Vector2(800, RightSprite.Position.Y);
+						/* tween.TweenProperty(RightSprite, "position:x", 600, 2);
+						tween.Parallel().TweenProperty(RightSprite, "modulate", FadeModulation, 2); */
+						
+						tween.TweenProperty(RightSprite, "position:x", 0, 0.2);
+						/* tween.Parallel().TweenProperty(RightSprite, "modulate", DefaultModulation, 1); */
+						oldRightCharacter = subCharacter[0];
+					}
 				}
 
 				if (story.CurrentTags[2] == "speaking")
 				{
 					if (subCharacter[2] == "left")
 					{
-						TrucGaucheDroite.SizeFlagsHorizontal = Control.SizeFlags.ShrinkEnd;
+						//TrucGaucheDroite.SizeFlagsHorizontal = Control.SizeFlags.ShrinkEnd;
+						RightSpeechIndicator.Hide();
+						LeftSpeechIndicator.Show();
+
+						DialogueContainer.GetNode<Control>("FillerL").Hide();
+						DialogueContainer.GetNode<Control>("FillerR").Show();
+						
 					}
 					else
 					{
-						TrucGaucheDroite.SizeFlagsHorizontal = Control.SizeFlags.ShrinkBegin;
+						//TrucGaucheDroite.SizeFlagsHorizontal = Control.SizeFlags.ShrinkBegin;
+						LeftSpeechIndicator.Hide();
+						RightSpeechIndicator.Show();
+
+						DialogueContainer.GetNode<Control>("FillerR").Hide();
+						DialogueContainer.GetNode<Control>("FillerL").Show();
+						
 					}
 
 					NameText.Text = subCharacter[1];
 					spriteNode.ZIndex = 0;
+
+					Tween tween = GetTree().CreateTween();
+					tween.TweenProperty(spriteNode, "modulate", DefaultModulation, 0.1);
 					
 				}
 				else
 				{
+
 					spriteNode.ZIndex = -11;
+
+					Tween tween = GetTree().CreateTween();
+					tween.TweenProperty(spriteNode, "modulate", BlueModulation, 0.1);
 				}
 
 				spriteNode.Texture = sprite;
@@ -316,6 +482,11 @@ public partial class DialogueScene : Control
 	public void ChangeMetric(String Metric, String Value, bool isAdding = false)
 	{
 		localSequenceManager.Call("change_metric", Metric, Value, isAdding);
+		List<String> opinions = new List<string>() {"erwan_opinion", "brianne_opinion", "gwen_opinion", "yoann_opinion"};
+		if (opinions.Contains(Metric))
+		{
+			RelationUpSound.Play();			
+		}
 		//Node metricDatabase = GetNode<Node>("/root/metrics_database");
 		
 		//int int_value;
@@ -333,6 +504,10 @@ public partial class DialogueScene : Control
 		//}
 	}
 
+	public void GetMetric(string MetricName)
+	{
+		localSequenceManager.Call("get_metric", MetricName);
+	}
 	public void EndOfSequence()
 	{
 		localSequenceManager.Call("end_of_sequence", CharacterInt);

@@ -1,0 +1,16 @@
+[remap]
+
+importer="ink"
+type="Resource"
+uid="uid://c02vsdmbkt4n2"
+path="res://.godot/imported/ERWAN_intro.ink-edc0b3f023562f0a10fedf4c88cbd8b6.res"
+
+[deps]
+
+source_file="res://sequences/sequences_resources/story_sequences/ink/ERWAN_intro.ink"
+dest_files=["res://.godot/imported/ERWAN_intro.ink-edc0b3f023562f0a10fedf4c88cbd8b6.res"]
+
+[params]
+
+is_main_file=true
+compress=true

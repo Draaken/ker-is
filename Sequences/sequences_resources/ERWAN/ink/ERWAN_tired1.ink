@@ -1,3 +1,4 @@
+/start
 ==ERWAN==
 
 {~->A|->B|->C}

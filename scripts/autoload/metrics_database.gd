@@ -9,6 +9,7 @@ enum metrics {
 	zadio,
 	IO_building,
 	IO_building_state,
+	treville_food,
 	
 	cassettes,
 	
@@ -18,6 +19,7 @@ enum metrics {
 	gwen_opinion,
 	erwan_stress,
 	brianne_gwen_flirt,
+	erwan_opinion_yoann,
 	
 }
 const METRICS_NAME_BY_INDEX := {
@@ -27,6 +29,7 @@ const METRICS_NAME_BY_INDEX := {
 	metrics.zadio: "zadio",
 	metrics.IO_building: "IO_building",
 	metrics.IO_building_state: "IO_building_state",
+	metrics.treville_food: "treville_food",
 	
 	metrics.cassettes: "cassettes",
 	
@@ -36,6 +39,7 @@ const METRICS_NAME_BY_INDEX := {
 	metrics.gwen_opinion: "gwen_opinion",
 	metrics.erwan_stress: "erwan_stress",
 	metrics.brianne_gwen_flirt: "brianne_gwen_flirt",
+	metrics.erwan_opinion_yoann: "erwan_opinion_yoann",
 }
 
 const METRICS_BY_NAME := {
@@ -45,6 +49,7 @@ const METRICS_BY_NAME := {
 	"zadio": metrics.zadio,
 	"IO_building": metrics.IO_building,
 	"IO_building_state": metrics.IO_building_state,
+	"treville_food": metrics.treville_food,
 	
 	"cassettes": metrics.cassettes,
 	
@@ -54,6 +59,7 @@ const METRICS_BY_NAME := {
 	"gwen_opinion": metrics.gwen_opinion,
 	"erwan_stress": metrics.erwan_stress,
 	"brianne_gwen_flirt": metrics.brianne_gwen_flirt,
+	"erwan_opinion_yoann": metrics.erwan_opinion_yoann,
 }
 
 #dictionary that connect the metric to it's possible values
@@ -65,6 +71,7 @@ const METRIC_VALUES_BY_TYPE := {
 	metrics.zadio: zadio,
 	metrics.IO_building: "range",
 	metrics.IO_building_state: IO_building_state,
+	metrics.treville_food: treville_food,
 	
 	metrics.cassettes: cassettes,
 	
@@ -74,6 +81,7 @@ const METRIC_VALUES_BY_TYPE := {
 	metrics.gwen_opinion: "range",
 	metrics.erwan_stress: "range",
 	metrics.brianne_gwen_flirt: "range",
+	metrics.erwan_opinion_yoann: "range",
 }
 
 const METRICS_VALUES_BY_VALUES_STRING := {
@@ -82,6 +90,7 @@ const METRICS_VALUES_BY_VALUES_STRING := {
 	metrics.magneto_tech: magneto_tech_string,
 	metrics.zadio: zadio_string,
 	metrics.IO_building_state: IO_building_state_string,
+	metrics.treville_food: treville_food_string,
 	
 	metrics.cassettes: cassettes_string,
 }
@@ -95,6 +104,7 @@ var metrics_values_live = {
 	"zadio": zadio.NONE,
 	"IO_building": 0,
 	"IO_building_state": IO_building_state.GOING,
+	"treville_food": treville_food.NORMAL,
 	
 	"cassettes": 0,
 	
@@ -104,6 +114,7 @@ var metrics_values_live = {
 	"gwen_opinion": 0,
 	"erwan_stress": 0,
 	"brianne_gwen_flirt": 0,
+	"erwan_opinion_yoann": 0,
 }
 
 enum characters {
@@ -119,6 +130,14 @@ const characters_name = {
 	characters.IMAK: "IMAK",
 	characters.ABANDONNED_VILLA: "ABANDONNED_VILLA",
 	characters.TREVILLE: "TREVILLE",
+}
+
+const characters_player_name = {
+	characters.IO: "Ile Ouest",
+	characters.ERWAN: "Atelier d'Erwan",
+	characters.IMAK: "Ile Musicalement Autogérée de Kermevin",
+	characters.ABANDONNED_VILLA: "Villa abandonnée",
+	characters.TREVILLE: "Tréville-en-Mer",
 }
 
 enum storm {
@@ -188,6 +207,18 @@ const IO_building_state_string :={
 	"PAUSED": IO_building_state.PAUSED,
 	"RESTARTED": IO_building_state.RESTARTED,
 	"GOING": IO_building_state.GOING,
+}
+
+enum treville_food {
+	LOW=1,
+	NORMAL=2,
+	HIGH=4,
+}
+
+const treville_food_string :={
+	"LOW": treville_food.LOW,
+	"NORMAL": treville_food.NORMAL,
+	"HIGH": treville_food.HIGH,
 }
 
 enum cassettes {

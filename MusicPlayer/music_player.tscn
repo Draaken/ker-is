@@ -12,6 +12,7 @@ tracks = Array[AudioStream]([ExtResource("2_7u84a"), ExtResource("3_wel7w"), Ext
 
 [node name="Player" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_7u84a")
+volume_db = -6.895
 
 [node name="TrackDelay" type="Timer" parent="."]
 one_shot = true

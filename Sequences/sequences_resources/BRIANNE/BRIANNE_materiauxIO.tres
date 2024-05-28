@@ -12,13 +12,14 @@ metric_value = 0
 
 [sub_resource type="Resource" id="Resource_0kf7h"]
 script = ExtResource("1_2dgww")
-metric = 11
+metric = 13
 logic = 4
 metric_value = 90
 
 [resource]
 script = ExtResource("1_0utlc")
-conditions = Array[ExtResource("1_2dgww")]([SubResource("Resource_theyx"), SubResource("Resource_0kf7h")])
+conditions = [SubResource("Resource_theyx"), SubResource("Resource_0kf7h")]
+priority = 1
 one_use_only = true
 ink_file = ExtResource("1_rgyte")
 local_metrics = {}

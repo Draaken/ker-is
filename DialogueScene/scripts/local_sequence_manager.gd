@@ -10,7 +10,10 @@ func load_sequence(sequence, character_int):
 
 
 func end_of_sequence(character_int):
-	current_sequence.characters -= character_int
+	if current_sequence.characters & character_int:
+		current_sequence.characters -= character_int
+	else:
+		return
 	if current_sequence.characters == 0: 
 	#ie: it was the last character with storylets in the sequence
 	#if that's the case we remove the sequence from the active sequences list
@@ -21,8 +24,9 @@ func end_of_sequence(character_int):
 		#grave broken pour l'instant: ça fait aussi jouer le storylet de "get_priority"
 		#au lecteur de dialogue :(
 		
+		await $"..".Desactivated
 		for i in current_characters:
-			if current_characters & i+1:
+			if (current_characters & i+1) && ((i+1 & i))==0:
 				if current_sequence.get_priority(i+1) != -1:
 					can_be_continued = true
 					break
@@ -41,8 +45,10 @@ func remove_sequence():
 	#chose if the sequence is discarded or added back to the list of available sequences
 	if current_sequence.one_use_only:
 		SequencesManager.finished_sequences.sequences.append(current_sequence)
+		print("Removing sequence from active l: "+ current_sequence.resource_path.get_file())
 	else:
 		SequencesManager.available_sequences.sequences.append(current_sequence)
+		print("Adding sequence back to available list: "+ current_sequence.resource_path.get_file())
 
 
 func change_metric(metric_string, value_string, is_adding = false):
@@ -60,4 +66,8 @@ func change_metric(metric_string, value_string, is_adding = false):
 			metric_variable += new_value
 		else:
 			metric_variable = new_value
-		
+	print_debug("Change "+metric_string +": "+value_string)
+func get_metric(metric_string):
+	var value = MetricsDatabase.metrics_values_live[metric_string]
+	$"..".story.StoreVariable(metric_string, value)
+	print_debug("Get "+metric_string +": "+str(value))

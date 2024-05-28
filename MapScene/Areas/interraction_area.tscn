@@ -21,3 +21,6 @@ polygon = PackedVector2Array(2, 2, 0, 0, 2, -2, 4, 0)
 texture_repeat = 2
 texture = ExtResource("2_hvykc")
 texture_mode = 1
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=3 format=3 uid="uid://ddr8baklw6ni3"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_4kfqo"]
+[ext_resource type="Resource" uid="uid://c02vsdmbkt4n2" path="res://sequences/sequences_resources/story_sequences/ink/ERWAN_intro.ink" id="1_fy7rm"]
+
+[resource]
+script = ExtResource("1_4kfqo")
+conditions = Array[Resource("res://scripts/sequences/metrics/metric_condition.gd")]([])
+priority = 3
+one_use_only = true
+ink_file = ExtResource("1_fy7rm")
+local_metrics = {}
+starter_characters = 2
+default_characters = 0

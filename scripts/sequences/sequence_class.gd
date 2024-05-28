@@ -11,6 +11,7 @@ var default_characters: characters_enum :
 		default_characters = value
 		characters = value
 var characters : characters_enum
+@export var priority = 1
 @export var one_use_only = true
 @export var ink_file: InkStory
 @export var local_metrics = {}
@@ -106,8 +107,9 @@ func is_valid()->bool:
 	
 func set_up_storylet(character:int):
 	
+	ink_reader.story = ink_file
 	var character_string = MetricsDatabase.characters_name[character]
-	var is_there_content = ink_reader.SetUpStorylet(ink_file, character_string)
+	var is_there_content = ink_reader.SetUpStorylet(character_string)
 	return is_there_content
 	#return un booléen qui dit si le ink CanContinue, ou si le perso n'a pas de storylet dans les conditions actuelles
 	
@@ -121,11 +123,14 @@ func get_priority(character: int)->int:
 	var is_there_content = set_up_storylet(character)
 #simple comme bonjour:
 #suffit de retourner le tag de priority du storylet en cours
-
+	
+	if is_there_content == null:
+		print("Error: ink_reader returned null.")
+	
 	if is_there_content:
 		return ink_reader.GetPriority()
 	else:
-		print("No content for this character in this sequence:" + resource_path.get_file() + MetricsDatabase.characters_name[character])
+		print_debug("No content for this character in this sequence:" + resource_path.get_file() + MetricsDatabase.characters_name[character])
 		return -1
 	
 	

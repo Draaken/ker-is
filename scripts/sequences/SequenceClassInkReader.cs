@@ -10,18 +10,19 @@ using Ink.Runtime;
 public partial class SequenceClassInkReader : Resource
 {
     private InkStory story;
-    private string stateBackup;
+    public string stateBackup = null!;
 
-    private bool SetUpStorylet(InkStory Sequence, string Character)
+    private bool SetUpStorylet(string Character)
     {
-        story = Sequence;
-
-
-        stateBackup = story.SaveState();
+        
+        story.ResetCallstack();
+        GD.Print(Character);
         story.ChoosePathString(Character);
         if (story.CanContinue)
         {
+            GD.Print("Can continue");
             String storyText = story.Continue();
+            stateBackup = story.SaveState();
             while (storyText.StartsWith(">>>DEBUG"))
             {
                 GD.Print(storyText);

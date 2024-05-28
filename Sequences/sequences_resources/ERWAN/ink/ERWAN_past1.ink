@@ -1,6 +1,6 @@
 LIST Erwan = (default), annoyed, friendly
 LIST Adri = (default), solo_introspection, talked_about_erwan_being_annoyed
-
+/start
 ===function DEBUG===
     ~return ">>>DEBUG ERWAN_past1 local metrics: {Erwan} / {Adri}"
 

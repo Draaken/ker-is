@@ -1,0 +1,24 @@
+[gd_scene load_steps=2 format=3 uid="uid://0jeo10sr0lxj"]
+
+[ext_resource type="Texture2D" uid="uid://vnpqy1e0nvbk" path="res://ui/map/map.png" id="1_n7cfl"]
+
+[node name="Map" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BlueFilter" type="ColorRect" parent="."]
+z_index = 10
+z_as_relative = false
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0.0705882, 0.156863, 0.321569, 0.352941)
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 20
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_n7cfl")

@@ -8,6 +8,8 @@ using System.Text.RegularExpressions;
 
 public partial class DebugInkReader : VBoxContainer
 {
+	[Signal]
+    public delegate void DesactivatedEventHandler();
 	private bool Activated;
 	private int CharacterInt;
 	private Node localSequenceManager;
@@ -67,6 +69,7 @@ public partial class DebugInkReader : VBoxContainer
 	{
 		story.ResetCallstack();
 		Activated = false;
+		EmitSignal(SignalName.Desactivated);
 
 	}
 
@@ -109,6 +112,10 @@ public partial class DebugInkReader : VBoxContainer
 					case "ChangeMetric":
 						//>>ChangeMetric, MetricString, ValueString, isAdding
 						ChangeMetric(substrings[1], substrings[2], Convert.ToBoolean(substrings[3]));
+						break;
+					case "GetMetric":
+						//GetMetric, MetricName
+						GetMetric(substrings[1]);
 						break;
 					case "UpdateMap":
 						//>>UpdateMap, ElementString, RemoveOrAdd
@@ -194,7 +201,10 @@ public partial class DebugInkReader : VBoxContainer
 			//match le string au int et le mettre dans la variable de destination
 		//}
 	}
-
+	public void GetMetric(string MetricName)
+	{
+		localSequenceManager.Call("get_metric", MetricName);
+	}
 	public void EndOfSequence()
 	{
 		localSequenceManager.Call("end_of_sequence", CharacterInt);

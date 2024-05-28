@@ -1,5 +1,5 @@
 LIST Adri = (default), spoke_to_brianne, gave_olive
-
+/start
 ==IO==
 {Adri?default: ->start}
 {Adri?gave_olive:->second_visit}
@@ -57,7 +57,8 @@ Je voulais en donner un peu aux amis de Tréville. Tu peux en garder pour toi au
 /
 #c #adriana #speaking #default
 /
-Ah ok merci… et elle est déjà repartie. Bon, elle avais l'air très occupée.
+Ah ok merci… 
+Et elle est déjà repartie. Elle avait l'air occupée...
 ~Adri = spoke_to_brianne
 ->END
 
@@ -118,7 +119,7 @@ C'est bien ce qu'il me semblait. C'est toujours à moi de prendre les devants.
 /
 #c #adriana #not_speaking #default
 /
-Mais je ne veux pas d'impliquer dans tout ça Adri! Tu n'as pas à subir les histoires de deux vieilles dames.
+Mais je ne veux pas t'impliquer dans tout ça Adri! Tu n'as pas à subir les histoires de deux vieilles dames.
 
 #c #brianne #not_speaking #default
 /
@@ -204,7 +205,7 @@ Non je ne crois pas. Elle avais l'air très pressée.
 
 #c #gwen #speaking #default
 /
-#c #adriana #not_speaking #smiling
+#c #adriana #not_speaking #default
 /
 Je comprend. Ce n'est pas important... Merci beaucoup Adriana! Tu reviens bientôt?
 

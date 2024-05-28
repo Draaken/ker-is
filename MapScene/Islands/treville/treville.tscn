@@ -1,0 +1,749 @@
+[gd_scene load_steps=60 format=3 uid="uid://bq34fe5wjglj2"]
+
+[ext_resource type="Texture2D" uid="uid://diy646yipm3um" path="res://MapScene/Islands/treville/treville.png" id="1_sblas"]
+[ext_resource type="PackedScene" uid="uid://c6s870mcud4nb" path="res://MapScene/sprites/bush1/sprite_bush1.tscn" id="2_1tps6"]
+[ext_resource type="PackedScene" uid="uid://bmuucuelnnoq" path="res://MapScene/sprites/tree1/sprite_tree1.tscn" id="2_g1ilm"]
+[ext_resource type="Texture2D" uid="uid://cc76nn3r66xhf" path="res://MapScene/Islands/treville/ERWAN.png" id="2_va0ja"]
+[ext_resource type="Shader" path="res://MapScene/sprites/testdemort.gdshader" id="3_nkif5"]
+[ext_resource type="PackedScene" uid="uid://v02otoifo6ce" path="res://MapScene/sprites/tree2/sprite_tree2.tscn" id="4_k0p0x"]
+[ext_resource type="PackedScene" uid="uid://dkst1b8rcsuqk" path="res://MapScene/sprites/phone_pole.tscn" id="6_a1j6k"]
+[ext_resource type="Shader" path="res://MapScene/sprites/sunk.gdshader" id="7_cront"]
+[ext_resource type="Texture2D" uid="uid://cxmkal6h4bkhc" path="res://MapScene/sprites/phone_poles/phone_pole1b.png" id="8_478b7"]
+[ext_resource type="Texture2D" uid="uid://dvonlrf5bs6hp" path="res://MapScene/sprites/phone_poles/phone_pole1a.png" id="9_ylf36"]
+[ext_resource type="PackedScene" uid="uid://cvmfewd1xlpcn" path="res://MapScene/sprites/windmills/windmill1.tscn" id="10_7qira"]
+[ext_resource type="PackedScene" uid="uid://bnfg3a8y00ncw" path="res://MapScene/sprites/windmills/windmill2.tscn" id="11_bl8ix"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hbsnq"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(890, 795)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ni3o0"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(857, 803)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g3wjh"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(824, 812)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xc68t"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(988, 746)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ps7lk"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(968, 730)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ag1rh"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1069, 779)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m18ov"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1002, 856)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gpbwu"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1038, 861)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y10uo"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1071, 867)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7gg0x"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(656, 756)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_irai4"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(680, 766)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qo3hx"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(608, 717)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yu2c7"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(638, 729)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lo8bn"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(538, 729)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_potp2"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1024, 687)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c042d"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1129, 759)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wjlxp"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1150, 741)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w2ria"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1088, 887)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dxric"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1090, 910)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekdw7"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(938, 852)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x6j0a"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(924, 818)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jrjud"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(635, 540)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wbtb1"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 50.0
+shader_parameter/offset = Vector2(1389, 897)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7vyk7"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(453, 704)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3qyn4"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(418, 685)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mbdck"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(462, 694)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t3jew"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1618, 851)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rorlq"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1208, 820)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3b3cy"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1675, 856)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aji1u"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(679, 719)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fjww4"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(794, 544)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtylw"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1155, 803)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lqowf"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(579, 703)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lsthv"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(917, 769)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yvoww"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(593, 679)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3vc6s"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(589, 733)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qscg0"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1306, 857)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6b42d"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(960, 843)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f3uio"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1112, 893)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o8xgq"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1131, 808)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txwq0"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(1239, 829)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtkja"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(639, 533)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ulqoi"]
+resource_local_to_scene = true
+shader = ExtResource("3_nkif5")
+shader_parameter/speedX = 0.3
+shader_parameter/disX = 50.0
+shader_parameter/speedY = 0.3
+shader_parameter/disY = 30.0
+shader_parameter/offset = Vector2(660, 530)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gl47m"]
+resource_local_to_scene = true
+shader = ExtResource("7_cront")
+shader_parameter/depth_base = 0.34
+shader_parameter/distortion_factor = 0.3
+shader_parameter/new_color = Color(0.352941, 0.819608, 0.988235, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lflsc"]
+resource_local_to_scene = true
+shader = ExtResource("7_cront")
+shader_parameter/depth_base = 0.34
+shader_parameter/distortion_factor = 0.3
+shader_parameter/new_color = Color(0.352941, 0.819608, 0.988235, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g6mbe"]
+resource_local_to_scene = true
+shader = ExtResource("7_cront")
+shader_parameter/depth_base = 0.565
+shader_parameter/distortion_factor = 0.3
+shader_parameter/new_color = Color(0.352941, 0.819608, 0.988235, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3wv4"]
+resource_local_to_scene = true
+shader = ExtResource("7_cront")
+shader_parameter/depth_base = 0.565
+shader_parameter/distortion_factor = 0.3
+shader_parameter/new_color = Color(0.352941, 0.819608, 0.988235, 1)
+
+[node name="Treville" type="Node2D"]
+
+[node name="Treville" type="Sprite2D" parent="."]
+position = Vector2(965, 540)
+texture = ExtResource("1_sblas")
+
+[node name="Sprites" type="Node2D" parent="."]
+y_sort_enabled = true
+
+[node name="Erwan" type="Sprite2D" parent="Sprites"]
+y_sort_enabled = true
+position = Vector2(753, 652)
+texture = ExtResource("2_va0ja")
+
+[node name="bushes" type="Node2D" parent="Sprites"]
+y_sort_enabled = true
+
+[node name="Bush1" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_hbsnq")
+position = Vector2(890, 795)
+scale = Vector2(1.06027, 1.06027)
+frame = 1
+
+[node name="Bush2" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_ni3o0")
+position = Vector2(857, 803)
+scale = Vector2(0.958625, 0.958625)
+
+[node name="Bush3" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_g3wjh")
+position = Vector2(824, 812)
+scale = Vector2(0.910716, 0.910716)
+frame = 2
+
+[node name="Bush4" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_xc68t")
+position = Vector2(988, 746)
+scale = Vector2(1.00807, 1.00807)
+frame = 1
+
+[node name="Bush5" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_ps7lk")
+position = Vector2(968, 730)
+scale = Vector2(1.2, 1.2)
+frame = 1
+
+[node name="Bush6" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_ag1rh")
+position = Vector2(1069, 779)
+scale = Vector2(1.09533, 1.09533)
+
+[node name="Bush7" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_m18ov")
+position = Vector2(1002, 856)
+scale = Vector2(1.02203, 1.02203)
+frame = 0
+
+[node name="Bush8" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_gpbwu")
+position = Vector2(1038, 861)
+scale = Vector2(0.941225, 0.941225)
+frame = 2
+
+[node name="Bush9" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_y10uo")
+position = Vector2(1071, 867)
+scale = Vector2(0.937713, 0.937713)
+frame = 2
+
+[node name="Bush10" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_7gg0x")
+position = Vector2(656, 756)
+scale = Vector2(1.07162, 1.07162)
+
+[node name="Bush11" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_irai4")
+position = Vector2(680, 766)
+scale = Vector2(1.04006, 1.04006)
+frame = 0
+
+[node name="Bush12" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_qo3hx")
+position = Vector2(608, 717)
+scale = Vector2(0.86669, 0.86669)
+frame = 0
+
+[node name="Bush13" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_yu2c7")
+position = Vector2(638, 729)
+scale = Vector2(0.929619, 0.929619)
+frame = 2
+
+[node name="Bush14" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_lo8bn")
+position = Vector2(538, 729)
+scale = Vector2(0.971819, 0.971819)
+frame = 1
+
+[node name="Bush15" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_potp2")
+position = Vector2(1024, 687)
+scale = Vector2(1.07484, 1.07484)
+frame = 2
+
+[node name="Bush16" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_c042d")
+position = Vector2(1129, 759)
+scale = Vector2(1.13914, 1.13914)
+frame = 1
+
+[node name="Bush17" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_wjlxp")
+position = Vector2(1150, 741)
+scale = Vector2(1.2, 1.2)
+
+[node name="Bush18" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_w2ria")
+position = Vector2(1088, 887)
+scale = Vector2(1.10766, 1.10766)
+frame = 2
+
+[node name="Bush19" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_dxric")
+position = Vector2(1090, 910)
+scale = Vector2(1.01937, 1.01937)
+frame = 2
+
+[node name="Bush20" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_ekdw7")
+position = Vector2(938, 852)
+scale = Vector2(1.04832, 1.04832)
+frame = 2
+
+[node name="Bush21" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_x6j0a")
+position = Vector2(924, 818)
+scale = Vector2(0.966577, 0.966577)
+frame = 1
+
+[node name="Bush22" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_jrjud")
+position = Vector2(635, 540)
+scale = Vector2(0.844332, 0.844332)
+frame = 0
+
+[node name="Bush23" parent="Sprites/bushes" instance=ExtResource("2_1tps6")]
+material = SubResource("ShaderMaterial_wbtb1")
+position = Vector2(1389, 897)
+scale = Vector2(1.02704, 1.02704)
+frame = 0
+
+[node name="trees" type="Node2D" parent="Sprites"]
+y_sort_enabled = true
+
+[node name="Tree16" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_7vyk7")
+position = Vector2(453, 704)
+scale = Vector2(0.842348, 0.842348)
+frame = 1
+
+[node name="Tree17" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_3qyn4")
+position = Vector2(418, 685)
+scale = Vector2(0.848862, 0.848862)
+
+[node name="Tree18" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_mbdck")
+position = Vector2(462, 694)
+scale = Vector2(1.12257, 1.12257)
+
+[node name="Tree19" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_t3jew")
+position = Vector2(1618, 851)
+scale = Vector2(0.907749, 0.907749)
+
+[node name="Tree20" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_rorlq")
+position = Vector2(1208, 820)
+scale = Vector2(1.10204, 1.10204)
+frame = 1
+
+[node name="Tree21" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_3b3cy")
+position = Vector2(1675, 856)
+scale = Vector2(1.00083, 1.00083)
+frame = 1
+
+[node name="Tree1" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_aji1u")
+position = Vector2(679, 719)
+scale = Vector2(1.07, 1.07)
+frame = 1
+
+[node name="Tree8" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_fjww4")
+position = Vector2(794, 544)
+scale = Vector2(1.01, 1.01)
+frame = 1
+
+[node name="Tree2" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_jtylw")
+position = Vector2(1155, 803)
+scale = Vector2(1.00671, 1.00671)
+frame = 2
+
+[node name="Tree3" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_lqowf")
+position = Vector2(579, 703)
+scale = Vector2(0.840875, 0.840875)
+frame = 2
+
+[node name="Tree4" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_lsthv")
+position = Vector2(917, 769)
+scale = Vector2(1.04409, 1.04409)
+
+[node name="Tree5" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_yvoww")
+position = Vector2(593, 679)
+scale = Vector2(1.06556, 1.06556)
+
+[node name="Tree10" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_3vc6s")
+position = Vector2(589, 733)
+scale = Vector2(1.02123, 1.02123)
+frame = 2
+
+[node name="Tree12" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_qscg0")
+position = Vector2(1306, 857)
+scale = Vector2(0.916047, 0.916047)
+frame = 2
+
+[node name="Tree13" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_6b42d")
+position = Vector2(960, 843)
+scale = Vector2(0.937894, 0.937894)
+frame = 2
+
+[node name="Tree14" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_f3uio")
+position = Vector2(1112, 893)
+scale = Vector2(0.8, 0.8)
+frame = 1
+
+[node name="Tree15" parent="Sprites/trees" instance=ExtResource("4_k0p0x")]
+material = SubResource("ShaderMaterial_o8xgq")
+position = Vector2(1131, 808)
+scale = Vector2(1.0091, 1.0091)
+frame = 2
+
+[node name="Tree22" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_txwq0")
+position = Vector2(1239, 829)
+scale = Vector2(1.1745, 1.1745)
+frame = 1
+
+[node name="Tree6" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_rtkja")
+position = Vector2(639, 533)
+scale = Vector2(1.0941, 1.0941)
+frame = 1
+
+[node name="Tree7" parent="Sprites/trees" instance=ExtResource("2_g1ilm")]
+material = SubResource("ShaderMaterial_ulqoi")
+position = Vector2(660, 530)
+scale = Vector2(1.00389, 1.00389)
+frame = 1
+
+[node name="pilone" type="Node2D" parent="Sprites"]
+y_sort_enabled = true
+
+[node name="PhonePole2" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = SubResource("ShaderMaterial_gl47m")
+position = Vector2(1233, 1127)
+texture = ExtResource("8_478b7")
+
+[node name="PhonePole4" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = SubResource("ShaderMaterial_lflsc")
+position = Vector2(1404, 720)
+
+[node name="PhonePole" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = SubResource("ShaderMaterial_g6mbe")
+position = Vector2(1270, 991)
+
+[node name="PhonePole3" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = SubResource("ShaderMaterial_o3wv4")
+position = Vector2(1379, 784)
+texture = ExtResource("9_ylf36")
+
+[node name="PhonePole5" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = null
+position = Vector2(1458, 908)
+texture = ExtResource("8_478b7")
+
+[node name="PhonePole6" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = null
+position = Vector2(1529, 778)
+flip_h = true
+
+[node name="PhonePole7" parent="Sprites/pilone" instance=ExtResource("6_a1j6k")]
+material = null
+position = Vector2(1344, 826)
+texture = ExtResource("9_ylf36")
+flip_h = true
+
+[node name="windmill2" parent="Sprites" instance=ExtResource("11_bl8ix")]
+y_sort_enabled = true
+position = Vector2(835, 557)
+
+[node name="windmill3" parent="Sprites" instance=ExtResource("11_bl8ix")]
+y_sort_enabled = true
+position = Vector2(814, 545)
+
+[node name="windmill4" parent="Sprites" instance=ExtResource("11_bl8ix")]
+position = Vector2(860, 588)
+
+[node name="windmill1" parent="Sprites" instance=ExtResource("10_7qira")]
+position = Vector2(1569, 880)

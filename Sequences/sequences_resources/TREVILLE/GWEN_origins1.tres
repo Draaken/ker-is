@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="SequenceClass" load_steps=5 format=3 uid="uid://du6igdoggwsj8"]
+
+[ext_resource type="Script" path="res://scripts/sequences/sequence_class.gd" id="1_3qraf"]
+[ext_resource type="Script" path="res://scripts/sequences/metrics/metric_condition.gd" id="1_4b1ch"]
+[ext_resource type="Resource" uid="uid://dqolmdamclwx3" path="res://sequences/sequences_resources/TREVILLE/ink/GWEN_origins1.ink" id="2_meg08"]
+
+[sub_resource type="Resource" id="Resource_anfyv"]
+script = ExtResource("1_4b1ch")
+metric = 11
+logic = 2
+metric_value = 20
+
+[resource]
+script = ExtResource("1_3qraf")
+conditions = [SubResource("Resource_anfyv")]
+priority = 1
+one_use_only = true
+ink_file = ExtResource("2_meg08")
+local_metrics = {}
+starter_characters = 16
+default_characters = 16

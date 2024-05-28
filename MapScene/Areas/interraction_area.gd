@@ -11,9 +11,10 @@ func _ready():
 	DialogueScene = get_node("/root/Main/UI/DialogueScene")
 	self.interaction_started.connect(DialogueScene.SetUp)
 
-func interraction_start():
+func interraction_start(skip_intro = false):
 	var sequence = SequencesManager.choose_sequence_to_play(character)
-	interaction_started.emit(sequence, character)
+	var place_name = MetricsDatabase.characters_player_name[character]
+	interaction_started.emit(sequence, character, place_name, skip_intro)
 
 
 func interraction_stop():
@@ -40,3 +41,11 @@ func _get_property_list() -> Array[Dictionary]:
 	})
 	notify_property_list_changed()
 	return ret
+
+
+func _on_mouse_entered():
+	Input.set_default_cursor_shape(Input.CURSOR_WAIT)
+
+
+func _on_mouse_exited():
+	Input.set_default_cursor_shape(Input.CURSOR_ARROW)
