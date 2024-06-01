@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://c0ve03k2b0i8i" path="res://MapScene/PlaceHolderMap/2.png" id="4_prmff"]
 [ext_resource type="Texture2D" uid="uid://cv8i5tipwblj8" path="res://MapScene/PlaceHolderMap/1.png" id="5_fpg0s"]
 [ext_resource type="PackedScene" uid="uid://bq34fe5wjglj2" path="res://MapScene/Islands/treville/treville.tscn" id="6_a8c72"]
+[ext_resource type="Texture2D" uid="uid://c54gojjdvpiml" path="res://MapScene/Islands/guerillac/guerillac.png" id="7_16kvf"]
 [ext_resource type="PackedScene" uid="uid://dmasthyopfrgg" path="res://MapScene/Areas/interraction_area.tscn" id="8_gc275"]
 [ext_resource type="PackedScene" uid="uid://cd63sh3ytn6md" path="res://MapScene/Islands/latreille/la_treille.tscn" id="8_xhbjj"]
 [ext_resource type="PackedScene" uid="uid://bmuucuelnnoq" path="res://MapScene/sprites/tree1/sprite_tree1.tscn" id="9_gkxwe"]
@@ -18,7 +19,6 @@
 [ext_resource type="PackedScene" uid="uid://c6s870mcud4nb" path="res://MapScene/sprites/bush1/sprite_bush1.tscn" id="11_c0ap3"]
 [ext_resource type="Script" path="res://MapScene/Particles/CloudsShadow.gd" id="12_m64jw"]
 [ext_resource type="Shader" path="res://MapScene/Particles/cloud_shadow.gdshader" id="13_o58yb"]
-[ext_resource type="Texture2D" uid="uid://c4ulastvi81j5" path="res://MapScene/Particles/cloud_noise.tres" id="13_uvrrf"]
 [ext_resource type="Texture2D" uid="uid://cn3enxkc64qrn" path="res://DialogueScene/Backgrounds/TREVILLE.png" id="14_qp8aa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1aepq"]
@@ -232,6 +232,11 @@ scale = Vector2(0.833333, 0.833333)
 [node name="Treville" parent="PlaceholderMap/Islands" instance=ExtResource("6_a8c72")]
 position = Vector2(831.667, 1050.83)
 
+[node name="Guerillac" type="Sprite2D" parent="PlaceholderMap/Islands"]
+position = Vector2(2197.5, -1221.67)
+scale = Vector2(0.833333, 0.833333)
+texture = ExtResource("7_16kvf")
+
 [node name="3" type="Sprite2D" parent="PlaceholderMap/Islands"]
 visible = false
 position = Vector2(1810.83, 1752.5)
@@ -295,63 +300,62 @@ y_sort_enabled = true
 [node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_1aepq")
 position = Vector2(-175.833, -78.5)
-scale = Vector2(1.09193, 1.09193)
-frame = 1
+scale = Vector2(1.13548, 1.13548)
 
 [node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_pxeou")
 position = Vector2(-250, -116.833)
-scale = Vector2(0.960212, 0.960212)
+scale = Vector2(1.07177, 1.07177)
+frame = 1
 
 [node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_oi0pj")
 position = Vector2(-243.333, -73.5)
-scale = Vector2(1.05745, 1.05745)
+scale = Vector2(0.84049, 0.84049)
 
 [node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_gkxwe")]
 material = SubResource("ShaderMaterial_lxaet")
 position = Vector2(-214.167, -112.667)
-scale = Vector2(1.14488, 1.14488)
+scale = Vector2(0.960822, 0.960822)
 frame = 1
 
 [node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ajeby")
 position = Vector2(-196.667, -56.8334)
-scale = Vector2(0.850076, 0.850076)
+scale = Vector2(0.963782, 0.963782)
 
 [node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_34ubk")
 position = Vector2(-101.667, -22.6667)
-scale = Vector2(1.2, 1.2)
-frame = 1
+scale = Vector2(1.05865, 1.05865)
 
 [node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_ic4ej")
 position = Vector2(-213.333, -92.6667)
-scale = Vector2(0.956451, 0.956451)
-frame = 2
+scale = Vector2(1.00407, 1.00407)
 
 [node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_eadu5")
 position = Vector2(-263.333, -96)
-scale = Vector2(0.950428, 0.950428)
-frame = 2
+scale = Vector2(0.888172, 0.888172)
+frame = 1
 
 [node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_cs85y")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.109, 1.109)
-frame = 1
+scale = Vector2(0.902834, 0.902834)
+frame = 0
 
 [node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_yrkbi")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(0.868609, 0.868609)
+scale = Vector2(0.872323, 0.872323)
+frame = 1
 
 [node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_c0ap3")]
 material = SubResource("ShaderMaterial_bb1c0")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(0.96144, 0.96144)
+scale = Vector2(0.960769, 0.960769)
 
 [node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]
 position = Vector2(-1460, 1098.33)
@@ -431,16 +435,10 @@ color = Color(0.588235, 0.521569, 0.211765, 1)
 polygon = PackedVector2Array(872.559, 854.264, -85.3656, 940.239, -604.876, 1173.78, -1640.83, 1342.5, -2160.97, 1190.24, -2411.58, 1243.9, -2427.43, 1172.56, -2313.41, 1087.19, -2370.12, 985.971, -2309.14, 720.728, -2168.9, 426.216, -1934.75, 89.6316, -1954.26, -178.661, -2207.92, -442.074, -2046.95, -622.562, -1673.17, -679.269, -799.388, -865.244, -215.853, -741.464, -55.4876, -478.05, -49.9999, -214.026, 570.121, -59.1487, 585.364, -668.903, 239.024, -1020.73, -84.9636, -869.669, -773.779, -973.781, -1698.78, -803.659, -2430, -860.833, -2431.7, -1000.61, -1898.17, -1056.1, -1898.17, -1167.07, -2523.16, -1218.9, -2520.12, -1290.85, -1970.73, -1320.12, -1479.26, -1445.73, -566.462, -1368.9, 1228.33, -1457.5, 2853.33, -869.166, 2656.78, -2.4613, 3156.09, -154.88, 3027.43, 229.265, 2809.14, 453.655, 2701.21, 591.459, 2503.33, 674.166, 2262.8, 677.435, 2076.82, 866.459, 2087.8, 1163.41, 2004.87, 1206.09, 1952.43, 1153.65, 1925, 849.995, 1807.31, 718.898, 1613.41, 754.874, 1525.61, 829.874, 1243.9, 815.24, 1143.9, 918.288, 947.559, 939.02)
 
 [node name="CloudsShadow" type="Node2D" parent="."]
-z_index = 10
+z_index = 100
 position = Vector2(-2059, 396)
 scale = Vector2(1.135, 1.135)
 script = ExtResource("12_m64jw")
-
-[node name="Sprite2D" type="Sprite2D" parent="CloudsShadow"]
-visible = false
-position = Vector2(558, 222)
-scale = Vector2(8.099, 2.882)
-texture = ExtResource("13_uvrrf")
 
 [node name="Sprite2D2" type="Sprite2D" parent="CloudsShadow"]
 material = SubResource("ShaderMaterial_xb1hj")
@@ -449,7 +447,7 @@ scale = Vector2(17.8965, 11.931)
 texture = ExtResource("14_qp8aa")
 
 [node name="Plane" parent="." instance=ExtResource("1_8kuoa")]
-z_index = 100
+z_index = 50
 position = Vector2(1311, 1442)
 
 [node name="Particles" type="Node2D" parent="Plane"]

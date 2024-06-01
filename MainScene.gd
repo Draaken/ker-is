@@ -20,7 +20,6 @@ func _ready():
 
 func play_intro():
 	$UI/Intro.show()
-	$UI/Intro.play()
 	$UI/TransitionScreen.show()
 	await $UI/Intro.intro_finished
 	
@@ -53,7 +52,11 @@ func _unhandled_input(event):
 		return
 		
 func pause():
-	$UI/PauseMenu.enter_screen()
+	$Pause/PauseMenu.enter_screen()
+	is_paused = true
+	$UI/Intro.is_picking_click = false
 	
 func unpause():
-	$UI/PauseMenu.exit_screen()
+	$Pause/PauseMenu.exit_screen()
+	is_paused = false
+	$UI/Intro.is_picking_click = true

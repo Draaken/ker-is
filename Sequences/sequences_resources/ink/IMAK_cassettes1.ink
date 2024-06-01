@@ -19,7 +19,7 @@ LIST Adri = (default), knows_house, visited_house, talked_house_with_yoann
 {Yoann?gave_tape && Adri?visited_house && Erwan?received_tape && not(Yoann?knows_erwan_is_repairing): ->visited_house_seen_erwan}   
 
 
-{Erwan.received_tape && not(Yoann?knows_erwan_is_repairing): ->seen_erwan} //parler à Yoann pendant qu'Erwan répare le lecteur
+{Erwan?received_tape && not(Yoann?knows_erwan_is_repairing): ->seen_erwan} //parler à Yoann pendant qu'Erwan répare le lecteur
 
 {not(Yoann?received_tape_player) && Erwan.gave_tape_player:->erwan_gave_tape_player}
 //amener le lecteur cassette à Yoann ->fin de la séquence pour Yoann
@@ -174,7 +174,7 @@ Hm. Bon, et alors, t'as trouvé des choses intéressantes là bas?
 #c #adriana #not_speaking #default
 /
 Ouais, il devait avoir un musicos dans la famille, parce qu'il y avais du matos partout. Des instruments, des posters, et beaucoup de cassettes. Mais bon, une bonne parti avais pris l'eau. 
-Et puis y avais tout ce bordel électronique aussi, pour enregistrer des cassettes je pense. Maintenant que j'y pense, peut être que ça intéresserait Erwan. 
+Et puis y avais tout ce bordel aussi, pour enregistrer des cassettes je crois. Maintenant que j'y pense, peut être que ça intéresserait Erwan. 
 Ca ce trouve il pourrait même refaire fonctionner des trucs. Moi j'ai essayé de jeter un oeil mais je comprend rien. Tu pourrais lui amener?
 
 #c #yoann #not_speaking #default
@@ -326,11 +326,11 @@ Pas de soucis! Prend ton temps Adri.
 /
 Sinon, j'ai montré le matos de cassettes à Erwan! Il était hyper content. Il va essayer de voir s'il peut réparer des choses. Je repasserais te voir si j'ai des nouvelles.
 
-#c #yoann #not_speaking #smiling
+#c #yoann #speaking #smiling
 /
-#c #adriana #speaking #smiling
+#c #adriana #not_speaking #smiling
 /
-Ah trop cool, je m'écouterais bien des cassettes. Il doit avoir plein de trésors planqués. Tiens moi au courrant!
+Ah trop cool, j'ai trop envie d'écouter tout ça maintenant! Tiens moi au courrant!
 ~Adri = talked_house_with_yoann
 ~Yoann = knows_erwan_is_repairing
 
@@ -541,7 +541,8 @@ Yo Erwan. J'ai vu Yoann, il voulait te passer ça. C'est du matos de musique, ou
 /
 #c #adriana #not_speaking #default
 /
-Oh wow, c'est génial. Ca fait longtemps que j'avais pas vu ce genre d'équipement. Ca m'intéresse carrément. Ca à l'air en sale état, mais je devrais pouvoir en tirer quelque chose!
+Oh wow, c'est génial. Ca fait longtemps que j'avais pas vu ce genre d'équipement. Ca m'intéresse carrément. 
+Ca à l'air en sale état, mais je devrais pouvoir en tirer quelque chose!
 {Adri>visited_house:
 #c #erwan #not_speaking #excited
 /
@@ -593,7 +594,7 @@ Ok, je repasserais plus tard. Ciao Erwan, prend soin de toi!
 /
 #c #adriana #not_speaking #default
 /
-Ah Adri, parfait. J'ai pris le temps de fouiller dans les trucs de Yoann, et il y a du beau matos. J'ai pu remettre sur pied un lecteur cassettes. On peut seulement écouter des cassettes audio, mais ça devrais plaire à Yoann.
+Ah Adri, parfait. J'ai pris le temps de fouiller dans les trucs de Yoann, et il y a du beau matos. J'ai pu remettre sur pied un lecteur cassettes. On peut seulement écouter des cassettes audio, mais ça devrais lui plaire.
 
 #c #erwan #not_speaking #default
 /

@@ -717,7 +717,7 @@ Erwan et Canette doivent encore être à l'IMAK...
 {ErwanStress?stressed && ErwanComing?ErwanComing.default && Gwen?Gwen.default: ->erwan_is_stressed}
 {ErwanStress?stressed && ErwanComing?ErwanComing.default && Gwen?Gwen.seen_adri: ->erwan_is_stressed_seen_adri}
 {ErwanComing?with_adri:->erwan_is_there}
-{->start|}
+{not(ErwanComing?with_yoann):->start|}
 
 =start
 #knot

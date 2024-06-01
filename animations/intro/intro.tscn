@@ -65,7 +65,7 @@
 [ext_resource type="Texture2D" uid="uid://of3p1tsuva6s" path="res://animations/intro/case2/image0024.png" id="62_wey31"]
 [ext_resource type="Texture2D" uid="uid://cq2kg81l686tb" path="res://animations/intro/case2/image0025.png" id="63_17sew"]
 [ext_resource type="Texture2D" uid="uid://b5s0sr6qkutq0" path="res://animations/intro/case2/image0026.png" id="64_iun8t"]
-[ext_resource type="Texture2D" uid="uid://c8mlya1h2i8qi" path="res://animations/intro/case3/case3.png" id="65_h3h7d"]
+[ext_resource type="Texture2D" path="res://animations/intro/case3/case3.png" id="65_h3h7d"]
 [ext_resource type="Texture2D" uid="uid://cb5yyqvltuuu4" path="res://animations/intro/case4/case4.png" id="66_s5cka"]
 [ext_resource type="Texture2D" uid="uid://bpqaew81xj8xi" path="res://animations/intro/case5/image0000.png" id="67_dc5g5"]
 [ext_resource type="Texture2D" uid="uid://q0hwbyh7fstq" path="res://animations/intro/case5/image0001.png" id="68_titlx"]

@@ -26,7 +26,7 @@ VAR foodReceived = 0
 /
 #c #adriana #speaking #default
 /
-Salut Gwen. La tempête n'a pas posé trop de problème chez vous?
+Salut Gwen. La tempête n'a pas posé trop de problèmes chez vous?
 
 #c #gwen #speaking #default
 /
@@ -163,36 +163,36 @@ Oh ne t'inquiète pas! Merci encore!
 #name:ADRIANA
 #side:left
 
-#id:yoan
-#name:YOAN
+#id:yoann
+#name:YOANN
 #side:right
 /
-#c #yoan #not_speaking #default
+#c #yoann #not_speaking #default
 /
 #c #adriana #speaking #default
 /
 Salut Yoann. Vous n'auriez pas un peu de nourriture à filler aux gens de Tréville?
 Iels ont perdu plein de bouffe avec la tempête. J'essaie de voir si on peut les aider.
 
-#c #yoan #speaking #default
+#c #yoann #speaking #default
 /
 #c #adriana #not_speaking #default
 /
 Oh merde. Je vais voir ce qu'on a. Je vais trouver quelque chose.
 
 
-#c #yoan #not_speaking #default
+#c #yoann #not_speaking #default
 /
 #c #adriana #speaking #default
 /
 
-#c #yoan #speaking #default
+#c #yoann #speaking #default
 /
 #c #adriana #not_speaking #default
 /
 Voilà, j'ai rassemblé quelques légumes. C'est pas grand-chose mais j'espère que ça pourra les aider.
 
-#c #yoan #not_speaking #default
+#c #yoann #not_speaking #default
 /
 #c #adriana #speaking #default
 /
@@ -211,7 +211,7 @@ Merci. Je vais leur amener.
 #knot
 #4
 
-#background: IMAK
+#background: IO
 
 #characters:2
 

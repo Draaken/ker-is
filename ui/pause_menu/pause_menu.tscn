@@ -1,7 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://b46eb627bnwqe"]
+[gd_scene load_steps=10 format=3 uid="uid://b46eb627bnwqe"]
 
-[ext_resource type="Script" path="res://UI/pause_menu/pause_menu.gd" id="1_31qy8"]
-[ext_resource type="Script" path="res://ui/pause_menu/SoundPanel.gd" id="2_e31am"]
+[ext_resource type="Script" path="res://ui/pause_menu/pause_menu.gd" id="1_31qy8"]
 [ext_resource type="Theme" uid="uid://dh4d6fd26ert" path="res://ui/pause_menu/active_theme.tres" id="3_f7rli"]
 [ext_resource type="Texture2D" uid="uid://di5kv1qsxihpy" path="res://ui/pause_menu/sound_logo.png" id="4_g3x8j"]
 [ext_resource type="Script" path="res://ui/pause_menu/VolumeSlider.gd" id="4_ysjog"]
@@ -161,7 +160,6 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 40
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
-script = ExtResource("2_e31am")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/SoundPanel"]
 layout_mode = 2
@@ -230,7 +228,6 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
-script = ExtResource("2_e31am")
 
 [node name="Button" type="Button" parent="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/RestartPannel"]
 custom_minimum_size = Vector2(400, 100)
@@ -248,7 +245,6 @@ theme_override_constants/margin_left = 30
 theme_override_constants/margin_top = 20
 theme_override_constants/margin_right = 30
 theme_override_constants/margin_bottom = 20
-script = ExtResource("2_e31am")
 
 [node name="Button" type="Button" parent="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/ExitPannel"]
 custom_minimum_size = Vector2(400, 100)
@@ -260,3 +256,5 @@ text = "EXIT"
 
 [connection signal="drag_ended" from="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/SoundPanel/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/MarginContainer/HSlider" to="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/SoundPanel/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/MarginContainer/HSlider" method="_on_drag_ended"]
 [connection signal="drag_started" from="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/SoundPanel/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/MarginContainer/HSlider" to="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/SoundPanel/VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/MarginContainer/HSlider" method="_on_drag_started"]
+[connection signal="button_down" from="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/RestartPannel/Button" to="." method="_on_restart_button_pressed"]
+[connection signal="button_down" from="PausePannel/PausePannel/Margin/VBoxContainer/MarginContainer/MenuOptions/ExitPannel/Button" to="." method="_on_exit_button_pressed"]

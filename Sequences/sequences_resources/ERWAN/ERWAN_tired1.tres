@@ -12,7 +12,7 @@ metric_value = 30
 
 [resource]
 script = ExtResource("1_pta1s")
-conditions = [SubResource("Resource_6tqe7")]
+conditions = Array[ExtResource("1_yie73")]([SubResource("Resource_6tqe7")])
 priority = 1
 one_use_only = false
 ink_file = ExtResource("2_rms5i")

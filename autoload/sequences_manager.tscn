@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://brgwl3ryt68kc"]
 
 [ext_resource type="Script" path="res://scripts/autoload/sequences_manager.gd" id="1_qssev"]
-[ext_resource type="Resource" uid="uid://dayfxjbno0bmw" path="res://sequences/sequences_pack/AvailableSequences.tres" id="2_32gqp"]
+[ext_resource type="Resource" uid="uid://bjneonlsjr18s" path="res://sequences/sequences_pack/AvailableSequences.tres" id="2_32gqp"]
 [ext_resource type="Resource" uid="uid://bryiskgxrfe5" path="res://sequences/sequences_pack/ActiveSequences.tres" id="3_sb6yw"]
 [ext_resource type="Resource" uid="uid://bf5qbfqfhvx2i" path="res://sequences/sequences_pack/FinishedSequences.tres" id="4_81gka"]
 

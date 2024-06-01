@@ -30,6 +30,9 @@ func shuffle():
 	TrackPlayer.stream = available_tracks[rand_index]
 	available_tracks.remove_at(rand_index)
 
+func change_volume(new_volume):
+	TrackPlayer.volume_db = new_volume
+
 
 func _on_track_finished():
 	var rand_delay = random.randi_range(5,40)

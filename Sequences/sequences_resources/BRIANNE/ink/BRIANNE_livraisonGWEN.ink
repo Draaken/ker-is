@@ -97,7 +97,7 @@ Super, merci Adrianna. Qu'est-ce qu'on ferais sans toi.
 /
 Elle avait l'air déçue que je n'ai pas de message pour elle de ta part… 
 
-#c #brianne #speaking #default
+#c #brianne #speaking #shocked
 /
 #c #adriana #not_speaking #default
 /
@@ -119,7 +119,7 @@ C'est bien ce qu'il me semblait. C'est toujours à moi de prendre les devants.
 /
 #c #adriana #not_speaking #default
 /
-Mais je ne veux pas t'impliquer dans tout ça Adri! Tu n'as pas à subir les histoires de deux vieilles dames.
+Mais je ne veux pas t'impliquer dans tout ça Adri! T'as pas à subir nos histoires de vieilles dames.
 
 #c #brianne #not_speaking #default
 /
@@ -127,8 +127,8 @@ Mais je ne veux pas t'impliquer dans tout ça Adri! Tu n'as pas à subir les his
 /
 Je crois que je suis déjà impliquée…
 
->>ChangeMetric, brian_gwen_flirt, 5, true
->>ChangeMetric, brian_opinion, 10, true
+>>ChangeMetric, brianne_gwen_flirt, 5, true
+>>ChangeMetric, brianne_opinion, 10, true
 
 >>EndOfSequence
 

@@ -53,19 +53,18 @@ func remove_sequence():
 
 func change_metric(metric_string, value_string, is_adding = false):
 	var metric = MetricsDatabase.METRICS_BY_NAME[metric_string]
-	var metric_variable = MetricsDatabase.metrics_values_live[metric_string]
 	if value_string.is_valid_int():
 		if is_adding:
-			metric_variable += int(value_string)
+			MetricsDatabase.metrics_values_live[metric_string] += int(value_string)
 		else:
-			metric_variable = int(value_string)
+			MetricsDatabase.metrics_values_live[metric_string] = int(value_string)
 	else:
 		var values = MetricsDatabase.METRICS_VALUES_BY_VALUES_STRING[metric]
 		var new_value = values[value_string]
 		if is_adding:
-			metric_variable += new_value
+			MetricsDatabase.metrics_values_live[metric_string] += new_value
 		else:
-			metric_variable = new_value
+			MetricsDatabase.metrics_values_live[metric_string] = new_value
 	print_debug("Change "+metric_string +": "+value_string)
 func get_metric(metric_string):
 	var value = MetricsDatabase.metrics_values_live[metric_string]

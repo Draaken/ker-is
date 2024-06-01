@@ -18,7 +18,7 @@ metric_value = 0
 
 [resource]
 script = ExtResource("1_3t64n")
-conditions = [SubResource("Resource_ibmvd"), SubResource("Resource_a7aap")]
+conditions = Array[ExtResource("1_vcvhg")]([SubResource("Resource_ibmvd"), SubResource("Resource_a7aap")])
 priority = 1
 one_use_only = true
 ink_file = ExtResource("2_8jr55")

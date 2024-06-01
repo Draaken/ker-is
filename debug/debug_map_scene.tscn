@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c1l0snsmq8gqo"]
+[gd_scene load_steps=26 format=3 uid="uid://c1l0snsmq8gqo"]
 
 [ext_resource type="Material" uid="uid://c16g0i816fq38" path="res://MapScene/watershadermaterial.tres" id="2_gjfrv"]
 [ext_resource type="Texture2D" uid="uid://br32wfc3vraag" path="res://MapScene/PlaceHolderMap/Map.png" id="3_jr0u6"]
@@ -13,6 +13,7 @@
 [ext_resource type="Script" path="res://debug/AreaTest.gd" id="12_ci8d8"]
 [ext_resource type="PackedScene" uid="uid://bh8bbtlcnjrlh" path="res://debug/button_area_debug.tscn" id="12_lrdjm"]
 [ext_resource type="PackedScene" uid="uid://n5xhbbbw7sxp" path="res://debug/DebugInkReader.tscn" id="13_n28ot"]
+[ext_resource type="Script" path="res://debug/MetricsDisplay.gd" id="14_b51kx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1aepq"]
 resource_local_to_scene = true
@@ -213,65 +214,65 @@ y_sort_enabled = true
 [node name="Tree1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
 material = SubResource("ShaderMaterial_1aepq")
 position = Vector2(-175.833, -78.5)
-scale = Vector2(1.03565, 1.03565)
+scale = Vector2(1.03746, 1.03746)
 
 [node name="Tree2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
 material = SubResource("ShaderMaterial_pxeou")
 position = Vector2(-250, -116.833)
-scale = Vector2(1.03296, 1.03296)
+scale = Vector2(1.02032, 1.02032)
 frame = 1
 
 [node name="Tree3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
 material = SubResource("ShaderMaterial_oi0pj")
 position = Vector2(-243.333, -73.5)
-scale = Vector2(1.12935, 1.12935)
+scale = Vector2(1.05782, 1.05782)
 frame = 1
 
 [node name="Tree4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("9_vvloj")]
 material = SubResource("ShaderMaterial_lxaet")
 position = Vector2(-214.167, -112.667)
-scale = Vector2(1.01572, 1.01572)
+scale = Vector2(1.09141, 1.09141)
 frame = 1
 
 [node name="Bush1" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_ajeby")
 position = Vector2(-196.667, -56.8334)
-scale = Vector2(1.10962, 1.10962)
+scale = Vector2(0.99656, 0.99656)
+frame = 1
 
 [node name="Bush2" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_34ubk")
 position = Vector2(-101.667, -22.6667)
-scale = Vector2(0.866315, 0.866315)
-frame = 1
+scale = Vector2(1.01344, 1.01344)
 
 [node name="Bush3" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_ic4ej")
 position = Vector2(-213.333, -92.6667)
-scale = Vector2(0.944713, 0.944713)
+scale = Vector2(0.991786, 0.991786)
 frame = 1
 
 [node name="Bush4" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_eadu5")
 position = Vector2(-263.333, -96)
-scale = Vector2(1.02798, 1.02798)
-frame = 2
+scale = Vector2(1.01556, 1.01556)
+frame = 1
 
 [node name="Bush5" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_cs85y")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.07326, 1.07326)
+scale = Vector2(0.983423, 0.983423)
 
 [node name="Bush6" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_yrkbi")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(1.03009, 1.03009)
-frame = 0
+scale = Vector2(1.14328, 1.14328)
+frame = 2
 
 [node name="Bush7" parent="PlaceholderMap/Islands/Polygon2D3/Vegetation" instance=ExtResource("11_33lu8")]
 material = SubResource("ShaderMaterial_bb1c0")
 position = Vector2(-237.5, -87.6667)
-scale = Vector2(0.946413, 0.946413)
-frame = 0
+scale = Vector2(1.04983, 1.04983)
+frame = 2
 
 [node name="Polygon2D13" type="Polygon2D" parent="PlaceholderMap/Islands"]
 position = Vector2(-1460, 1098.33)
@@ -451,6 +452,15 @@ alignment = 2
 [node name="FPS" type="Label" parent="UI"]
 offset_right = 40.0
 offset_bottom = 23.0
+
+[node name="Metrics" type="Label" parent="UI"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 23.0
+grow_horizontal = 0
+script = ExtResource("14_b51kx")
 
 [editable path="AreaTest/IMAK"]
 [editable path="AreaTest/Villa"]

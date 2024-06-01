@@ -12,6 +12,12 @@ script = ExtResource("1_xjht6")
 
 [node name="MapScene" parent="." instance=ExtResource("1_v52n2")]
 
+[node name="Pause" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="PauseMenu" parent="Pause" instance=ExtResource("6_faeg6")]
+visible = false
+
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="TransitionScreen" type="ColorRect" parent="UI"]
@@ -32,5 +38,3 @@ visible = false
 [node name="Intro" parent="UI" instance=ExtResource("5_bh60j")]
 visible = false
 z_index = 200
-
-[node name="PauseMenu" parent="UI" instance=ExtResource("6_faeg6")]
